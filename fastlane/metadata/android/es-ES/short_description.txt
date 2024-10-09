@@ -1,1 +1,1 @@
-Mando a distancia Bluetooth para Android TV.
+Control remoto Bluetooth para Android TV.

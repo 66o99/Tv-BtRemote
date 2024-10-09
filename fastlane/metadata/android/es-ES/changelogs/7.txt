@@ -1,0 +1,4 @@
+1.3.1
+
+Se actualizaron las traducciones al alemán (gracias a Dirk).
+Se actualizaron las traducciones al español (gracias a gallegonovato).

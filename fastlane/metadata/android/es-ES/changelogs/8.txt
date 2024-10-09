@@ -1,0 +1,5 @@
+1.3.2
+
+Se actualizaron las dependencias y se realizaron ajustes en el código.
+Algunas mejoras menores.
+Se actualizó la traducción al filipino (gracias a kita).

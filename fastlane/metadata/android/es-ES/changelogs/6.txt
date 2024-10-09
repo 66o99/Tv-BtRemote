@@ -1,0 +1,9 @@
+1.3.0
+
+Se añadió la traducción al neerlandés (gracias a Vistaus).
+Se actualizaron las traducciones.
+Se agregó un teclado avanzado que permite la entrada directa de caracteres, incluyendo la integración de teclas modificadoras similares a las de un teclado físico (se puede habilitar en la configuración).
+Se añadieron los botones 'Power', 'Menú', 'CC' y 'Brillo' a los elementos de la barra superior.
+Se añadieron botones de desplazamiento para el ratón y algunos botones para el teclado.
+Mejoras en el código y corrección de errores.
+Se actualizaron las dependencias.
