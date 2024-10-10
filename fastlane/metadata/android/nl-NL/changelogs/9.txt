@@ -1,0 +1,8 @@
+1.4.0
+
+- Nieuw: Griekse vertaling (met dank aan Vasilis Kos);
+- Nieuw: Turkse vertaling (met dank aan FurkanÇ);
+- Nieuw: Griekse en Turkse toetsenbordindelingen;
+- Nieuw: muisbediening middels de versnellingsmeter;
+- Verbeterd: muisimplementatie;
+- Bijgewerkt: afhankelijkheden.
