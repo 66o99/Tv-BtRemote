@@ -1,0 +1,8 @@
+1.4.0
+
+- Añadida traducción al griego (gracias a Vasilis Kos).
+- Añadida traducción al turco (gracias a FurkanÇ).
+- Se han añadido los diseños de teclado turco y griego.
+- Se ha añadido el control del ratón con el giroscopio.
+- Mejora de la aplicación del ratón.
+- Dependencias actualizadas.
