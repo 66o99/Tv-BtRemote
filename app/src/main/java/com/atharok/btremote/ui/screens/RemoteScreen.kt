@@ -61,6 +61,7 @@ import com.atharok.btremote.ui.views.RemoteScreenHelpModalBottomSheet
 import com.atharok.btremote.ui.views.keyboard.AdvancedKeyboardLayoutView
 import com.atharok.btremote.ui.views.keyboard.VirtualKeyboardView
 import com.atharok.btremote.ui.views.mouse.MousePadLayout
+import com.atharok.btremote.ui.views.remote.MinimalistRemoteView
 import com.atharok.btremote.ui.views.remote.RemoteView
 import com.atharok.btremote.ui.views.remoteButtons.DirectionalButtons
 
@@ -101,6 +102,9 @@ fun RemoteScreen(
 
         var showHelpBottomSheet: Boolean by remember { mutableStateOf(false) }
 
+        val useMinimalistRemote: Boolean by settingsViewModel.useMinimalistRemote
+            .collectAsStateWithLifecycle(initialValue = false)
+
         StatelessRemoteScreen(
             deviceName = deviceName,
             topBarActions = {
@@ -113,15 +117,23 @@ fun RemoteScreen(
                     onShowKeyboardChanged = { showKeyboard = it },
                     showHelpBottomSheet = showHelpBottomSheet,
                     onShowHelpBottomSheetChanged = { showHelpBottomSheet = it },
-                    sendRemoteKeyReport = sendRemoteKeyReport
+                    sendRemoteKeyReport = sendRemoteKeyReport,
+                    showBrightnessButtons = !useMinimalistRemote
                 )
             },
             remoteLayout = {
-                RemoteView(
-                    sendRemoteKeyReport = sendRemoteKeyReport,
-                    sendNumberKeyReport = sendKeyboardKeyReport,
-                    modifier = Modifier.padding(dimensionResource(id = R.dimen.remote_button_padding))
-                )
+                if(useMinimalistRemote) {
+                    MinimalistRemoteView(
+                        sendRemoteKeyReport = sendRemoteKeyReport,
+                        modifier = Modifier.padding(dimensionResource(id = R.dimen.remote_button_padding))
+                    )
+                } else {
+                    RemoteView(
+                        sendRemoteKeyReport = sendRemoteKeyReport,
+                        sendNumberKeyReport = sendKeyboardKeyReport,
+                        modifier = Modifier.padding(dimensionResource(id = R.dimen.remote_button_padding))
+                    )
+                }
             },
             navigationLayout = {
                 NavigationLayout(
@@ -417,7 +429,8 @@ private fun TopBarActions(
     onShowKeyboardChanged: (Boolean) -> Unit,
     showHelpBottomSheet: Boolean,
     onShowHelpBottomSheetChanged: (Boolean) -> Unit,
-    sendRemoteKeyReport: (ByteArray) -> Unit
+    sendRemoteKeyReport: (ByteArray) -> Unit,
+    showBrightnessButtons: Boolean
 ) {
 
     FadeAnimatedContent(targetState = navigationToggle) {
@@ -447,22 +460,24 @@ private fun TopBarActions(
     )
 
     MoreOverflowMenu { closeDropdownMenu: () -> Unit ->
-        BrightnessIncDropdownMenuItem(
-            touchDown = {
-                sendRemoteKeyReport(RemoteInput.REMOTE_INPUT_BRIGHTNESS_INC)
-            },
-            touchUp = {
-                sendRemoteKeyReport(REMOTE_INPUT_NONE)
-            }
-        )
-        BrightnessDecDropdownMenuItem(
-            touchDown = {
-                sendRemoteKeyReport(RemoteInput.REMOTE_INPUT_BRIGHTNESS_DEC)
-            },
-            touchUp = {
-                sendRemoteKeyReport(REMOTE_INPUT_NONE)
-            }
-        )
+        if(showBrightnessButtons) {
+            BrightnessIncDropdownMenuItem(
+                touchDown = {
+                    sendRemoteKeyReport(RemoteInput.REMOTE_INPUT_BRIGHTNESS_INC)
+                },
+                touchUp = {
+                    sendRemoteKeyReport(REMOTE_INPUT_NONE)
+                }
+            )
+            BrightnessDecDropdownMenuItem(
+                touchDown = {
+                    sendRemoteKeyReport(RemoteInput.REMOTE_INPUT_BRIGHTNESS_DEC)
+                },
+                touchUp = {
+                    sendRemoteKeyReport(REMOTE_INPUT_NONE)
+                }
+            )
+        }
         DisconnectDropdownMenuItem(
             disconnect = {
                 closeDropdownMenu()

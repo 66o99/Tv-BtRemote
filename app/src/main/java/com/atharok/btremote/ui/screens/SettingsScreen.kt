@@ -24,6 +24,7 @@ import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.rounded.Keyboard
 import androidx.compose.material.icons.rounded.Mouse
 import androidx.compose.material.icons.rounded.Palette
+import androidx.compose.material.icons.rounded.ViewCompact
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
@@ -249,6 +250,40 @@ fun SettingsScreen(
                 initialValue = false,
                 primaryText = stringResource(id = R.string.advanced_keyboard),
                 secondaryText = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        horizontal = horizontalPadding,
+                        vertical = verticalPadding
+                    )
+            )
+
+            HorizontalDivider(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = verticalPadding)
+            )
+
+            // ---- Interface ----
+
+            TitleItem(
+                text = stringResource(id = R.string.user_interface),
+                icon = Icons.Rounded.ViewCompact,
+                iconDescription = stringResource(id = R.string.user_interface),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        horizontal = horizontalPadding,
+                        vertical = verticalPadding
+                    )
+            )
+
+            StatefulSettingsSwitchItem(
+                isEnabledFlow = settingsViewModel.useMinimalistRemote,
+                onEnabledFlowChange = { settingsViewModel.saveUseMinimalistRemote(it) },
+                initialValue = false,
+                primaryText = stringResource(id = R.string.use_minimalist_interface),
+                secondaryText = stringResource(id = R.string.minimalist_interface_info),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(

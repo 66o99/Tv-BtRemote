@@ -29,6 +29,7 @@ class SettingsDataStore(private val context: Context) {
         private const val KEYBOARD_LANGUAGE = "keyboard_language"
         private const val MUST_CLEAR_INPUT_FIELD_KEY = "must_clear_input_field_key"
         private const val USE_ADVANCED_KEYBOARD_KEY = "use_advanced_keyboard_key"
+        private const val USE_MINIMALIST_REMOTE_KEY = "use_minimalist_remote_key"
     }
 
     private val themeKey = stringPreferencesKey(THEME_KEY)
@@ -40,6 +41,7 @@ class SettingsDataStore(private val context: Context) {
     private val keyboardLanguageKey = stringPreferencesKey(KEYBOARD_LANGUAGE)
     private val mustClearInputFieldKey = booleanPreferencesKey(MUST_CLEAR_INPUT_FIELD_KEY)
     private val useAdvancedKeyboardKey = booleanPreferencesKey(USE_ADVANCED_KEYBOARD_KEY)
+    private val useMinimalistRemoteKey = booleanPreferencesKey(USE_MINIMALIST_REMOTE_KEY)
 
     private fun Flow<Preferences>.catchException(): Flow<Preferences> = this.catch {
         if (it is IOException) {
@@ -191,6 +193,22 @@ class SettingsDataStore(private val context: Context) {
     suspend fun saveUseAdvancedKeyboard(useAdvancedKeyboard: Boolean) {
         context.dataStore.edit {
             it[useAdvancedKeyboardKey] = useAdvancedKeyboard
+        }
+    }
+
+    // ---- Interface ----
+
+    val useMinimalistRemoteFlow: Flow<Boolean> by lazy {
+        context.dataStore.data
+            .catchException()
+            .map { preferences ->
+                preferences[useMinimalistRemoteKey] ?: false
+            }
+    }
+
+    suspend fun saveUseMinimalistRemote(useAdvancedKeyboard: Boolean) {
+        context.dataStore.edit {
+            it[useMinimalistRemoteKey] = useAdvancedKeyboard
         }
     }
 }

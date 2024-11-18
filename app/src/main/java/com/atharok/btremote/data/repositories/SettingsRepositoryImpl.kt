@@ -54,4 +54,9 @@ class SettingsRepositoryImpl(
     override suspend fun saveUseAdvancedKeyboard(useAdvancedKeyboard: Boolean) {
         settingsDataStore.saveUseAdvancedKeyboard(useAdvancedKeyboard)
     }
+
+    override fun useMinimalistRemote(): Flow<Boolean> = settingsDataStore.useMinimalistRemoteFlow
+    override suspend fun saveUseMinimalistRemote(useMinimalistRemote: Boolean) {
+        settingsDataStore.saveUseMinimalistRemote(useMinimalistRemote)
+    }
 }

@@ -13,6 +13,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
 import com.atharok.btremote.ui.views.remote.buttonsLayouts.BackButton
+import com.atharok.btremote.ui.views.remote.buttonsLayouts.BrightnessVerticalButtons
 import com.atharok.btremote.ui.views.remote.buttonsLayouts.ChannelButton0
 import com.atharok.btremote.ui.views.remote.buttonsLayouts.ChannelButton1
 import com.atharok.btremote.ui.views.remote.buttonsLayouts.ChannelButton2
@@ -41,9 +42,7 @@ fun RemoteView(
     val shape = CircleShape
     val padding: Dp = dimensionResource(id = R.dimen.remote_button_padding)
 
-    Column(
-        modifier = modifier,
-    ) {
+    Column(modifier = modifier) {
         MultimediaLayout(
             sendReport = sendRemoteKeyReport,
             modifier = Modifier
@@ -225,6 +224,112 @@ fun RemoteView(
                     shape = shape
                 )
             }
+        }
+    }
+}
+
+@Composable
+fun MinimalistRemoteView(
+    sendRemoteKeyReport: (bytes: ByteArray) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val shape = CircleShape
+    val padding: Dp = dimensionResource(id = R.dimen.remote_button_padding)
+
+    Column(modifier = modifier) {
+        MultimediaLayout(
+            sendReport = sendRemoteKeyReport,
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+                .padding(padding),
+            shape = shape
+        )
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(2f),
+            horizontalArrangement = Arrangement.Absolute.SpaceBetween
+        ) {
+            Column(modifier = Modifier.weight(1f).padding(padding)) {
+                VolumeVerticalButtons(
+                    sendReport = sendRemoteKeyReport,
+                    modifier = Modifier.align(Alignment.Start),
+                    shape = shape
+                )
+            }
+
+            Column(
+                modifier = Modifier.weight(2f)
+            ) {
+
+                Row(
+                    modifier = Modifier.weight(1f)
+                ) {
+                    VolumeMuteButton(
+                        sendReport = sendRemoteKeyReport,
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(padding),
+                        shape = shape
+                    )
+
+                    ClosedCaptionsButton(
+                        sendReport = sendRemoteKeyReport,
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(padding),
+                        shape = shape
+                    )
+                }
+
+                HomeButton(
+                    sendReport = sendRemoteKeyReport,
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(padding),
+                    shape = shape
+                )
+
+            }
+
+            Column(modifier = Modifier.weight(1f).padding(padding)) {
+                BrightnessVerticalButtons(
+                    sendReport = sendRemoteKeyReport,
+                    modifier = Modifier.align(Alignment.End),
+                    shape = shape
+                )
+            }
+        }
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f),
+            horizontalArrangement = Arrangement.Absolute.SpaceBetween
+        ) {
+            BackButton(
+                sendReport = sendRemoteKeyReport,
+                modifier = Modifier
+                    .weight(2f)
+                    .padding(padding),
+                shape = shape
+            )
+            MenuButton(
+                sendReport = sendRemoteKeyReport,
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(padding),
+                shape = shape
+            )
+            PowerButton(
+                sendReport = sendRemoteKeyReport,
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(padding),
+                shape = shape
+            )
         }
     }
 }

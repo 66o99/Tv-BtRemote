@@ -90,7 +90,7 @@ private fun MultimediaPreviousButtonContent(
         Icon(
             imageVector = Icons.Rounded.SkipPrevious,
             contentDescription = stringResource(id = R.string.previous),
-            modifier = Modifier.fillMaxSize(0.75f)
+            modifier = Modifier.fillMaxSize(0.65f)
         )
     }
 }
@@ -108,7 +108,7 @@ private fun MultimediaNextButtonContent(
         Icon(
             imageVector = Icons.Rounded.SkipNext,
             contentDescription = stringResource(id = R.string.next),
-            modifier = Modifier.fillMaxSize(0.75f)
+            modifier = Modifier.fillMaxSize(0.65f)
         )
     }
 }
@@ -124,7 +124,7 @@ private fun MultimediaPlayPauseButtonContent(
         shape = shape
     ) {
         Row(
-            modifier = Modifier.fillMaxHeight(0.75f),
+            modifier = Modifier.fillMaxHeight(0.65f),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
