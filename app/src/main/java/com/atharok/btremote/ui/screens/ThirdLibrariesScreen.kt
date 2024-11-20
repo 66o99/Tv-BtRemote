@@ -62,7 +62,7 @@ fun StatelessThirdLibrariesScreen(
                     library = item,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(dimensionResource(id = R.dimen.padding_medium))
+                        .padding(dimensionResource(id = R.dimen.padding_large))
                 )
 
                 if (index < libraries.lastIndex) {
