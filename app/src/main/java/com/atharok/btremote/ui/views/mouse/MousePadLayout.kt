@@ -1,15 +1,11 @@
 package com.atharok.btremote.ui.views.mouse
 
-
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.ArrowDownward
-import androidx.compose.material.icons.rounded.ArrowUpward
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
@@ -21,6 +17,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.domain.entity.remoteInput.MouseAction
 import kotlin.jvm.internal.Ref.BooleanRef
 import kotlin.jvm.internal.Ref.FloatRef
@@ -202,7 +199,7 @@ private fun ScrollMouseButtonsLayout(
                     )
                 )
             },
-            image = Icons.Rounded.ArrowUpward,
+            image = AppIcons.MouseScrollUp,
             contentDescription = stringResource(id = R.string.mouse_wheel_up),
             shape = RoundedCornerShape(topEnd = dimensionResource(id = R.dimen.card_corner_radius)),
             modifier = Modifier
@@ -230,7 +227,7 @@ private fun ScrollMouseButtonsLayout(
                     )
                 )
             },
-            image = Icons.Rounded.ArrowDownward,
+            image = AppIcons.MouseScrollDown,
             contentDescription = stringResource(id = R.string.mouse_wheel_down),
             shape = RectangleShape,
             modifier = Modifier

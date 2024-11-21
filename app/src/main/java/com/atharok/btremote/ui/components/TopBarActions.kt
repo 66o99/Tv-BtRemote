@@ -1,15 +1,5 @@
 package com.atharok.btremote.ui.components
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.ArrowBack
-import androidx.compose.material.icons.automirrored.rounded.BluetoothSearching
-import androidx.compose.material.icons.rounded.ControlCamera
-import androidx.compose.material.icons.rounded.HelpOutline
-import androidx.compose.material.icons.rounded.Keyboard
-import androidx.compose.material.icons.rounded.MoreVert
-import androidx.compose.material.icons.rounded.Mouse
-import androidx.compose.material.icons.rounded.Refresh
-import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
@@ -17,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 
 // ---- Actions ----
 
@@ -45,7 +36,7 @@ fun NavigateUpAction(
 ) {
     TopAppBarAction(
         onClick = navigateUp,
-        image = Icons.AutoMirrored.Rounded.ArrowBack,
+        image = AppIcons.Back,
         contentDescription = stringResource(id = R.string.back),
         modifier = modifier
     )
@@ -58,7 +49,7 @@ fun SettingsAction(
 ) {
     TopAppBarAction(
         onClick = openSettingsScreen,
-        image = Icons.Rounded.Settings,
+        image = AppIcons.Settings,
         contentDescription = stringResource(id = R.string.settings),
         modifier = modifier
     )
@@ -71,7 +62,7 @@ fun PairingNewDeviceAction(
 ) {
     TopAppBarAction(
         onClick = openBluetoothPairingScreen,
-        image = Icons.AutoMirrored.Rounded.BluetoothSearching,
+        image = AppIcons.BluetoothPairing,
         contentDescription = stringResource(id = R.string.pairing_a_device),
         modifier = modifier
     )
@@ -84,7 +75,7 @@ fun HelpAction(
 ) {
     TopAppBarAction(
         onClick = showHelp,
-        image = Icons.Rounded.HelpOutline,
+        image = AppIcons.Help,
         contentDescription = stringResource(id = R.string.help),
         modifier = modifier
     )
@@ -97,7 +88,7 @@ fun RefreshAction(
 ) {
     TopAppBarAction(
         onClick = refresh,
-        image = Icons.Rounded.Refresh,
+        image = AppIcons.Refresh,
         contentDescription = stringResource(id = R.string.refresh),
         modifier = modifier
     )
@@ -110,7 +101,7 @@ fun KeyboardAction(
 ) {
     TopAppBarAction(
         onClick = showKeyboard,
-        image = Icons.Rounded.Keyboard,
+        image = AppIcons.Keyboard,
         contentDescription = stringResource(id = R.string.keyboard),
         modifier = modifier
     )
@@ -123,7 +114,7 @@ fun DirectionButtonsAction(
 ) {
     TopAppBarAction(
         onClick = showDirectionButtons,
-        image = Icons.Rounded.ControlCamera,
+        image = AppIcons.Controller,
         contentDescription = stringResource(id = R.string.direction_arrows),
         modifier = modifier
     )
@@ -136,7 +127,7 @@ fun MouseAction(
 ) {
     TopAppBarAction(
         onClick = showMousePad,
-        image = Icons.Rounded.Mouse,
+        image = AppIcons.Mouse,
         contentDescription = stringResource(id = R.string.mouse),
         modifier = modifier
     )
@@ -149,7 +140,7 @@ fun MoreAction(
 ) {
     TopAppBarAction(
         onClick = showMenu,
-        image = Icons.Rounded.MoreVert,
+        image = AppIcons.MoreVert,
         contentDescription = stringResource(id = R.string.more),
         modifier = modifier
     )

@@ -1,19 +1,8 @@
 package com.atharok.btremote.domain.entity
 
 import android.bluetooth.BluetoothClass.Device
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Bluetooth
-import androidx.compose.material.icons.rounded.Computer
-import androidx.compose.material.icons.rounded.DeviceUnknown
-import androidx.compose.material.icons.rounded.HealthAndSafety
-import androidx.compose.material.icons.rounded.MusicVideo
-import androidx.compose.material.icons.rounded.Print
-import androidx.compose.material.icons.rounded.Router
-import androidx.compose.material.icons.rounded.Smartphone
-import androidx.compose.material.icons.rounded.Toys
-import androidx.compose.material.icons.rounded.Usb
-import androidx.compose.material.icons.rounded.Watch
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.atharok.btremote.common.utils.AppIcons
 
 data class DeviceEntity(
     val name: String,
@@ -21,16 +10,16 @@ data class DeviceEntity(
     private val category: Int
 ) {
     val imageVector: ImageVector = when(category) {
-        Device.Major.COMPUTER -> Icons.Rounded.Computer
-        Device.Major.PHONE -> Icons.Rounded.Smartphone
-        Device.Major.NETWORKING -> Icons.Rounded.Router
-        Device.Major.AUDIO_VIDEO -> Icons.Rounded.MusicVideo
-        Device.Major.PERIPHERAL -> Icons.Rounded.Usb
-        Device.Major.IMAGING -> Icons.Rounded.Print
-        Device.Major.WEARABLE -> Icons.Rounded.Watch
-        Device.Major.TOY -> Icons.Rounded.Toys
-        Device.Major.HEALTH -> Icons.Rounded.HealthAndSafety
-        Device.Major.UNCATEGORIZED -> Icons.Rounded.DeviceUnknown
-        else -> Icons.Rounded.Bluetooth
+        Device.Major.COMPUTER -> AppIcons.Computer
+        Device.Major.PHONE -> AppIcons.Phone
+        Device.Major.NETWORKING -> AppIcons.Networking
+        Device.Major.AUDIO_VIDEO -> AppIcons.AudioVideo
+        Device.Major.PERIPHERAL -> AppIcons.Peripheral
+        Device.Major.IMAGING -> AppIcons.Imaging
+        Device.Major.WEARABLE -> AppIcons.Wearable
+        Device.Major.TOY -> AppIcons.Toy
+        Device.Major.HEALTH -> AppIcons.Health
+        Device.Major.UNCATEGORIZED -> AppIcons.Uncategorized
+        else -> AppIcons.Bluetooth
     }
 }

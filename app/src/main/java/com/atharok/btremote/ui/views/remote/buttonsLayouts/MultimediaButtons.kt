@@ -7,11 +7,6 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Pause
-import androidx.compose.material.icons.rounded.PlayArrow
-import androidx.compose.material.icons.rounded.SkipNext
-import androidx.compose.material.icons.rounded.SkipPrevious
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,6 +17,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
 import com.atharok.btremote.ui.views.remoteButtons.RemoteButtonContentTemplate
 import com.atharok.btremote.ui.views.remoteButtons.RemoteButtonSkin
@@ -94,7 +90,7 @@ private fun MultimediaPreviousButtonContent(
         shape = shape
     ) {
         Icon(
-            imageVector = Icons.Rounded.SkipPrevious,
+            imageVector = AppIcons.MultimediaPrevious,
             contentDescription = stringResource(id = R.string.previous),
             modifier = Modifier.fillMaxSize(0.65f)
         )
@@ -112,7 +108,7 @@ private fun MultimediaNextButtonContent(
         shape = shape
     ) {
         Icon(
-            imageVector = Icons.Rounded.SkipNext,
+            imageVector = AppIcons.MultimediaNext,
             contentDescription = stringResource(id = R.string.next),
             modifier = Modifier.fillMaxSize(0.65f)
         )
@@ -135,12 +131,12 @@ private fun MultimediaPlayPauseButtonContent(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
-                imageVector = Icons.Rounded.PlayArrow,
+                imageVector = AppIcons.MultimediaPlay,
                 contentDescription = stringResource(id = R.string.play),
                 modifier = Modifier.fillMaxHeight().aspectRatio(1f)
             )
             Icon(
-                imageVector = Icons.Rounded.Pause,
+                imageVector = AppIcons.MultimediaPause,
                 contentDescription = stringResource(id = R.string.pause),
                 modifier = Modifier.fillMaxHeight().aspectRatio(1f)
             )

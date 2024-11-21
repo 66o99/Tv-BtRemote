@@ -13,12 +13,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowLeft
-import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
-import androidx.compose.material.icons.outlined.Circle
-import androidx.compose.material.icons.rounded.KeyboardArrowDown
-import androidx.compose.material.icons.rounded.KeyboardArrowUp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -31,6 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.ArcShape
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
 import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
@@ -117,7 +112,7 @@ fun DirectionalButtons(
                     modifier = Modifier
                         .fillMaxSize()
                         .weight(1f),
-                    imageVector = Icons.Rounded.KeyboardArrowUp,
+                    imageVector = AppIcons.Up,
                     contentDescription = stringResource(id = R.string.up),
                 )
                 Spacer(Modifier.weight(1f).padding(8.dp))
@@ -133,21 +128,21 @@ fun DirectionalButtons(
                     modifier = Modifier
                         .fillMaxSize()
                         .weight(1f),
-                    imageVector = Icons.AutoMirrored.Rounded.KeyboardArrowLeft,
+                    imageVector = AppIcons.Left,
                     contentDescription = stringResource(id = R.string.left)
                 )
                 Icon(
                     modifier = Modifier
                         .fillMaxSize()
                         .weight(1f),
-                    imageVector = Icons.Outlined.Circle,
+                    imageVector = AppIcons.Pick,
                     contentDescription = stringResource(id = R.string.pick)
                 )
                 Icon(
                     modifier = Modifier
                         .fillMaxSize()
                         .weight(1f),
-                    imageVector = Icons.AutoMirrored.Rounded.KeyboardArrowRight,
+                    imageVector = AppIcons.Right,
                     contentDescription = stringResource(id = R.string.right)
                 )
             }
@@ -161,7 +156,7 @@ fun DirectionalButtons(
                     modifier = Modifier
                         .fillMaxSize()
                         .weight(1f),
-                    imageVector = Icons.Rounded.KeyboardArrowDown,
+                    imageVector = AppIcons.Down,
                     contentDescription = stringResource(id = R.string.down)
                 )
                 Spacer(Modifier.weight(1f).padding(8.dp))

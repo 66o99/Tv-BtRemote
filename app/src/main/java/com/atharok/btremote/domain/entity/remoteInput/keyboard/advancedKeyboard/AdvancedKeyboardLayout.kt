@@ -1,18 +1,9 @@
 package com.atharok.btremote.domain.entity.remoteInput.keyboard.advancedKeyboard
 
 import android.content.Context
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.Backspace
-import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowLeft
-import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
-import androidx.compose.material.icons.automirrored.rounded.KeyboardReturn
-import androidx.compose.material.icons.automirrored.rounded.KeyboardTab
-import androidx.compose.material.icons.rounded.KeyboardArrowDown
-import androidx.compose.material.icons.rounded.KeyboardArrowUp
-import androidx.compose.material.icons.rounded.ScreenshotMonitor
-import androidx.compose.material.icons.rounded.SpaceBar
 import androidx.compose.ui.text.style.TextAlign
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.domain.entity.remoteInput.keyboard.KeyboardKey
 
 abstract class AdvancedKeyboardLayout(protected val context: Context) {
@@ -102,27 +93,27 @@ abstract class AdvancedKeyboardLayout(protected val context: Context) {
                 IconAdvancedKeyboardKey(
                     byte = KeyboardKey.KEY_TAB.byte,
                     weight = 1f,
-                    icon = Icons.AutoMirrored.Rounded.KeyboardTab
+                    icon = AppIcons.KeyboardTab
                 ),
                 IconAdvancedKeyboardKey(
                     byte = KeyboardKey.KEY_PRINT_SCREEN.byte,
                     weight = 1f,
-                    icon = Icons.Rounded.ScreenshotMonitor
+                    icon = AppIcons.KeyboardScreenshot
                 ),
                 IconAdvancedKeyboardKey(
                     byte = KeyboardKey.KEY_UP_ARROW.byte,
                     weight = 1f,
-                    icon = Icons.Rounded.KeyboardArrowUp
+                    icon = AppIcons.KeyboardArrowUp
                 ),
                 IconAdvancedKeyboardKey(
                     byte = KeyboardKey.KEY_DELETE.byte,
                     weight = 1.5f,
-                    icon = Icons.AutoMirrored.Rounded.Backspace
+                    icon = AppIcons.KeyboardBackspace
                 ),
                 IconAdvancedKeyboardKey(
                     byte = KeyboardKey.KEY_ENTER.byte,
                     weight = 1.5f,
-                    icon = Icons.AutoMirrored.Rounded.KeyboardReturn
+                    icon = AppIcons.KeyboardEnter
                 )
             ),
 
@@ -143,17 +134,17 @@ abstract class AdvancedKeyboardLayout(protected val context: Context) {
                 IconAdvancedKeyboardKey(
                     byte = KeyboardKey.KEY_LEFT_ARROW.byte,
                     weight = 1f,
-                    icon = Icons.AutoMirrored.Rounded.KeyboardArrowLeft
+                    icon = AppIcons.KeyboardArrowLeft
                 ),
                 IconAdvancedKeyboardKey(
                     byte = KeyboardKey.KEY_DOWN_ARROW.byte,
                     weight = 1f,
-                    icon = Icons.Rounded.KeyboardArrowDown
+                    icon = AppIcons.KeyboardArrowDown
                 ),
                 IconAdvancedKeyboardKey(
                     byte = KeyboardKey.KEY_RIGHT_ARROW.byte,
                     weight = 1f,
-                    icon = Icons.AutoMirrored.Rounded.KeyboardArrowRight
+                    icon = AppIcons.KeyboardArrowRight
                 ),
                 TextAdvancedKeyboardModifierKey(
                     byte = KeyboardKey.KEY_META_RIGHT.byte,
@@ -186,7 +177,7 @@ abstract class AdvancedKeyboardLayout(protected val context: Context) {
                 IconAdvancedKeyboardKey(
                     byte = KeyboardKey.KEY_SPACE_BAR.byte,
                     weight = 3f,
-                    icon = Icons.Rounded.SpaceBar
+                    icon = AppIcons.SpaceBar
                 ),
                 TextAdvancedKeyboardModifierKey(
                     byte = KeyboardKey.KEY_ALT_GR.byte,

@@ -1,8 +1,5 @@
 package com.atharok.btremote.ui.screens
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Key
-import androidx.compose.material.icons.rounded.Lock
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
@@ -12,6 +9,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.ui.components.RequestMultiplePermissions
 import com.atharok.btremote.ui.views.ActivationView
 
@@ -73,10 +71,10 @@ private fun StatelessBluetoothPermission(
 ) {
     ActivationView(
         topBarTitle = stringResource(id = R.string.permission),
-        image = Icons.Rounded.Lock,
+        image = AppIcons.Lock,
         title = stringResource(id = R.string.bluetooth_permission_not_granted),
         message = stringResource(id = R.string.bluetooth_permission_message),
-        buttonIcon = Icons.Rounded.Key,
+        buttonIcon = AppIcons.Key,
         buttonText = stringResource(id = R.string.bluetooth_permission_button),
         buttonOnClick = requestPermission,
         openSettings = openSettings,

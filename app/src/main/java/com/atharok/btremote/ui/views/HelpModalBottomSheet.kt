@@ -4,13 +4,12 @@ import android.os.Build
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.HelpOutline
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.ui.components.TemplateModalBottomSheet
 import com.atharok.btremote.ui.components.TextMedium
 import com.atharok.btremote.ui.components.TextNormalSecondary
@@ -23,7 +22,7 @@ private fun HelpModalBottomSheet(
 ) {
     TemplateModalBottomSheet(
         title = stringResource(id = R.string.help),
-        icon = Icons.Rounded.HelpOutline,
+        icon = AppIcons.Help,
         iconDescription = stringResource(id = R.string.help),
         onDismissRequest = onDismissRequest,
         modifier = modifier,

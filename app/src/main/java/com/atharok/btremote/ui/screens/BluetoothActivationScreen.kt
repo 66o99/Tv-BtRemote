@@ -2,9 +2,6 @@ package com.atharok.btremote.ui.screens
 
 import android.bluetooth.BluetoothAdapter
 import android.content.Intent
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Bluetooth
-import androidx.compose.material.icons.rounded.BluetoothDisabled
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Modifier
@@ -12,6 +9,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.atharok.btremote.R
 import com.atharok.btremote.common.extensions.getActivity
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.checkBluetoothConnectPermission
 import com.atharok.btremote.ui.views.ActivationView
 
@@ -28,10 +26,10 @@ fun BluetoothActivationScreen(
     ) { enableBluetooth: () -> Unit ->
         ActivationView(
             topBarTitle = stringResource(id = R.string.activation),
-            image = Icons.Rounded.BluetoothDisabled,
+            image = AppIcons.BluetoothDisabled,
             title = stringResource(id = R.string.bluetooth_disabled_info),
             message = stringResource(id = R.string.bluetooth_disabled_message),
-            buttonIcon = Icons.Rounded.Bluetooth,
+            buttonIcon = AppIcons.Bluetooth,
             buttonText = stringResource(id = R.string.bluetooth_enabled_button),
             buttonOnClick = enableBluetooth,
             openSettings = openSettings,

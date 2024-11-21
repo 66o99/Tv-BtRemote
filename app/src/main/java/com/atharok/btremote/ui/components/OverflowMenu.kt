@@ -1,12 +1,5 @@
 package com.atharok.btremote.ui.components
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.BrightnessHigh
-import androidx.compose.material.icons.rounded.BrightnessLow
-import androidx.compose.material.icons.rounded.Delete
-import androidx.compose.material.icons.rounded.HelpOutline
-import androidx.compose.material.icons.rounded.LinkOff
-import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
@@ -22,6 +15,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.ui.views.remoteButtons.StatefulRemoteButton
 
 @Composable
@@ -122,7 +116,7 @@ fun BrightnessIncDropdownMenuItem(
     DropdownMenuItemTemplate(
         touchDown = touchDown,
         touchUp = touchUp,
-        image = Icons.Rounded.BrightnessHigh,
+        image = AppIcons.BrightnessIncrease,
         title = stringResource(id = R.string.brightness_increase),
         modifier = modifier
     )
@@ -137,7 +131,7 @@ fun BrightnessDecDropdownMenuItem(
     DropdownMenuItemTemplate(
         touchDown = touchDown,
         touchUp = touchUp,
-        image = Icons.Rounded.BrightnessLow,
+        image = AppIcons.BrightnessDecrease,
         title = stringResource(id = R.string.brightness_decrease),
         modifier = modifier
     )
@@ -150,7 +144,7 @@ fun DisconnectDropdownMenuItem(
 ) {
     DropdownMenuItemTemplate(
         onClick = disconnect,
-        image = Icons.Rounded.LinkOff,
+        image = AppIcons.Disconnect,
         title = stringResource(id = R.string.disconnect),
         modifier = modifier
     )
@@ -163,7 +157,7 @@ fun HelpDropdownMenuItem(
 ) {
     DropdownMenuItemTemplate(
         onClick = showHelp,
-        image = Icons.Rounded.HelpOutline,
+        image = AppIcons.Help,
         title = stringResource(id = R.string.help),
         modifier = modifier
     )
@@ -176,7 +170,7 @@ fun SettingsDropdownMenuItem(
 ) {
     DropdownMenuItemTemplate(
         onClick = showSettingsScreen,
-        image = Icons.Rounded.Settings,
+        image = AppIcons.Settings,
         title = stringResource(id = R.string.settings),
         modifier = modifier
     )
@@ -189,7 +183,7 @@ fun UnpairDropdownMenuItem(
 ) {
     DropdownMenuItemTemplate(
         onClick = unpair,
-        image = Icons.Rounded.Delete,
+        image = AppIcons.BluetoothUnpair,
         title = stringResource(id = R.string.unpair),
         modifier = modifier
     )

@@ -1,16 +1,6 @@
 package com.atharok.btremote.ui.views.remote.buttonsLayouts
 
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.ArrowBack
-import androidx.compose.material.icons.automirrored.rounded.List
-import androidx.compose.material.icons.rounded.Add
-import androidx.compose.material.icons.rounded.ClosedCaption
-import androidx.compose.material.icons.rounded.Dialpad
-import androidx.compose.material.icons.rounded.Home
-import androidx.compose.material.icons.rounded.PowerSettingsNew
-import androidx.compose.material.icons.rounded.Remove
-import androidx.compose.material.icons.rounded.VolumeOff
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,6 +13,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.domain.entity.remoteInput.ChannelInput
 import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
 import com.atharok.btremote.ui.components.AdaptiveText
@@ -115,7 +106,7 @@ fun BackButton(
     IconRemoteButton(
         bytes = RemoteInput.REMOTE_INPUT_BACK,
         sendReport = sendReport,
-        image = Icons.AutoMirrored.Rounded.ArrowBack,
+        image = AppIcons.Back,
         contentDescription = stringResource(id = R.string.back),
         modifier = modifier,
         shape = shape
@@ -131,7 +122,7 @@ fun HomeButton(
     IconRemoteButton(
         bytes = RemoteInput.REMOTE_INPUT_HOME,
         sendReport = sendReport,
-        image = Icons.Rounded.Home,
+        image = AppIcons.Home,
         contentDescription = stringResource(id = R.string.home),
         modifier = modifier,
         shape = shape
@@ -147,7 +138,7 @@ fun MenuButton(
     IconRemoteButton(
         bytes = RemoteInput.REMOTE_INPUT_MENU,
         sendReport = sendReport,
-        image = Icons.AutoMirrored.Rounded.List,
+        image = AppIcons.Menu,
         contentDescription = stringResource(id = R.string.menu),
         modifier = modifier,
         shape = shape
@@ -163,7 +154,7 @@ fun PowerButton(
     IconRemoteButton(
         bytes = RemoteInput.REMOTE_INPUT_POWER,
         sendReport = sendReport,
-        image = Icons.Rounded.PowerSettingsNew,
+        image = AppIcons.Power,
         contentDescription = stringResource(id = R.string.power),
         modifier = modifier,
         shape = shape
@@ -179,7 +170,7 @@ fun VolumeMuteButton(
     IconRemoteButton(
         bytes = RemoteInput.REMOTE_INPUT_VOLUME_MUTE,
         sendReport = sendReport,
-        image = Icons.Rounded.VolumeOff,
+        image = AppIcons.Mute,
         contentDescription = stringResource(id = R.string.mute),
         modifier = modifier,
         shape = shape
@@ -195,7 +186,7 @@ fun ClosedCaptionsButton(
     IconRemoteButton(
         bytes = RemoteInput.REMOTE_INPUT_CLOSED_CAPTIONS,
         sendReport = sendReport,
-        image = Icons.Rounded.ClosedCaption,
+        image = AppIcons.ClosedCaption,
         contentDescription = stringResource(id = R.string.closed_captions),
         modifier = modifier,
         shape = shape
@@ -219,7 +210,7 @@ fun TVChannelButton(
             shape = shape,
             content = {
                 Icon(
-                    imageVector = Icons.Rounded.Dialpad,
+                    imageVector = AppIcons.TVChannel,
                     contentDescription = stringResource(id = R.string.tv),
                     modifier = Modifier.fillMaxSize(0.5f)
                 )
@@ -410,7 +401,7 @@ fun TVChannelPreviousButton(
     IconRemoteButton(
         bytes = RemoteInput.REMOTE_INPUT_CHANNEL_DEC,
         sendReport = sendReport,
-        image = Icons.Rounded.Remove,
+        image = AppIcons.TVChannelDecrease,
         contentDescription = stringResource(id = R.string.previous_channel),
         modifier = modifier,
         shape = shape,
@@ -428,7 +419,7 @@ fun TVChannelNextButton(
     IconRemoteButton(
         bytes = RemoteInput.REMOTE_INPUT_CHANNEL_INC,
         sendReport = sendReport,
-        image = Icons.Rounded.Add,
+        image = AppIcons.TVChannelIncrease,
         contentDescription = stringResource(id = R.string.next_channel),
         modifier = modifier,
         shape = shape,

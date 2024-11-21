@@ -10,16 +10,6 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.Backspace
-import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowLeft
-import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
-import androidx.compose.material.icons.automirrored.rounded.KeyboardReturn
-import androidx.compose.material.icons.automirrored.rounded.Send
-import androidx.compose.material.icons.rounded.KeyboardArrowDown
-import androidx.compose.material.icons.rounded.KeyboardArrowUp
-import androidx.compose.material.icons.rounded.ScreenshotMonitor
-import androidx.compose.material.icons.rounded.SpaceBar
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.TextField
@@ -39,6 +29,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
 import com.atharok.btremote.domain.entity.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
 
@@ -142,7 +133,7 @@ private fun StatelessKeyboardView(
                 modifier = Modifier.weight(1f).padding(start = dimensionResource(id = R.dimen.padding_thin))
             ) {
                 Icon(
-                    imageVector = Icons.AutoMirrored.Rounded.Send,
+                    imageVector = AppIcons.Send,
                     contentDescription = stringResource(id = R.string.send)
                 )
             }
@@ -169,7 +160,7 @@ private fun AdditionalKeyboardKeys(
             modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_thin))
         ) {
             VirtualKeyboardKey(
-                image = Icons.Rounded.SpaceBar,
+                image = AppIcons.SpaceBar,
                 contentDescription = stringResource(id = R.string.space_bar),
                 bytes = VirtualKeyboardLayout.KEYBOARD_KEY_SPACE_BAR,
                 sendKeyboardKey = sendKeyboardKeyReport,
@@ -177,7 +168,7 @@ private fun AdditionalKeyboardKeys(
             )
 
             VirtualKeyboardKey(
-                image = Icons.Rounded.KeyboardArrowUp,
+                image = AppIcons.KeyboardArrowUp,
                 contentDescription = stringResource(id = R.string.up),
                 bytes = VirtualKeyboardLayout.KEYBOARD_KEY_UP,
                 sendKeyboardKey = sendKeyboardKeyReport,
@@ -185,7 +176,7 @@ private fun AdditionalKeyboardKeys(
             )
 
             VirtualKeyboardKey(
-                image = Icons.Rounded.ScreenshotMonitor,
+                image = AppIcons.KeyboardScreenshot,
                 contentDescription = stringResource(id = R.string.print_screen),
                 bytes = VirtualKeyboardLayout.KEYBOARD_KEY_PRINT_SCREEN,
                 sendKeyboardKey = sendKeyboardKeyReport,
@@ -197,7 +188,7 @@ private fun AdditionalKeyboardKeys(
             modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_thin))
         ) {
             VirtualKeyboardKey(
-                image = Icons.AutoMirrored.Rounded.Backspace,
+                image = AppIcons.KeyboardBackspace,
                 contentDescription = stringResource(id = R.string.delete),
                 bytes = VirtualKeyboardLayout.KEYBOARD_KEY_DELETE,
                 sendKeyboardKey = sendKeyboardKeyReport,
@@ -205,7 +196,7 @@ private fun AdditionalKeyboardKeys(
             )
 
             VirtualKeyboardKey(
-                image = Icons.AutoMirrored.Rounded.KeyboardReturn,
+                image = AppIcons.KeyboardEnter,
                 contentDescription = stringResource(id = R.string.enter),
                 bytes = VirtualKeyboardLayout.KEYBOARD_KEY_ENTER,
                 sendKeyboardKey = sendKeyboardKeyReport,
@@ -213,7 +204,7 @@ private fun AdditionalKeyboardKeys(
             )
 
             VirtualKeyboardKey(
-                image = Icons.AutoMirrored.Rounded.KeyboardArrowLeft,
+                image = AppIcons.KeyboardArrowLeft,
                 contentDescription = stringResource(id = R.string.left),
                 bytes = VirtualKeyboardLayout.KEYBOARD_KEY_LEFT,
                 sendKeyboardKey = sendKeyboardKeyReport,
@@ -221,7 +212,7 @@ private fun AdditionalKeyboardKeys(
             )
 
             VirtualKeyboardKey(
-                image = Icons.Rounded.KeyboardArrowDown,
+                image = AppIcons.KeyboardArrowDown,
                 contentDescription = stringResource(id = R.string.down),
                 bytes = VirtualKeyboardLayout.KEYBOARD_KEY_DOWN,
                 sendKeyboardKey = sendKeyboardKeyReport,
@@ -229,7 +220,7 @@ private fun AdditionalKeyboardKeys(
             )
 
             VirtualKeyboardKey(
-                image = Icons.AutoMirrored.Rounded.KeyboardArrowRight,
+                image = AppIcons.KeyboardArrowRight,
                 contentDescription = stringResource(id = R.string.right),
                 bytes = VirtualKeyboardLayout.KEYBOARD_KEY_RIGHT,
                 sendKeyboardKey = sendKeyboardKeyReport,

@@ -7,13 +7,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Add
-import androidx.compose.material.icons.rounded.BrightnessHigh
-import androidx.compose.material.icons.rounded.BrightnessLow
-import androidx.compose.material.icons.rounded.Remove
-import androidx.compose.material.icons.rounded.VolumeDown
-import androidx.compose.material.icons.rounded.VolumeUp
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,6 +18,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
 import com.atharok.btremote.ui.views.remoteButtons.RemoteButtonContentTemplate
 import com.atharok.btremote.ui.views.remoteButtons.RemoteButtonSkin
@@ -111,10 +105,10 @@ fun VolumeVerticalButtons(
 ) {
     VerticalLayout(
         upBytes = RemoteInput.REMOTE_INPUT_VOLUME_INC,
-        upIcon = Icons.Rounded.VolumeUp,
+        upIcon = AppIcons.VolumeIncrease,
         upIconDescription = R.string.volume_increase,
         downBytes = RemoteInput.REMOTE_INPUT_VOLUME_DEC,
-        downIcon = Icons.Rounded.VolumeDown,
+        downIcon = AppIcons.VolumeDecrease,
         downIconDescription = R.string.volume_decrease,
         sendReport = sendReport,
         modifier = modifier,
@@ -130,10 +124,10 @@ fun TVChannelVerticalButtons(
 ) {
     VerticalLayout(
         upBytes = RemoteInput.REMOTE_INPUT_CHANNEL_INC,
-        upIcon = Icons.Rounded.Add,
+        upIcon = AppIcons.TVChannelIncrease,
         upIconDescription = R.string.next_channel,
         downBytes = RemoteInput.REMOTE_INPUT_CHANNEL_DEC,
-        downIcon = Icons.Rounded.Remove,
+        downIcon = AppIcons.TVChannelDecrease,
         downIconDescription = R.string.previous_channel,
         sendReport = sendReport,
         modifier = modifier,
@@ -149,10 +143,10 @@ fun BrightnessVerticalButtons(
 ) {
     VerticalLayout(
         upBytes = RemoteInput.REMOTE_INPUT_BRIGHTNESS_INC,
-        upIcon = Icons.Rounded.BrightnessHigh,
+        upIcon = AppIcons.BrightnessIncrease,
         upIconDescription = R.string.brightness_increase,
         downBytes = RemoteInput.REMOTE_INPUT_BRIGHTNESS_DEC,
-        downIcon = Icons.Rounded.BrightnessLow,
+        downIcon = AppIcons.BrightnessDecrease,
         downIconDescription = R.string.brightness_decrease,
         sendReport = sendReport,
         modifier = modifier,

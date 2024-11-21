@@ -19,12 +19,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Info
-import androidx.compose.material.icons.rounded.Keyboard
-import androidx.compose.material.icons.rounded.Mouse
-import androidx.compose.material.icons.rounded.Palette
-import androidx.compose.material.icons.rounded.ViewCompact
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
@@ -44,6 +38,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.MOUSE_SPEED_DEFAULT_VALUE
 import com.atharok.btremote.common.utils.SOURCE_CODE_LINK
 import com.atharok.btremote.common.utils.WEB_SITE_LINK
@@ -87,7 +82,7 @@ fun SettingsScreen(
 
             TitleItem(
                 text = stringResource(id = R.string.appearance),
-                icon = Icons.Rounded.Palette,
+                icon = AppIcons.Appearance,
                 iconDescription = stringResource(id = R.string.appearance),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -149,7 +144,7 @@ fun SettingsScreen(
 
             TitleItem(
                 text = stringResource(id = R.string.mouse),
-                icon = Icons.Rounded.Mouse,
+                icon = AppIcons.Mouse,
                 iconDescription = stringResource(id = R.string.mouse),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -208,7 +203,7 @@ fun SettingsScreen(
 
             TitleItem(
                 text = stringResource(id = R.string.keyboard_and_input_field),
-                icon = Icons.Rounded.Keyboard,
+                icon = AppIcons.Keyboard,
                 iconDescription = stringResource(id = R.string.keyboard),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -268,7 +263,7 @@ fun SettingsScreen(
 
             TitleItem(
                 text = stringResource(id = R.string.user_interface),
-                icon = Icons.Rounded.ViewCompact,
+                icon = AppIcons.UserInterface,
                 iconDescription = stringResource(id = R.string.user_interface),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -302,7 +297,7 @@ fun SettingsScreen(
 
             TitleItem(
                 text = stringResource(id = R.string.about),
-                icon = Icons.Outlined.Info,
+                icon = AppIcons.Info,
                 iconDescription = stringResource(id = R.string.about),
                 modifier = Modifier
                     .fillMaxWidth()
