@@ -4,12 +4,16 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.automirrored.rounded.Backspace
 import androidx.compose.material.icons.automirrored.rounded.BluetoothSearching
+import androidx.compose.material.icons.automirrored.rounded.HelpOutline
 import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowLeft
 import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
 import androidx.compose.material.icons.automirrored.rounded.KeyboardReturn
 import androidx.compose.material.icons.automirrored.rounded.KeyboardTab
 import androidx.compose.material.icons.automirrored.rounded.List
 import androidx.compose.material.icons.automirrored.rounded.Send
+import androidx.compose.material.icons.automirrored.rounded.VolumeDown
+import androidx.compose.material.icons.automirrored.rounded.VolumeOff
+import androidx.compose.material.icons.automirrored.rounded.VolumeUp
 import androidx.compose.material.icons.outlined.Circle
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.rounded.Add
@@ -60,13 +64,27 @@ import androidx.compose.material.icons.rounded.VolumeDown
 import androidx.compose.material.icons.rounded.VolumeOff
 import androidx.compose.material.icons.rounded.VolumeUp
 import androidx.compose.material.icons.rounded.Watch
+import androidx.compose.ui.graphics.vector.ImageVector
+import org.koin.core.component.KoinComponent
+import java.util.Locale
 
-object AppIcons {
+object AppIcons: KoinComponent {
+
+    private val localLanguage: String get() = getKoin().get<Locale>().language
+    private val hebrewLanguage: String by lazy { Locale("he").language }
+
+    private fun isLanguageHebrew(): Boolean = localLanguage == hebrewLanguage
+
+    // Some icons should not be mirrored in Hebrew.
+    private val HelpIcon: ImageVector get() = if(!isLanguageHebrew()) Icons.AutoMirrored.Rounded.HelpOutline else @Suppress("DEPRECATION") Icons.Rounded.HelpOutline
+    private val MuteIcon: ImageVector get() = if(!isLanguageHebrew()) Icons.AutoMirrored.Rounded.VolumeOff else @Suppress("DEPRECATION") Icons.Rounded.VolumeOff
+    private val VolumeIncreaseIcon: ImageVector get() = if(!isLanguageHebrew()) Icons.AutoMirrored.Rounded.VolumeUp else @Suppress("DEPRECATION") Icons.Rounded.VolumeUp
+    private val VolumeDecreaseIcon: ImageVector get() = if(!isLanguageHebrew()) Icons.AutoMirrored.Rounded.VolumeDown else @Suppress("DEPRECATION") Icons.Rounded.VolumeDown
 
     // ---- UI ----
 
     val Back get() = Icons.AutoMirrored.Rounded.ArrowBack
-    val Help get() = Icons.Rounded.HelpOutline
+    val Help get() = HelpIcon
     val Settings get() = Icons.Rounded.Settings
     val Info get() = Icons.Outlined.Info
     val Refresh get() = Icons.Rounded.Refresh
@@ -86,9 +104,9 @@ object AppIcons {
     val TVChannel get() = Icons.Rounded.Dialpad
     val TVChannelIncrease get() = Icons.Rounded.Add
     val TVChannelDecrease get() = Icons.Rounded.Remove
-    val Mute get() = Icons.Rounded.VolumeOff
-    val VolumeIncrease get() = Icons.Rounded.VolumeUp
-    val VolumeDecrease get() = Icons.Rounded.VolumeDown
+    val Mute get() = MuteIcon
+    val VolumeIncrease get() = VolumeIncreaseIcon
+    val VolumeDecrease get() = VolumeDecreaseIcon
     val BrightnessIncrease get() = Icons.Rounded.BrightnessHigh
     val BrightnessDecrease get() = Icons.Rounded.BrightnessLow
     val MultimediaPrevious get() = Icons.Rounded.SkipPrevious

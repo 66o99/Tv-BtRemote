@@ -59,6 +59,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
+import java.util.Locale
 
 val appModules by lazy {
     listOf<Module>(androidModule, viewModelModule, useCaseModule, repositoryModule, dataModule)
@@ -114,6 +115,10 @@ private val androidModule: Module = module {
     single { ElAdvancedKeyboardLayout(context = androidContext()) }
     single { TRAdvancedKeyboardLayout(context = androidContext()) }
     single { HEAdvancedKeyboardLayout(context = androidContext()) }
+
+    factory<Locale> {
+        androidContext().resources.configuration.locales[0]
+    }
 }
 
 private val viewModelModule: Module = module {
