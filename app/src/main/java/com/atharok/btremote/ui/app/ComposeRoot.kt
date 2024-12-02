@@ -21,8 +21,9 @@ import com.atharok.btremote.ui.navigation.AppNavHost
 import com.atharok.btremote.ui.navigation.navigateTo
 import com.atharok.btremote.ui.screens.BluetoothActivationScreen
 import com.atharok.btremote.ui.screens.BluetoothNotSupportScreen
+import com.atharok.btremote.ui.screens.BluetoothPairingFromARemoteDeviceScreen
+import com.atharok.btremote.ui.screens.BluetoothPairingFromAScannedDeviceScreen
 import com.atharok.btremote.ui.screens.BluetoothPermissionsScreen
-import com.atharok.btremote.ui.screens.BluetoothScanningScreen
 import com.atharok.btremote.ui.screens.DevicesSelectionScreen
 import com.atharok.btremote.ui.screens.RemoteScreen
 import com.atharok.btremote.ui.screens.SettingsScreen
@@ -131,16 +132,19 @@ fun ComposeRoot(
                                 openRemoteScreen = {
                                     navController.navigateTo(AppNavDestination.BluetoothRemoteDestination.route)
                                 },
-                                openBluetoothScanningDeviceScreen = {
-                                    navController.navigateTo(AppNavDestination.BluetoothDeviceScanningDestination.route)
+                                openPairingFromAScannedDeviceScreen = {
+                                    navController.navigateTo(AppNavDestination.BluetoothPairingFromAScannedDeviceDestination.route)
+                                },
+                                openPairingFromARemoteDeviceScreen = {
+                                    navController.navigateTo(AppNavDestination.BluetoothPairingFromARemoteDeviceDestination.route)
                                 },
                                 openSettings = openSettings,
                                 modifier = Modifier
                             )
                         },
 
-                        bluetoothDeviceScanningScreen = {
-                            BluetoothScanningScreen(
+                        bluetoothPairingFromAScannedDeviceScreen = {
+                            BluetoothPairingFromAScannedDeviceScreen(
                                 bluetoothScanningPermissions = bluetoothViewModel.getBluetoothScanningPermissions(),
                                 areBluetoothScanningPermissionsGranted = {
                                     bluetoothViewModel.areBluetoothScanningPermissionsGranted()
@@ -164,6 +168,17 @@ fun ComposeRoot(
                                     navController.navigateTo(AppNavDestination.BluetoothRemoteDestination.route)
                                 },
                                 openSettings = openSettings,
+                                modifier = Modifier
+                            )
+                        },
+
+                        bluetoothPairingFromARemoteDeviceScreen = {
+                            BluetoothPairingFromARemoteDeviceScreen(
+                                isBluetoothEnabled = isBluetoothEnabled,
+                                localDeviceName = bluetoothViewModel.getLocalDeviceName(),
+                                navigateUp = {
+                                    navController.navigateUp()
+                                },
                                 modifier = Modifier
                             )
                         },

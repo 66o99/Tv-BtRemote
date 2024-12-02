@@ -6,10 +6,12 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.app.ActivityCompat
+import com.atharok.btremote.R
 import com.atharok.btremote.common.extensions.unpair
 import com.atharok.btremote.common.utils.checkBluetoothConnectPermission
 import com.atharok.btremote.common.utils.checkBluetoothScanPermission
 import com.atharok.btremote.domain.entity.DeviceEntity
+
 
 class BluetoothInteractions(
     private val context: Context,
@@ -20,6 +22,12 @@ class BluetoothInteractions(
     fun isBluetoothSupported(): Boolean = adapter != null
 
     fun isBluetoothEnabled(): Boolean = adapter?.isEnabled ?: false
+
+    // ---- About local device ----
+
+    fun getLocalDeviceName(): String = if(checkBluetoothConnectPermission(context)) {
+        adapter?.name ?: context.getString(R.string.unknown)
+    } else context.getString(R.string.unknown)
 
     // ---- Bluetooth permissions ----
 
@@ -77,6 +85,7 @@ class BluetoothInteractions(
     }
 
     // ---- Get Bonded Devices ----
+
     fun getBondedDevices(): List<DeviceEntity> {
         val deviceEntities = mutableListOf<DeviceEntity>()
         if (checkBluetoothConnectPermission(context)) {

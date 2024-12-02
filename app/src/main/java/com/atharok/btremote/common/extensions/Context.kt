@@ -3,6 +3,9 @@ package com.atharok.btremote.common.extensions
 import android.content.Context
 import android.content.ContextWrapper
 import androidx.activity.ComponentActivity
+import androidx.annotation.DimenRes
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -15,3 +18,5 @@ fun Context.getActivity(): ComponentActivity? = when (this) {
     is ContextWrapper -> baseContext.getActivity()
     else -> null
 }
+
+fun Context.getDimensionDp(@DimenRes res: Int): Dp = (this.resources.getDimension(res) / this.resources.displayMetrics.density).dp

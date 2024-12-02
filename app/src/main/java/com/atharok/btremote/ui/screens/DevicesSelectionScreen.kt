@@ -35,10 +35,12 @@ import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.domain.entity.DeviceEntity
 import com.atharok.btremote.domain.entity.DeviceHidConnectionState
 import com.atharok.btremote.ui.components.AppScaffold
+import com.atharok.btremote.ui.components.BluetoothPairingFromARemoteDeviceDropdownMenuItem
+import com.atharok.btremote.ui.components.BluetoothPairingFromAScannedDeviceDropdownMenuItem
+import com.atharok.btremote.ui.components.BluetoothPairingOverflowMenu
 import com.atharok.btremote.ui.components.DefaultElevatedCard
 import com.atharok.btremote.ui.components.HelpAction
 import com.atharok.btremote.ui.components.LoadingDialog
-import com.atharok.btremote.ui.components.PairingNewDeviceAction
 import com.atharok.btremote.ui.components.SettingsAction
 import com.atharok.btremote.ui.components.SimpleDialog
 import com.atharok.btremote.ui.components.TextMedium
@@ -69,7 +71,8 @@ fun DevicesSelectionScreen(
     autoConnectionDeviceAddressFlow: Flow<String>,
     saveAutoConnectionDeviceAddress: (String) -> Unit,
     openRemoteScreen: (deviceName: String) -> Unit,
-    openBluetoothScanningDeviceScreen: () -> Unit,
+    openPairingFromAScannedDeviceScreen: () -> Unit,
+    openPairingFromARemoteDeviceScreen: () -> Unit,
     openSettings: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -121,7 +124,8 @@ fun DevicesSelectionScreen(
         devices = devices,
         connectDevice = connectDevice,
         autoConnectDeviceAddress = autoConnectionDeviceAddress,
-        openBluetoothScanningDeviceScreen = openBluetoothScanningDeviceScreen,
+        openPairingFromAScannedDeviceScreen = openPairingFromAScannedDeviceScreen,
+        openPairingFromARemoteDeviceScreen = openPairingFromARemoteDeviceScreen,
         openSettings = openSettings,
 
         helpBottomSheet = {
@@ -225,7 +229,8 @@ private fun StatelessDevicesSelectionScreen(
     devices: List<DeviceEntity>,
     connectDevice: (String) -> Unit,
     autoConnectDeviceAddress: String,
-    openBluetoothScanningDeviceScreen: () -> Unit,
+    openPairingFromAScannedDeviceScreen: () -> Unit,
+    openPairingFromARemoteDeviceScreen: () -> Unit,
     openSettings: () -> Unit,
 
     helpBottomSheet: @Composable () -> Unit,
@@ -247,7 +252,21 @@ private fun StatelessDevicesSelectionScreen(
         title = stringResource(id = R.string.devices),
         modifier = modifier,
         topBarActions = {
-            PairingNewDeviceAction(openBluetoothScanningDeviceScreen)
+            BluetoothPairingOverflowMenu { closeDropdownMenu: () -> Unit ->
+                BluetoothPairingFromAScannedDeviceDropdownMenuItem(
+                    openBluetoothPairingScreen = {
+                        openPairingFromAScannedDeviceScreen()
+                        closeDropdownMenu()
+                    }
+                )
+                BluetoothPairingFromARemoteDeviceDropdownMenuItem(
+                    openBluetoothPairingScreen = {
+                        openPairingFromARemoteDeviceScreen()
+                        closeDropdownMenu()
+                    }
+                )
+            }
+
             HelpAction(showHelp = { onShowHelpBottomSheetChanged(!showHelpBottomSheet) })
             SettingsAction(openSettings)
         },

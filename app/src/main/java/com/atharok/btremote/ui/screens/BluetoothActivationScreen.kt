@@ -20,30 +20,6 @@ fun BluetoothActivationScreen(
     openSettings: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    StatefulBluetoothActivationScreen(
-        isBluetoothEnabled = isBluetoothEnabled,
-        openBluetoothDeviceSelectionScreen =openBluetoothDeviceSelectionScreen
-    ) { enableBluetooth: () -> Unit ->
-        ActivationView(
-            topBarTitle = stringResource(id = R.string.activation),
-            image = AppIcons.BluetoothDisabled,
-            title = stringResource(id = R.string.bluetooth_disabled_info),
-            message = stringResource(id = R.string.bluetooth_disabled_message),
-            buttonIcon = AppIcons.Bluetooth,
-            buttonText = stringResource(id = R.string.bluetooth_enabled_button),
-            buttonOnClick = enableBluetooth,
-            openSettings = openSettings,
-            modifier = modifier
-        )
-    }
-}
-
-@Composable
-private fun StatefulBluetoothActivationScreen(
-    isBluetoothEnabled: Boolean,
-    openBluetoothDeviceSelectionScreen: () -> Unit,
-    content: @Composable (enableBluetooth: () -> Unit) -> Unit
-) {
     val context = LocalContext.current
 
     DisposableEffect(isBluetoothEnabled) {
@@ -53,12 +29,22 @@ private fun StatefulBluetoothActivationScreen(
         onDispose {}
     }
 
-    content {
-        if (checkBluetoothConnectPermission(context)) {
-            (context.getActivity())?.let { activity ->
-                val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
-                activity.startActivity(enableBtIntent)
+    ActivationView(
+        topBarTitle = stringResource(id = R.string.activation),
+        image = AppIcons.BluetoothDisabled,
+        title = stringResource(id = R.string.bluetooth_disabled_info),
+        message = stringResource(id = R.string.bluetooth_disabled_message),
+        buttonIcon = AppIcons.Bluetooth,
+        buttonText = stringResource(id = R.string.bluetooth_enabled_button),
+        buttonOnClick = {
+            if (checkBluetoothConnectPermission(context)) {
+                (context.getActivity())?.let { activity ->
+                    val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+                    activity.startActivity(enableBtIntent)
+                }
             }
-        }
-    }
+        },
+        openSettings = openSettings,
+        modifier = modifier
+    )
 }

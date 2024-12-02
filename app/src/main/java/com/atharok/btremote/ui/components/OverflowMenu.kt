@@ -54,6 +54,22 @@ fun MoreOverflowMenu(
     )
 }
 
+@Composable
+fun BluetoothPairingOverflowMenu(
+    modifier: Modifier = Modifier,
+    content: @Composable (closeDropdownMenu: () -> Unit) -> Unit
+) {
+    OverflowMenu(
+        item = {
+            PairingNewDeviceAction(
+                onClick = it,
+                modifier = modifier
+            )
+        },
+        content = content
+    )
+}
+
 // ---- DropdownMenuItem ----
 
 @Composable
@@ -198,6 +214,32 @@ fun AutoConnectDropdownMenuItem(
         onClick = autoConnect,
         image = AppIcons.EnabledAutoConnect,
         title = stringResource(id = R.string.automatic_connect),
+        modifier = modifier
+    )
+}
+
+@Composable
+fun BluetoothPairingFromAScannedDeviceDropdownMenuItem(
+    openBluetoothPairingScreen: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    DropdownMenuItemTemplate(
+        onClick = openBluetoothPairingScreen,
+        image = AppIcons.BluetoothPairing,
+        title = stringResource(id = R.string.pairing_a_device),
+        modifier = modifier
+    )
+}
+
+@Composable
+fun BluetoothPairingFromARemoteDeviceDropdownMenuItem(
+    openBluetoothPairingScreen: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    DropdownMenuItemTemplate(
+        onClick = openBluetoothPairingScreen,
+        image = AppIcons.BluetoothPairing,
+        title = stringResource(id = R.string.pairing_from_the_remote_device),
         modifier = modifier
     )
 }

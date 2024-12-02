@@ -44,7 +44,8 @@ fun AppNavHost(
     thirdLibrariesScreen: @Composable () -> Unit,
     bluetoothActivationScreen: @Composable () -> Unit,
     bluetoothDeviceSelectionScreen: @Composable () -> Unit,
-    bluetoothDeviceScanningScreen: @Composable () -> Unit,
+    bluetoothPairingFromAScannedDeviceScreen: @Composable () -> Unit,
+    bluetoothPairingFromARemoteDeviceScreen: @Composable () -> Unit,
     bluetoothRemoteScreen: @Composable () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -105,13 +106,23 @@ fun AppNavHost(
         }
 
         composable(
-            route = AppNavDestination.BluetoothDeviceScanningDestination.route,
+            route = AppNavDestination.BluetoothPairingFromAScannedDeviceDestination.route,
             enterTransition = enterTransition,
             exitTransition = exitTransition,
             popEnterTransition = popEnterTransition,
             popExitTransition = popExitTransition
         ) {
-            bluetoothDeviceScanningScreen()
+            bluetoothPairingFromAScannedDeviceScreen()
+        }
+
+        composable(
+            route = AppNavDestination.BluetoothPairingFromARemoteDeviceDestination.route,
+            enterTransition = enterTransition,
+            exitTransition = exitTransition,
+            popEnterTransition = popEnterTransition,
+            popExitTransition = popExitTransition
+        ) {
+            bluetoothPairingFromARemoteDeviceScreen()
         }
 
         composable(

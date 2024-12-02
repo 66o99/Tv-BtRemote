@@ -48,6 +48,29 @@
     <string name="bluetooth_pairing_device_not_found">No device has been detected.</string>
     <string name="refresh">Refresh</string>
 
+    <!-- Pairing from a remote device -->
+    <string name="pairing_from_the_remote_device">Pairing from the remote device</string>
+    <string name="name_of_this_device">Name of this device : %1$s.</string>
+    <string name="pairing_from_a_remote_device_intro_title">Guide to pair a device from the remote device</string>
+    <string name="pairing_from_a_remote_device_intro_content">On some devices, Bluetooth visibility may be disabled, preventing them from being detected by the app. This guide will help you resolve the issue by explaining how to pair your devices directly from the remote device.</string>
+    <string name="pairing_from_a_remote_device_step_1_title">1. Enable Bluetooth visibility</string>
+    <string name="pairing_from_a_remote_device_step_1_content_1">You must first enable Bluetooth visibility on this device.</string>
+    <string name="pairing_from_a_remote_device_step_1_content_2">This device should be visible to other devices under the name: %1$s.</string>
+    <string name="enabled_bluetooth_visibility">Enabled Bluetooth visibility</string>
+    <string name="pairing_from_a_remote_device_step_2_title">2. Pair the two devices</string>
+    <string name="pairing_from_a_remote_device_step_2_content_1">On the remote device:</string>
+    <string name="pairing_from_a_remote_device_step_2_content_2">- Open the Bluetooth settings.\n- Select the option to pair a new device.\n- The device \"%1$s\" should appear in the list of available devices.\n- Select the device \"%1$s\" to initiate pairing.</string>
+    <string name="pairing_from_a_remote_device_step_2_content_3">A pairing confirmation request should appear on both devices. You must accept this request on both devices to complete the Bluetooth pairing.</string>
+    <string name="pairing_from_a_remote_device_step_2_content_4">If no confirmation request appears, restart Bluetooth on the remote device and repeat the previous steps.</string>
+    <string name="pairing_from_a_remote_device_step_3_title">3. Disconnect the devices</string>
+    <string name="pairing_from_a_remote_device_step_3_content_1">If the pairing was successful, the Android device should automatically connect to the remote device. However, this connection does not use the HID (Human Interface Device) protocol, which prevents the remote control from working. To resolve this issue:</string>
+    <string name="pairing_from_a_remote_device_step_3_content_2">- Go to the Bluetooth settings on your device.\n- Manually disconnect the remote device.</string>
+    <string name="open_bluetooth_settings">Open the Bluetooth settings</string>
+    <string name="pairing_from_a_remote_device_step_4_title">4. Finalization</string>
+    <string name="pairing_from_a_remote_device_step_4_content">If you have followed all the previous steps, the pairing was successful, and you have disconnected both devices, you can select the \"%1$s\" button. The remote device should appear in the list of paired devices. Select it to establish the connection using the HID protocol.</string>
+    <string name="done">Done</string>
+    <string name="unknown">unknown</string>
+
     <!-- Bluetooth Connecting -->
     <string name="connection">Connection</string>
     <string name="bluetooth_device_connecting_message">Attempt to connect to \"%1$s\" device…</string>

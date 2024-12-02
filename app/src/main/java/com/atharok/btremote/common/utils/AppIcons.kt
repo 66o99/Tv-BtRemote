@@ -61,6 +61,7 @@ import androidx.compose.material.icons.rounded.SpaceBar
 import androidx.compose.material.icons.rounded.Toys
 import androidx.compose.material.icons.rounded.Usb
 import androidx.compose.material.icons.rounded.ViewCompact
+import androidx.compose.material.icons.rounded.Visibility
 import androidx.compose.material.icons.rounded.VolumeDown
 import androidx.compose.material.icons.rounded.VolumeOff
 import androidx.compose.material.icons.rounded.VolumeUp
@@ -90,6 +91,8 @@ object AppIcons: KoinComponent {
     val Info get() = Icons.Outlined.Info
     val Refresh get() = Icons.Rounded.Refresh
     val MoreVert get() = Icons.Rounded.MoreVert
+    val Visibility get() = Icons.Rounded.Visibility
+    //val Done get() = Icons.Rounded.Done
     val Appearance get() = Icons.Rounded.Palette
     val UserInterface get() = Icons.Rounded.ViewCompact
     val OpenInBrowser get() = Icons.Rounded.OpenInBrowser

@@ -5,6 +5,7 @@ import com.atharok.btremote.domain.entity.DeviceEntity
 interface BluetoothRepository {
     fun isBluetoothSupported(): Boolean
     fun isBluetoothEnabled(): Boolean
+    fun getLocalDeviceName(): String
     fun getBluetoothPermissions(): Array<String>
     fun areBluetoothPermissionsGranted(): Boolean
     fun getBluetoothScanningPermissions(): Array<String>

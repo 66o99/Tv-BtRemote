@@ -11,6 +11,8 @@ class BluetoothRepositoryImpl(
 
     override fun isBluetoothEnabled(): Boolean = bluetoothInteractions.isBluetoothEnabled()
 
+    override fun getLocalDeviceName(): String = bluetoothInteractions.getLocalDeviceName()
+
     override fun getBluetoothPermissions(): Array<String> {
         return bluetoothInteractions.bluetoothMandatoryPermissions
     }

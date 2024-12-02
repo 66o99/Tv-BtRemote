@@ -23,6 +23,10 @@ class BluetoothViewModel(
     val isBluetoothSupported: Boolean = useCase.isBluetoothSupported()
     fun isBluetoothEnable(): Boolean = useCase.isBluetoothEnabled()
 
+    // ---- About local device ----
+
+    fun getLocalDeviceName(): String = useCase.getLocalDeviceName()
+
     // ---- Bluetooth permissions ----
 
     fun getBluetoothPermissions(): Array<String> = useCase.getBluetoothPermissions()

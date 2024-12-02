@@ -57,11 +57,11 @@ fun SettingsAction(
 
 @Composable
 fun PairingNewDeviceAction(
-    openBluetoothPairingScreen: () -> Unit,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     TopAppBarAction(
-        onClick = openBluetoothPairingScreen,
+        onClick = onClick,
         image = AppIcons.BluetoothPairing,
         contentDescription = stringResource(id = R.string.pairing_a_device),
         modifier = modifier

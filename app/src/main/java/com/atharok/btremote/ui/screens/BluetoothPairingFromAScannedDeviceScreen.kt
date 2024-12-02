@@ -49,7 +49,7 @@ import com.atharok.btremote.ui.views.DeviceItemView
 import kotlinx.coroutines.flow.StateFlow
 
 @Composable
-fun BluetoothScanningScreen(
+fun BluetoothPairingFromAScannedDeviceScreen(
     bluetoothScanningPermissions: Array<String>,
     areBluetoothScanningPermissionsGranted: () -> Boolean,
     isBluetoothEnabled: Boolean,
@@ -70,7 +70,7 @@ fun BluetoothScanningScreen(
         arePermissionsGranted = areBluetoothScanningPermissionsGranted,
         onPermissionsDenied = navigateUp
     ) {
-        BluetoothScanningScreen(
+        BluetoothPairingFromAScannedDeviceScreen(
             isBluetoothEnabled = isBluetoothEnabled,
             isBluetoothServiceStarted = isBluetoothServiceStarted,
             bluetoothDeviceHidConnectionState = bluetoothDeviceHidConnectionState,
@@ -88,7 +88,7 @@ fun BluetoothScanningScreen(
 }
 
 @Composable
-private fun BluetoothScanningScreen(
+private fun BluetoothPairingFromAScannedDeviceScreen(
     isBluetoothEnabled: Boolean,
     isBluetoothServiceStarted: Boolean,
     bluetoothDeviceHidConnectionState: DeviceHidConnectionState,

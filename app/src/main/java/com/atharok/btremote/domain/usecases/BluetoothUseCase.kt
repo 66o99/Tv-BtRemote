@@ -11,6 +11,10 @@ class BluetoothUseCase(private val bluetoothRepository: BluetoothRepository) {
 
     fun isBluetoothEnabled(): Boolean = bluetoothRepository.isBluetoothEnabled()
 
+    // ---- About local device ----
+
+    fun getLocalDeviceName(): String = bluetoothRepository.getLocalDeviceName()
+
     // ---- Bluetooth permissions ----
 
     fun getBluetoothPermissions(): Array<String> = bluetoothRepository.getBluetoothPermissions()

@@ -42,6 +42,28 @@
     <string name="available_devices">Appareils disponibles</string>
     <string name="bluetooth_pairing_device_not_found">Aucun appareil n\'a été détecté.</string>
     <string name="refresh">Actualiser</string>
+    <!-- Pairing from a remote device -->
+    <string name="pairing_from_the_remote_device">Associer à partir de l\'appareil distant</string>
+    <string name="name_of_this_device">Nom de cet appareil : %1$s</string>
+    <string name="pairing_from_a_remote_device_intro_title">Guide pour associer un appareil depuis l\'appareil distant</string>
+    <string name="pairing_from_a_remote_device_intro_content">Sur certains appareils, la visibilité Bluetooth peut être désactivée, ce qui empêche leur détection par l\'application. Ce guide vous aidera à résoudre ce problème en vous expliquant comment associer vos appareils directement depuis l\'appareil distant.</string>
+    <string name="pairing_from_a_remote_device_step_1_title">1. Activer la visibilité Bluetooth</string>
+    <string name="pairing_from_a_remote_device_step_1_content_1">Vous devez d\'abord activer la visibilité Bluetooth sur cet appareil.</string>
+    <string name="pairing_from_a_remote_device_step_1_content_2">Cet appareil devrait être visible par les autres appareils sous le nom : %1$s.</string>
+    <string name="enabled_bluetooth_visibility">Activer la visibilité Bluetooth</string>
+    <string name="pairing_from_a_remote_device_step_2_title">2. Associer les deux appareils</string>
+    <string name="pairing_from_a_remote_device_step_2_content_1">Sur l\'appareil distant :</string>
+    <string name="pairing_from_a_remote_device_step_2_content_2">- Ouvrez les paramètres Bluetooth.\n- Sélectionnez l\'option pour associer un nouvel appareil.\n- L\'appareil \"%1$s\" devrait apparaître dans la liste des appareils disponibles.\n- Sélectionnez l\'appareil \"%1$s\" pour initier le couplage.</string>
+    <string name="pairing_from_a_remote_device_step_2_content_3">Une demande de confirmation pour associer vos appareils devrait apparaître sur les deux appareils. Vous devez accepter cette demande sur les deux appareils pour finaliser le couplage Bluetooth.</string>
+    <string name="pairing_from_a_remote_device_step_2_content_4">Si aucune demande de confirmation n\'apparaît, redémarrez le Bluetooth sur l\'appareil distant et recommencez les étapes précédentes.</string>
+    <string name="pairing_from_a_remote_device_step_3_title">3. Déconnecter les appareils</string>
+    <string name="pairing_from_a_remote_device_step_3_content_1">Si l\'appairage a été effectué avec succès, l\'appareil Android devrait se connecter automatiquement à l\'appareil distant. Toutefois, cette connexion ne passe pas par le protocole HID (Human Interface Device), ce qui empêche la télécommande de fonctionner. Pour résoudre ce problème :</string>
+    <string name="pairing_from_a_remote_device_step_3_content_2">- Allez dans les paramètres Bluetooth de votre appareil.\n- Déconnectez manuellement l\'appareil distant.</string>
+    <string name="open_bluetooth_settings">Ouvrir les paramètres Bluetooth</string>
+    <string name="pairing_from_a_remote_device_step_4_title">4. Finalisation</string>
+    <string name="pairing_from_a_remote_device_step_4_content">Si vous avez bien suivi toutes les étapes précédentes, que l\'appairage a été effectué avec succès, et que vous avez bien déconnecté les deux appareils, vous pouvez sélectionner le bouton \"%1$s\". L\'appareil distant devrait apparaître dans la liste des appareils appairés. Sélectionnez-le pour établir la connexion via le protocole HID.</string>
+    <string name="done">Terminé</string>
+    <string name="unknown">inconnu</string>
     <!-- Bluetooth Connecting -->
     <string name="connection">Connexion</string>
     <string name="bluetooth_device_connecting_message">Tentative de connexion au périphérique \"%1$s\"…</string>
