@@ -28,6 +28,11 @@ class SettingsViewModel(
         useCase.saveUseBlackColorForDarkTheme(useBlackColorForDarkTheme)
     }
 
+    val useFullScreen: Flow<Boolean> = useCase.useFullScreen()
+    fun saveUseFullScreen(useFullScreen: Boolean) = viewModelScope.launch {
+        useCase.saveUseFullScreen(useFullScreen)
+    }
+
     val mouseSpeed: Flow<Float> get() = useCase.getMouseSpeed()
     fun saveMouseSpeed(mouseSpeed: Float) = viewModelScope.launch {
         useCase.saveMouseSpeed(mouseSpeed)

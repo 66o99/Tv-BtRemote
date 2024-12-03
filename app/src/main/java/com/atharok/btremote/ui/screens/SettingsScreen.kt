@@ -138,6 +138,20 @@ fun SettingsScreen(
                 )
             }
 
+            StatefulSettingsSwitchItem(
+                isEnabledFlow = settingsViewModel.useFullScreen,
+                onEnabledFlowChange = { settingsViewModel.saveUseFullScreen(it) },
+                initialValue = false,
+                primaryText = stringResource(id = R.string.full_screen),
+                secondaryText = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        horizontal = horizontalPadding,
+                        vertical = verticalPadding
+                    )
+            )
+
             HorizontalDivider(
                 modifier = Modifier
                     .fillMaxWidth()

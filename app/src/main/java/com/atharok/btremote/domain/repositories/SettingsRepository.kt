@@ -15,6 +15,9 @@ interface SettingsRepository {
     fun useBlackColorForDarkTheme(): Flow<Boolean>
     suspend fun saveUseBlackColorForDarkTheme(useBlackColorForDarkTheme: Boolean)
 
+    fun useFullScreen(): Flow<Boolean>
+    suspend fun saveUseFullScreen(useFullScreen: Boolean)
+
     fun getMouseSpeed(): Flow<Float>
     suspend fun saveMouseSpeed(mouseSpeed: Float)
 

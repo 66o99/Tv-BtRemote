@@ -1,6 +1,5 @@
 package com.atharok.btremote.ui.theme
 
-import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -10,6 +9,7 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
@@ -20,6 +20,8 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.atharok.btremote.R
+import com.atharok.btremote.common.extensions.getActivity
+import com.atharok.btremote.common.extensions.setFullScreen
 import com.atharok.btremote.common.utils.isDynamicColorsAvailable
 import com.atharok.btremote.domain.entity.ThemeEntity
 import com.atharok.btremote.presentation.viewmodel.SettingsViewModel
@@ -269,65 +271,9 @@ fun BtRemoteTheme(
     settingsViewModel: SettingsViewModel,
     content: @Composable () -> Unit
 ) {
-    StatefulBtRemoteTheme(
-        settingsViewModel = settingsViewModel
-    ) { useDarkTheme: Boolean, useDynamicColors: Boolean, useBlackColorForDarkTheme: Boolean ->
 
-        val colorScheme = when {
-            useDynamicColors && isDynamicColorsAvailable() -> {
-                val context = LocalContext.current
-                if (useDarkTheme) {
-                    if(useBlackColorForDarkTheme) {
-                        dynamicDarkColorScheme(context).copy(
-                            background = Color.Black,
-                            surface = Color.Black
-                        )
-                    } else {
-                        dynamicDarkColorScheme(context)
-                    }
-                } else dynamicLightColorScheme(context)
-            }
-            useDarkTheme -> {
-                if(useBlackColorForDarkTheme) {
-                    darkScheme.copy(
-                        background = Color.Black,
-                        surface = Color.Black
-                    )
-                } else {
-                    darkScheme
-                }
-            }
-            else -> lightScheme
-        }
+    val context = LocalContext.current
 
-        val view = LocalView.current
-        if (!view.isInEditMode) {
-            SideEffect {
-                val window = (view.context as Activity).window
-                WindowCompat.setDecorFitsSystemWindows(window, false)
-                window.statusBarColor = Color.Transparent.toArgb()
-                window.navigationBarColor = Color.Transparent.toArgb()
-                WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = !useDarkTheme
-                WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightNavigationBars = !useDarkTheme
-            }
-        }
-
-        MaterialTheme(
-            colorScheme = colorScheme,
-            shapes = MaterialTheme.shapes.copy(
-                extraSmall = RoundedCornerShape(dimensionResource(id = R.dimen.card_corner_radius))
-            ),
-            typography = Typography,
-            content = content
-        )
-    }
-}
-
-@Composable
-private fun StatefulBtRemoteTheme(
-    settingsViewModel: SettingsViewModel,
-    content: @Composable (Boolean, Boolean, Boolean) -> Unit
-) {
     val theme: ThemeEntity by settingsViewModel.theme
         .collectAsStateWithLifecycle(initialValue = ThemeEntity.SYSTEM)
 
@@ -337,11 +283,65 @@ private fun StatefulBtRemoteTheme(
     val useBlackColorForDarkTheme: Boolean by settingsViewModel.useBlackColorForDarkTheme
         .collectAsStateWithLifecycle(initialValue = false)
 
+    val useFullScreen: Boolean by settingsViewModel.useFullScreen
+        .collectAsStateWithLifecycle(initialValue = false)
+
     val useDarkTheme = when(theme) {
         ThemeEntity.SYSTEM -> isSystemInDarkTheme()
         ThemeEntity.LIGHT -> false
         ThemeEntity.DARK -> true
     }
 
-    content(useDarkTheme, useDynamicColors, useBlackColorForDarkTheme)
+    val colorScheme = when {
+        useDynamicColors && isDynamicColorsAvailable() -> {
+            if (useDarkTheme) {
+                if(useBlackColorForDarkTheme) {
+                    dynamicDarkColorScheme(context).copy(
+                        background = Color.Black,
+                        surface = Color.Black
+                    )
+                } else {
+                    dynamicDarkColorScheme(context)
+                }
+            } else dynamicLightColorScheme(context)
+        }
+        useDarkTheme -> {
+            if(useBlackColorForDarkTheme) {
+                darkScheme.copy(
+                    background = Color.Black,
+                    surface = Color.Black
+                )
+            } else {
+                darkScheme
+            }
+        }
+        else -> lightScheme
+    }
+
+    LaunchedEffect(useFullScreen) {
+        context.setFullScreen(useFullScreen)
+    }
+
+    val view = LocalView.current
+    if (!view.isInEditMode) {
+        SideEffect {
+            view.context.getActivity()?.let { activity ->
+                val window = activity.window
+                WindowCompat.setDecorFitsSystemWindows(window, false)
+                window.statusBarColor = Color.Transparent.toArgb()
+                window.navigationBarColor = Color.Transparent.toArgb()
+                WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = !useDarkTheme
+                WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightNavigationBars = !useDarkTheme
+            }
+        }
+    }
+
+    MaterialTheme(
+        colorScheme = colorScheme,
+        shapes = MaterialTheme.shapes.copy(
+            extraSmall = RoundedCornerShape(dimensionResource(id = R.dimen.card_corner_radius))
+        ),
+        typography = Typography,
+        content = content
+    )
 }

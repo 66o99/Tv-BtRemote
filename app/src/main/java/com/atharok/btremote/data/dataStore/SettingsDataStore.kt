@@ -24,6 +24,7 @@ class SettingsDataStore(private val context: Context) {
         private const val THEME_KEY = "theme_key"
         private const val DYNAMIC_COLORS_KEY = "material_you_key"
         private const val BLACK_COLOR_KEY = "black_color_key"
+        private const val FULL_SCREEN_KEY = "full_screen_key"
         private const val MOUSE_SPEED_KEY = "mouse_speed_key"
         private const val INVERT_MOUSE_SCROLLING_DIRECTION_KEY = "invert_mouse_scrolling_direction_key"
         private const val USE_GYROSCOPE_KEY = "use_gyroscope_key"
@@ -37,6 +38,7 @@ class SettingsDataStore(private val context: Context) {
     private val themeKey = stringPreferencesKey(THEME_KEY)
     private val useDynamicColorsKey = booleanPreferencesKey(DYNAMIC_COLORS_KEY)
     private val useBlackColorForDarkThemeKey = booleanPreferencesKey(BLACK_COLOR_KEY)
+    private val useFullScreenKey = booleanPreferencesKey(FULL_SCREEN_KEY)
     private val mouseSpeedKey = floatPreferencesKey(MOUSE_SPEED_KEY)
     private val invertMouseScrollingDirectionKey = booleanPreferencesKey(INVERT_MOUSE_SCROLLING_DIRECTION_KEY)
     private val useGyroscopeKey = booleanPreferencesKey(USE_GYROSCOPE_KEY)
@@ -102,6 +104,20 @@ class SettingsDataStore(private val context: Context) {
     suspend fun saveUseBlackColorForDarkTheme(useBlackColorForDarkTheme: Boolean) {
         context.dataStore.edit {
             it[useBlackColorForDarkThemeKey] = useBlackColorForDarkTheme
+        }
+    }
+
+    val useFullScreenFlow: Flow<Boolean> by lazy {
+        context.dataStore.data
+            .catchException()
+            .map { preferences ->
+                preferences[useFullScreenKey] ?: false
+            }
+    }
+
+    suspend fun saveUseFullScreen(useFullScreen: Boolean) {
+        context.dataStore.edit {
+            it[useFullScreenKey] = useFullScreen
         }
     }
 

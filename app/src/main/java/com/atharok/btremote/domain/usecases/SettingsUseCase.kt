@@ -23,6 +23,11 @@ class SettingsUseCase(private val repository: SettingsRepository) {
         repository.saveUseBlackColorForDarkTheme(useBlackColorForDarkTheme)
     }
 
+    fun useFullScreen(): Flow<Boolean> = repository.useFullScreen()
+    suspend fun saveUseFullScreen(useFullScreen: Boolean) {
+        repository.saveUseFullScreen(useFullScreen)
+    }
+
     fun getMouseSpeed(): Flow<Float> = repository.getMouseSpeed()
     suspend fun saveMouseSpeed(mouseSpeed: Float) {
         repository.saveMouseSpeed(mouseSpeed)

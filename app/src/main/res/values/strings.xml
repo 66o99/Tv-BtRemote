@@ -101,6 +101,7 @@
     <string name="theme_black">True black for the dark theme</string>
     <string name="theme_black_oled_info">Uses less energy on OLED screens</string>
     <string name="dynamic_colors">Dynamic colors</string>
+    <string name="full_screen">Full screen</string>
     <string name="mouse_pointer_speed">Pointer speed</string>
     <string name="invert_mouse_scrolling_direction">Invert the scrolling direction</string>
     <string name="use_the_gyroscope_to_control_the_mouse">Use the gyroscope to control the mouse</string>

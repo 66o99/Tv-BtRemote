@@ -26,6 +26,12 @@ class SettingsRepositoryImpl(
         settingsDataStore.saveUseBlackColorForDarkTheme(useBlackColorForDarkTheme)
     }
 
+    override fun useFullScreen(): Flow<Boolean> = settingsDataStore.useFullScreenFlow
+
+    override suspend fun saveUseFullScreen(useFullScreen: Boolean) {
+        settingsDataStore.saveUseFullScreen(useFullScreen)
+    }
+
     override fun getMouseSpeed(): Flow<Float> = settingsDataStore.mouseSpeed
     override suspend fun saveMouseSpeed(mouseSpeed: Float) {
         settingsDataStore.saveMouseSpeed(mouseSpeed)
