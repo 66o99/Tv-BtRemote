@@ -133,4 +133,8 @@
     <string name="alt_gr">Alt Gr</string>
     <string name="closed_captions">Mga closed caption</string>
     <string name="menu">Menu</string>
+    <string name="keyboard_tr">Turkish</string>
+    <string name="use_the_gyroscope_to_control_the_mouse">Gamitin ang gyroscope para kontrolin ang mouse</string>
+    <string name="keyboard_he">Hebrew</string>
+    <string name="keyboard_el">Greek</string>
 </resources>

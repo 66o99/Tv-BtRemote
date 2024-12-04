@@ -136,4 +136,5 @@
     <string name="keyboard_el">Grieks</string>
     <string name="use_the_gyroscope_to_control_the_mouse">Versnellingsmeter gebruiken om muis te bedienen</string>
     <string name="keyboard_tr">Turks</string>
+    <string name="keyboard_he">Hebreeuws</string>
 </resources>

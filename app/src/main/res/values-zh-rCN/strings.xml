@@ -144,4 +144,5 @@
     <string name="keyboard_el">希腊语</string>
     <string name="use_the_gyroscope_to_control_the_mouse">使用陀螺仪控制鼠标</string>
     <string name="keyboard_tr">土耳其语</string>
+    <string name="keyboard_he">希伯来语</string>
 </resources>

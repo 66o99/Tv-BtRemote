@@ -136,4 +136,5 @@
     <string name="keyboard_el">Grego</string>
     <string name="keyboard_tr">Turco</string>
     <string name="use_the_gyroscope_to_control_the_mouse">Usar o giroscópio para controlar o mouse</string>
+    <string name="keyboard_he">Hebraico</string>
 </resources>
