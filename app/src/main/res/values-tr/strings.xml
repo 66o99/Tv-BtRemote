@@ -135,4 +135,23 @@
     <string name="app_name">BT Kumanda</string>
     <string name="keyboard_el">Yunanca</string>
     <string name="keyboard_tr">Türkçe</string>
+    <string name="automatic_connect">Otomatik Bağlantı</string>
+    <string name="disabled_automatic_connection_message">Otomatik bağlantıyı kapamak istiyor musunuz?</string>
+    <string name="automatic_shorten">Otomatik</string>
+    <string name="name_of_this_device">Bu aygıtın adı: %1$s.</string>
+    <string name="pairing_from_a_remote_device_step_1_title">1. Bluetooth görünürlüğünü etkinleştirin</string>
+    <string name="pairing_from_a_remote_device_step_1_content_1">İlkin bu aygıtta Bluetooth görünürlüğünü etkinleştirmelisiniz.</string>
+    <string name="pairing_from_a_remote_device_step_1_content_2">Bu aygıt öbür aygıtlara şu ad altında görünmeli: %1$s.</string>
+    <string name="pairing_from_a_remote_device_step_2_title">2. İki aygıtı eşleştirin</string>
+    <string name="pairing_from_a_remote_device_step_3_title">3. Aygıtların bağlantısını kesin</string>
+    <string name="bluetooth_address">Bluetooth adresi</string>
+    <string name="full_screen">Tam ekran</string>
+    <string name="user_interface">Arayüz</string>
+    <string name="use_minimalist_interface">Minimalist arayüzü kullan</string>
+    <string name="minimalist_interface_info">Televizyon kanalı düğmelerini göstermez</string>
+    <string name="keyboard_he">İbranice</string>
+    <string name="information">Bilgi</string>
+    <string name="help_info_message">Bir sorunla karşılaşırsanız lütfen yardım bölümüne bakınız.</string>
+    <string name="enabled_automatic_connection_message">Uygulama başlatılınca bu aygıta otomatikman bağlanmak istiyor musunuz?</string>
+    <string name="pairing_from_a_remote_device_step_2_content_3">İki aygıtta da bir eşleştirme onaylama isteği gözükmelidir. Bluetooth eşleştirmesini tamamlamak için bu isteği kabul etmelisiniz.</string>
 </resources>
