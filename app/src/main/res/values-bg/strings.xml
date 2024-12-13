@@ -180,4 +180,5 @@
     <string name="pairing_from_a_remote_device_step_3_content_1">Ако сдвояването е било успешно, устройството с Android трябва автоматично да се свърже с отдалеченото устройство. Тази връзка обаче не използва протокола HID (Human Interface Device), което не позволява на дистанционното управление да работи. За да разрешите този проблем:</string>
     <string name="connection">Свързване</string>
     <string name="direction_arrows">Стрелки за посока</string>
+    <string name="keyboard_bg">Български</string>
 </resources>
