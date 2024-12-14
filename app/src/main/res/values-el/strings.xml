@@ -201,4 +201,5 @@
     <string name="pairing_from_a_remote_device_step_3_content_1">Εάν η σύζευξη ήταν επιτυχής, η συσκευή Android θα πρέπει να συνδεθεί αυτόματα στην απομακρυσμένη συσκευή. Ωστόσο, αυτή η σύνδεση δεν χρησιμοποιεί το πρωτόκολλο HID (Human Interface Device), το οποίο εμποδίζει τη λειτουργία του τηλεχειριστηρίου. Για να επιλύσετε αυτό το ζήτημα:</string>
     <string name="use_minimalist_interface">Χρήση μινιμαλιστικής διεπαφής</string>
     <string name="keyboard_he">Εβραϊκά</string>
+    <string name="keyboard_bg">Βουλγαρικά</string>
 </resources>
