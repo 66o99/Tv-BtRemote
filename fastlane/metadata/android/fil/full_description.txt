@@ -11,5 +11,4 @@ Mga tampok:
 - Walang mga advertisement.
 - Open source.
 
-Available ang source code dito:
-https://gitlab.com/Atharok/BtRemote
+Available ang source code dito: https://gitlab.com/Atharok/BtRemote
