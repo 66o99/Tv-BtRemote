@@ -15,6 +15,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -24,9 +25,11 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.unit.LayoutDirection
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
@@ -130,13 +133,15 @@ private fun StatelessKeyboardView(
             }
         }
 
-        AdditionalKeyboardKeys(
-            sendKeyboardKeyReport = sendKeyboardKeyReport,
-            modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentHeight(unbounded = true)
-                .padding(top = dimensionResource(id = R.dimen.padding_medium))
-        )
+        CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
+            AdditionalKeyboardKeys(
+                sendKeyboardKeyReport = sendKeyboardKeyReport,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight(unbounded = true)
+                    .padding(top = dimensionResource(id = R.dimen.padding_medium))
+            )
+        }
     }
 }
 

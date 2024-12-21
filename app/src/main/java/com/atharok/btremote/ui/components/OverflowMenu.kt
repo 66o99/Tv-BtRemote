@@ -16,6 +16,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
+import com.atharok.btremote.common.utils.AppIcons.getIconModifier
 
 @Composable
 private fun OverflowMenu(
@@ -87,7 +88,8 @@ private fun DropdownMenuItemTemplate(
         leadingIcon = {
             Icon(
                 imageVector = image,
-                contentDescription = title
+                contentDescription = title,
+                modifier = getIconModifier(image)
             )
         }
     )

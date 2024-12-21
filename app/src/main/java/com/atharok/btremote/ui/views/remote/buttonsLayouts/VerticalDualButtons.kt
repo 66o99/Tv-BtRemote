@@ -19,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
+import com.atharok.btremote.common.utils.AppIcons.getIconModifier
 import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
 import com.atharok.btremote.ui.components.RemoteButtonContentTemplate
 import com.atharok.btremote.ui.components.RemoteButtonSurface
@@ -73,7 +74,7 @@ private fun VerticalLayout(
                 Icon(
                     imageVector = upIcon,
                     contentDescription = stringResource(id = upIconDescription),
-                    modifier = Modifier.fillMaxSize(0.5f)
+                    modifier = getIconModifier(upIcon).fillMaxSize(0.5f)
                 )
             }
         },
@@ -86,7 +87,7 @@ private fun VerticalLayout(
                 Icon(
                     imageVector = downIcon,
                     contentDescription = stringResource(id = downIconDescription),
-                    modifier = Modifier.fillMaxSize(0.5f)
+                    modifier = getIconModifier(downIcon).fillMaxSize(0.5f)
                 )
             }
         },

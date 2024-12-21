@@ -1,5 +1,6 @@
 package com.atharok.btremote.ui.views.remote.buttonsLayouts
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
@@ -53,7 +54,8 @@ private fun TVChannelLayout(
         modifier = modifier
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().weight(1f)
+            modifier = Modifier.fillMaxWidth().weight(1f),
+            horizontalArrangement = Arrangement.Absolute.Left
         ) {
             TVChannelButton1(
                 sendReport = sendNumberKeyReport,
@@ -81,7 +83,8 @@ private fun TVChannelLayout(
             )
         }
         Row(
-            modifier = Modifier.fillMaxWidth().weight(1f)
+            modifier = Modifier.fillMaxWidth().weight(1f),
+            horizontalArrangement = Arrangement.Absolute.Left
         ) {
             TVChannelButton4(
                 sendReport = sendNumberKeyReport,
@@ -109,7 +112,8 @@ private fun TVChannelLayout(
             )
         }
         Row(
-            modifier = Modifier.fillMaxWidth().weight(1f)
+            modifier = Modifier.fillMaxWidth().weight(1f),
+            horizontalArrangement = Arrangement.Absolute.Left
         ) {
             TVChannelButton7(
                 sendReport = sendNumberKeyReport,

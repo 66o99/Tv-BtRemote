@@ -1,5 +1,6 @@
 package com.atharok.btremote.common.utils
 
+import android.util.LayoutDirection
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.automirrored.rounded.Backspace
@@ -30,7 +31,6 @@ import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.material.icons.rounded.DeviceUnknown
 import androidx.compose.material.icons.rounded.Dialpad
 import androidx.compose.material.icons.rounded.HealthAndSafety
-import androidx.compose.material.icons.rounded.HelpOutline
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.Key
 import androidx.compose.material.icons.rounded.Keyboard
@@ -62,31 +62,40 @@ import androidx.compose.material.icons.rounded.Toys
 import androidx.compose.material.icons.rounded.Usb
 import androidx.compose.material.icons.rounded.ViewCompact
 import androidx.compose.material.icons.rounded.Visibility
-import androidx.compose.material.icons.rounded.VolumeDown
-import androidx.compose.material.icons.rounded.VolumeOff
-import androidx.compose.material.icons.rounded.VolumeUp
 import androidx.compose.material.icons.rounded.Watch
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.core.text.layoutDirection
 import org.koin.core.component.KoinComponent
 import java.util.Locale
 
 object AppIcons: KoinComponent {
 
-    private val localLanguage: String get() = getKoin().get<Locale>().language
-    private val hebrewLanguage: String by lazy { Locale("he").language }
+    // Workaround for some icons which should not be mirrored in RTL layout.
+    private val mirrorModifier: Modifier get() = Modifier.scale(scaleX = -1f, scaleY = 1f)
 
-    private fun isLanguageHebrew(): Boolean = localLanguage == hebrewLanguage
+    fun getIconModifier(appIcon: ImageVector): Modifier {
+        when (appIcon) {
+            Help -> {
+                if (getKoin().get<Locale>().language == Locale("he").language) {
+                    return mirrorModifier
+                }
+            }
 
-    // Some icons should not be mirrored in Hebrew.
-    private val HelpIcon: ImageVector get() = if(!isLanguageHebrew()) Icons.AutoMirrored.Rounded.HelpOutline else @Suppress("DEPRECATION") Icons.Rounded.HelpOutline
-    private val MuteIcon: ImageVector get() = if(!isLanguageHebrew()) Icons.AutoMirrored.Rounded.VolumeOff else @Suppress("DEPRECATION") Icons.Rounded.VolumeOff
-    private val VolumeIncreaseIcon: ImageVector get() = if(!isLanguageHebrew()) Icons.AutoMirrored.Rounded.VolumeUp else @Suppress("DEPRECATION") Icons.Rounded.VolumeUp
-    private val VolumeDecreaseIcon: ImageVector get() = if(!isLanguageHebrew()) Icons.AutoMirrored.Rounded.VolumeDown else @Suppress("DEPRECATION") Icons.Rounded.VolumeDown
+            Mute, VolumeIncrease, VolumeDecrease -> {
+                if (getKoin().get<Locale>().layoutDirection == LayoutDirection.RTL) {
+                    return mirrorModifier
+                }
+            }
+        }
+        return Modifier
+    }
 
     // ---- UI ----
 
     val Back get() = Icons.AutoMirrored.Rounded.ArrowBack
-    val Help get() = HelpIcon
+    val Help get() = Icons.AutoMirrored.Rounded.HelpOutline
     val Settings get() = Icons.Rounded.Settings
     val Info get() = Icons.Outlined.Info
     val Refresh get() = Icons.Rounded.Refresh
@@ -108,9 +117,9 @@ object AppIcons: KoinComponent {
     val TVChannel get() = Icons.Rounded.Dialpad
     val TVChannelIncrease get() = Icons.Rounded.Add
     val TVChannelDecrease get() = Icons.Rounded.Remove
-    val Mute get() = MuteIcon
-    val VolumeIncrease get() = VolumeIncreaseIcon
-    val VolumeDecrease get() = VolumeDecreaseIcon
+    val Mute get() = Icons.AutoMirrored.Rounded.VolumeOff
+    val VolumeIncrease get() = Icons.AutoMirrored.Rounded.VolumeUp
+    val VolumeDecrease get() = Icons.AutoMirrored.Rounded.VolumeDown
     val BrightnessIncrease get() = Icons.Rounded.BrightnessHigh
     val BrightnessDecrease get() = Icons.Rounded.BrightnessLow
     val MultimediaPrevious get() = Icons.Rounded.SkipPrevious

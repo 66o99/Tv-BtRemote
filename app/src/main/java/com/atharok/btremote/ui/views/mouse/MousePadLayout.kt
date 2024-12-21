@@ -1,5 +1,6 @@
 package com.atharok.btremote.ui.views.mouse
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -121,7 +122,7 @@ private fun MouseButtonsLayout(
     onMouseActionChange: (MouseAction) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Row(modifier = modifier) {
+    Row(modifier = modifier, horizontalArrangement = Arrangement.Absolute.Left) {
 
         // Start
         MouseButton(

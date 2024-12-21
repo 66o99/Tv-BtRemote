@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -18,7 +19,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.getAdvancedKeyboardLayout
@@ -48,14 +51,16 @@ fun AdvancedKeyboardLayoutView(
         windowInsets = WindowInsets(0, 0, 0, 0),
         modifier = modifier
     ) {
-        AdvancedKeyboardLayoutView(
-            keyboardLayout = advancedKeyboardLayout,
-            sendKeyboardKeyReport = sendKeyboardKeyReport,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(dimensionResource(id = R.dimen.padding_medium))
-                .padding(bottom = dimensionResource(id = R.dimen.padding_max))
-        )
+        CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
+            AdvancedKeyboardLayoutView(
+                keyboardLayout = advancedKeyboardLayout,
+                sendKeyboardKeyReport = sendKeyboardKeyReport,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(dimensionResource(id = R.dimen.padding_medium))
+                    .padding(bottom = dimensionResource(id = R.dimen.padding_max))
+            )
+        }
     }
 }
 

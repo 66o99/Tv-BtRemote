@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.dimensionResource
 import com.atharok.btremote.R
+import com.atharok.btremote.common.utils.AppIcons.getIconModifier
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -55,7 +56,7 @@ fun TemplateModalBottomSheet(
                 Image(
                     imageVector = icon,
                     contentDescription = iconDescription,
-                    modifier = Modifier.size(dimensionResource(id = R.dimen.large_icon_size)),
+                    modifier = getIconModifier(icon).size(dimensionResource(id = R.dimen.large_icon_size)),
                     colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.onSurface)
                 )
                 TextLarge(

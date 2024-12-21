@@ -14,6 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
+import com.atharok.btremote.common.utils.AppIcons.getIconModifier
 import com.atharok.btremote.domain.entity.remoteInput.ChannelInput
 import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
 import com.atharok.btremote.ui.components.AdaptiveText
@@ -64,7 +65,7 @@ private fun IconRemoteButton(
         Icon(
             imageVector = image,
             contentDescription = contentDescription,
-            modifier = Modifier.fillMaxSize(0.5f)
+            modifier = getIconModifier(image).fillMaxSize(0.5f)
         )
     }
 }
