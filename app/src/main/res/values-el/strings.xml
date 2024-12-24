@@ -55,7 +55,7 @@
     <string name="theme_system">Σύστημα</string>
     <string name="theme_light">Φωτεινό</string>
     <string name="theme_dark">Σκοτεινό</string>
-    <string name="theme_black">TΠραγματικό μαύρο στο σκοτεινό θέμα</string>
+    <string name="theme_black">Πραγματικό μαύρο στο σκοτεινό θέμα</string>
     <string name="theme_black_oled_info">Χρησιμοποιεί λιγότερη ενέργεια στις οθόνες OLED</string>
     <string name="dynamic_colors">Δυναμικά χρώματα</string>
     <string name="mouse_pointer_speed">Ταχύτητα δείκτη</string>
