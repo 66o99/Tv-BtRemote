@@ -1,0 +1,19 @@
+Full changelog here: https://gitlab.com/Atharok/BtRemote/-/releases
+
+1.5.1
+
+- Disabled dependency metadata.
+
+1.5.0
+
+- Added Hebrew translation (thanks to Guy Lao).
+- Added Bulgarian translation (thanks to trunars).
+- Updated translations.
+- Added 2 methods to pair devices.
+- Added automatic connection to a device at app startup.
+- Added a button to unpair a device.
+- Added a touchpad for gesture-based navigation.
+- Added a minimalist view for the remote screen.
+- Various improvements.
+- Bug fixes.
+- Updated dependencies.

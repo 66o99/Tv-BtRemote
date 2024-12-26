@@ -1,0 +1,16 @@
+Liste des modifications ici: https://gitlab.com/Atharok/BtRemote/-/releases
+
+1.5.1
+
+- Métadonnées de dépendance désactivées.
+
+1.5.0
+
+- Ajout des traductions hébreu (Guy Lao) et bulgare (trunars).
+- Mise à jour des traductions.
+- Ajout de 2 méthodes pour associer les appareils.
+- Ajout de la connexion automatique à un appareil au démarrage de l'application.
+- Ajout d'un bouton pour dissocier un appareil.
+- Ajout d'un pavé tactile pour la navigation gestuelle.
+- Ajout d'une vue minimaliste pour l'écran de la télécommande.
+- Diverses améliorations.
