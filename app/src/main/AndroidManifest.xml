@@ -46,6 +46,10 @@
             android:exported="false"
             android:foregroundServiceType="connectedDevice" />
 
+        <receiver
+            android:name=".presentation.services.NotificationBroadcastReceiver"
+            android:exported="false" />
+
         <activity
             android:name=".presentation.activities.MainActivity"
             android:exported="true"

@@ -9,6 +9,7 @@
         If the text exceeds 11 characters, it's not a problem, but it may not display entirely in all launchers.
     -->
     <string name="app_name">BT Remote</string>
+    <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="error">Error</string>
     <string name="retry">Retry</string>
@@ -189,6 +190,7 @@
     <!-- Notification -->
     <string name="notification_channel_name">Bluetooth HID connection</string>
     <string name="connected_on">Connected on %1$s</string>
+    <string name="connected_off">No devices connected</string>
 
     <!-- Help messages -->
     <string name="information">Information</string>

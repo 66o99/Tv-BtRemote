@@ -1,5 +1,6 @@
 package com.atharok.btremote.common.utils
 
+const val NOTIFICATION_ID = 1
 const val NOTIFICATION_CHANNEL_ID = "notificationChannelId"
 
 const val DATA_STORE_PREFERENCES_SETTINGS_NAME = "dataStoreSettings"

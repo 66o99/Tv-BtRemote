@@ -13,4 +13,7 @@
     <dimen name="padding_max">16dp</dimen>
     <dimen name="medium_icon_size">20dp</dimen>
     <dimen name="large_icon_size">32dp</dimen>
+    <dimen name="notification_button_margin">1dp</dimen>
+    <dimen name="notification_button_inner_padding">8dp</dimen>
+    <dimen name="notification_button_height">48dp</dimen>
 </resources>

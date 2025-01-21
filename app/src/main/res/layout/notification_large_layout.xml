@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Row 1 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_previous"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button_top_left"
+            android:src="@drawable/round_skip_previous_24"
+            android:contentDescription="@string/previous"
+            />
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_play_pause"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button"
+            android:src="@drawable/round_play_pause_24"
+            android:contentDescription="@string/play"
+            />
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_next"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button_top_right"
+            android:src="@drawable/round_skip_next_24"
+            android:contentDescription="@string/next"
+            />
+
+    </LinearLayout>
+
+    <!-- Row 2 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_volume_dec"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button"
+            android:src="@drawable/round_volume_down_24"
+            android:contentDescription="@string/volume_decrease"
+            />
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_up"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button"
+            android:src="@drawable/round_keyboard_arrow_up_24"
+            android:contentDescription="@string/up"
+            />
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_volume_inc"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button"
+            android:src="@drawable/round_volume_up_24"
+            android:contentDescription="@string/volume_increase"
+            />
+
+    </LinearLayout>
+
+    <!-- Row 3 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_left"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button"
+            android:src="@drawable/round_keyboard_arrow_left_24"
+            android:contentDescription="@string/left"
+            />
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_pick"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button"
+            android:src="@drawable/outline_circle_24"
+            android:contentDescription="@string/pick"
+            />
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_right"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button"
+            android:src="@drawable/round_keyboard_arrow_right_24"
+            android:contentDescription="@string/right"
+            />
+
+    </LinearLayout>
+
+    <!-- Row 4 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_back"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button_bottom_left"
+            android:src="@drawable/round_arrow_back_24"
+            android:contentDescription="@string/back"
+            />
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_down"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button"
+            android:src="@drawable/round_keyboard_arrow_down_24"
+            android:contentDescription="@string/down"
+            />
+
+        <ImageButton
+            android:id="@+id/notification_large_layout_home"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/notification_button_height"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/notification_button_margin"
+            android:scaleType="fitCenter"
+            android:background="@drawable/notification_button_bottom_right"
+            android:src="@drawable/round_home_24"
+            android:contentDescription="@string/home"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
