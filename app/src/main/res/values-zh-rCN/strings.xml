@@ -82,7 +82,7 @@
     <string name="back">返回</string>
     <string name="mouse_pad_tap">点按</string>
     <string name="notification_channel_name">蓝牙 HID 连接</string>
-    <string name="connected_on">已连接于 %1$s</string>
+    <string name="connected_on">已连接 %1$s</string>
     <string name="help">帮助</string>
     <string name="help_missing_device_title">缺少设备</string>
     <string name="help_device_failed_connection_title">连接失败</string>
@@ -191,4 +191,6 @@
     <string name="keyboard_bg">保加利亚语</string>
     <string name="help_remote_control_buttons_are_not_working_message_2">每个使用 HID 协议的应用程序可能依赖于不同的配置文件。如果您之前已通过其他应用程序配对过设备，则可能需要重新配对以重置配置文件。如果没有此步骤，按钮可能无法按预期运行或可能发送不正确的值。</string>
     <string name="help_device_failed_connection_message_4">如果您的设备启用了开发者选项，则“停用蓝牙 HID 设备配置文件”选项可能也已启用。如果您设备的开发者选项中提供此选项，则您需要将其停用以确保连接功能正常。</string>
+    <string name="connected_off">未连接设备</string>
+    <string name="open">打开</string>
 </resources>
