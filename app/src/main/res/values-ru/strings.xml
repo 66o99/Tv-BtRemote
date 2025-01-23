@@ -170,7 +170,7 @@
     <string name="keyboard_el">Греческий</string>
     <string name="keyboard_he">Иврит</string>
     <string name="information">Информация</string>
-    <string name="help_info_message">Если у вас возникли какие-либо проблемы, пожалуйста, посетите раздел справки.</string>
+    <string name="help_info_message">Если у вас возникли какие-либо проблемы, пожалуйста, посетите раздел помощи.</string>
     <string name="tv">ТВ</string>
     <string name="unpair_device_warning_message">Это устройство будет полностью отсоединено от вашего устройства. Вы действительно хотите продолжить?</string>
     <string name="unpair">Отсоединить</string>
