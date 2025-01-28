@@ -75,10 +75,9 @@ class BluetoothViewModel(
     // ---- Unpair device ----
 
     fun unpairDevice(address: String): Boolean {
-        val success = runBlocking {
-            useCase.unpairDevice(address)
-        }
+        val success = useCase.unpairDevice(address)
         if(success) {
+            runBlocking { delay(200L) } // -> Small delay to allow the system to complete updating the device removal.
             findBondedDevices(context = Dispatchers.Main)
         }
         return success
