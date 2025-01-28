@@ -183,4 +183,6 @@
     <string name="done">סיום</string>
     <string name="help_device_failed_connection_message_4">אם אפשרויות מפתח מופעלות במכשיר שלך, זה ייתכן שהאפשרות \'השבת פרופיל התקן Bluetooth HID\' היא גם מופעלת. אם אפשרות זו זמינה באפשרויות המפתח במכשיר שלך, תצטרך להשבית אותה כדי להבטיח פונקציונליות חיבור תקינה.</string>
     <string name="help_remote_control_buttons_are_not_working_message_2">כל אפליקציה שמשתמשת בפרוטוקול HID עלולה להסתמך על פרופיל אחר. אם בעבר שייכת את המכשירים שלך דרך אפליקציה אחרת, אתה עשוי להצטרך לשייך אותם מחדש כדי לאפס את הפרופיל. ללא שלב זה, הכפתורים עלולים לא לתפקד כצפוי או עשויים לשלוח ערכים שגויים.</string>
+    <string name="connected_off">אין מכשירים מחוברים</string>
+    <string name="open">פתח</string>
 </resources>
