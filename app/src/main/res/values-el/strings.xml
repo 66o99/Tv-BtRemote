@@ -82,7 +82,7 @@
     <string name="keyboard_cs">Τσέχικα</string>
     <string name="keyboard_pl">Πολωνικά</string>
     <string name="keyboard_pt">Πορτογαλικά</string>
-    <string name="keyboard_br">Βραζιλιάνικα</string>
+    <string name="keyboard_br">Πορτογαλικά (Βραζιλίας)</string>
     <string name="keyboard_el">Ελληνικά</string>
     <string name="keyboard_tr">Τουρκικά</string>
     <string name="send">Αποστολή</string>
@@ -204,4 +204,6 @@
     <string name="keyboard_bg">Βουλγαρικά</string>
     <string name="help_device_failed_connection_message_4">Εάν οι επιλογές προγραμματιστή είναι ενεργοποιημένες στη συσκευή σας, είναι πιθανό να είναι ενεργοποιημένη και η επιλογή «Απενεργοποίηση προφίλ συσκευής HID Bluetooth». Εάν αυτή η επιλογή είναι διαθέσιμη στις επιλογές προγραμματιστή στη συσκευή σας, θα πρέπει να την απενεργοποιήσετε για να διασφαλίσετε τη σωστή λειτουργία σύνδεσης.</string>
     <string name="help_remote_control_buttons_are_not_working_message_2">Κάθε εφαρμογή που χρησιμοποιεί το πρωτόκολλο HID μπορεί να βασίζεται σε διαφορετικό προφίλ. Εάν έχετε προηγουμένως συνδέσει τις συσκευές σας μέσω άλλης εφαρμογής, ίσως χρειαστεί να τις επανασυνδέσετε για να επαναφέρετε το προφίλ. Χωρίς αυτό το βήμα, τα κουμπιά ενδέχεται να μην λειτουργούν όπως αναμένεται ή να στέλνουν εσφαλμένες τιμές.</string>
+    <string name="connected_off">Καμία συνδεδεμένη συσκευή</string>
+    <string name="open">Άνοιγμα</string>
 </resources>
