@@ -65,13 +65,13 @@
     <string name="keyboard">Клавиатура</string>
     <string name="keyboard_language">Език на клавиатурата</string>
     <string name="advanced_keyboard">Разширена клавиатура</string>
-    <string name="keyboard_us">Английски (United States)</string>
+    <string name="keyboard_us">Английски (Съединени щати)</string>
     <string name="keyboard_fr">Френски</string>
     <string name="keyboard_de">Немски</string>
     <string name="keyboard_ru">Руски</string>
     <string name="keyboard_cs">Чешки</string>
     <string name="keyboard_pl">Полски</string>
-    <string name="keyboard_br">Бразилски</string>
+    <string name="keyboard_br">Португалски (Бразилия)</string>
     <string name="keyboard_es">Испански</string>
     <string name="send">Изпрати</string>
     <string name="keyboard_he">Иврит</string>
@@ -158,7 +158,7 @@
     <string name="help_pairing_missing_device_check_location_for_android_11_or_less">• Уверете се, че услугите за местоположение са активирани на вашето устройство.</string>
     <string name="help_pairing_device_failed_connection_message_1">Ако успешно сте сдвоили двете устройства, но не можете да се свържете с отдалеченото устройство, моля, не забравяйте да следвате инструкциите по-долу:</string>
     <string name="help_keyboard_wrong_character_sent_message">Ако изпратените знаци са неправилни, трябва да конфигурирате физическата клавиатура на отдалеченото устройство, за да съответства на езика, избран в настройките на приложението.</string>
-    <string name="keyboard_uk">Английски (United Kingdom)</string>
+    <string name="keyboard_uk">Английски (Обединено кралство)</string>
     <string name="keyboard_pt">Португалски</string>
     <string name="bluetooth_pairing_device_not_found">Не е открито устройство.</string>
     <string name="enabled_bluetooth_visibility">Активирана Bluetooth видимост</string>
