@@ -120,7 +120,7 @@
     <string name="help_device_failed_connection_message_3">Wenn die Problematik weiterhin besteht, stelle sicher, dass die Bluetooth-Module in beiden Geräten in Ordnung sind.</string>
     <string name="unpair">Entkoppeln</string>
     <string name="keyboard_pt">Portugiesisch</string>
-    <string name="keyboard_br">Brasilianisch</string>
+    <string name="keyboard_br">Portugiesisch (Brasilien)</string>
     <string name="unpair_device_warning_message">Dieses Gerät wird vollständig von deinem Gerät entkoppelt werden. Willst du wirklich fortsetzen?</string>
     <string name="power">Power</string>
     <string name="advanced_keyboard">Erweiterte Tastatur</string>
