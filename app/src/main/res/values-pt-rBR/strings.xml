@@ -121,7 +121,7 @@
     <string name="unpair">Desparear</string>
     <string name="keyboard_pt">Português</string>
     <string name="unpair_device_warning_message">Este dispositivo será completamente despareado do seu dispositivo. Tem certeza que deseja continuar?</string>
-    <string name="keyboard_br">Brasileiro</string>
+    <string name="keyboard_br">Português (Brasil)</string>
     <string name="power">Energia</string>
     <string name="advanced_keyboard">Teclado avançado</string>
     <string name="space_bar">Barra de Espaço</string>

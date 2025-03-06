@@ -121,7 +121,7 @@
     <string name="unpair">I-unpair</string>
     <string name="unpair_device_warning_message">Ang device na ito ay maa-unpair sa device na ito. Gusto mo ba talagang magpatuloy?</string>
     <string name="keyboard_pt">Portuguese</string>
-    <string name="keyboard_br">Brazilian</string>
+    <string name="keyboard_br">Portuguese (Brazil)</string>
     <string name="power">Power</string>
     <string name="advanced_keyboard">Advanced na keyboard</string>
     <string name="space_bar">Space Bar</string>
