@@ -57,10 +57,12 @@ import com.atharok.btremote.ui.components.KeyboardAction
 import com.atharok.btremote.ui.components.LoadingDialog
 import com.atharok.btremote.ui.components.MoreOverflowMenu
 import com.atharok.btremote.ui.components.MouseAction
+import com.atharok.btremote.ui.components.RemoteAction
 import com.atharok.btremote.ui.components.SettingsDropdownMenuItem
 import com.atharok.btremote.ui.views.RemoteScreenHelpModalBottomSheet
-import com.atharok.btremote.ui.views.keyboard.AdvancedKeyboardLayoutView
-import com.atharok.btremote.ui.views.keyboard.VirtualKeyboardView
+import com.atharok.btremote.ui.views.keyboard.AdvancedKeyboard
+import com.atharok.btremote.ui.views.keyboard.AdvancedKeyboardModalBottomSheet
+import com.atharok.btremote.ui.views.keyboard.VirtualKeyboardModalBottomSheet
 import com.atharok.btremote.ui.views.mouse.MousePadLayout
 import com.atharok.btremote.ui.views.remote.MinimalistRemoteView
 import com.atharok.btremote.ui.views.remote.RemoteView
@@ -92,17 +94,26 @@ fun RemoteScreen(
 ) {
     val configuration = LocalConfiguration.current
 
+    // Remote
     var navigationToggle by rememberSaveable { mutableStateOf(NavigationToggle.DIRECTION) }
-
-    var showKeyboardBottomSheet: Boolean by remember { mutableStateOf(false) }
-
-    var showHelpBottomSheet: Boolean by remember { mutableStateOf(false) }
-
     val useMinimalistRemote: Boolean by settingsViewModel.useMinimalistRemote
         .collectAsStateWithLifecycle(initialValue = false)
-
     val remoteNavigationMode: RemoteNavigationEntity by settingsViewModel.remoteNavigation
         .collectAsStateWithLifecycle(initialValue = RemoteNavigationEntity.D_PAD)
+
+    // Keyboard
+    var showKeyboard: Boolean by rememberSaveable { mutableStateOf(false) }
+    val useAdvancedKeyboard: Boolean by settingsViewModel.useAdvancedKeyboard
+        .collectAsStateWithLifecycle(initialValue = false)
+    val useAdvancedKeyboardIntegrated: Boolean by settingsViewModel.useAdvancedKeyboardIntegrated
+        .collectAsStateWithLifecycle(initialValue = false)
+    val keyboardLanguage: KeyboardLanguage by settingsViewModel.keyboardLanguage
+        .collectAsStateWithLifecycle(initialValue = KeyboardLanguage.ENGLISH_US)
+    val mustClearInputField: Boolean by settingsViewModel.mustClearInputField
+        .collectAsStateWithLifecycle(initialValue = false)
+
+    // Help
+    var showHelpBottomSheet: Boolean by remember { mutableStateOf(false) }
 
     BackHandler(enabled = true, onBack = closeApp)
 
@@ -129,8 +140,9 @@ fun RemoteScreen(
                 disconnectDevice = disconnectDevice,
                 navigationToggle = navigationToggle,
                 onNavigationToggleChanged = { navigationToggle = it },
-                showKeyboard = showKeyboardBottomSheet,
-                onShowKeyboardChanged = { showKeyboardBottomSheet = it },
+                useAdvancedKeyboardIntegrated = useAdvancedKeyboard && useAdvancedKeyboardIntegrated,
+                showKeyboard = showKeyboard,
+                onShowKeyboardChanged = { showKeyboard = it },
                 showHelpBottomSheet = showHelpBottomSheet,
                 onShowHelpBottomSheetChanged = { showHelpBottomSheet = it },
                 sendRemoteKeyReport = sendRemoteKeyReport,
@@ -140,6 +152,8 @@ fun RemoteScreen(
         remoteLayout = {
             RemoteLayout(
                 useMinimalistRemote = useMinimalistRemote,
+                showAdvancedKeyboard = useAdvancedKeyboard && useAdvancedKeyboardIntegrated && showKeyboard,
+                keyboardLanguage = keyboardLanguage,
                 sendRemoteKeyReport = sendRemoteKeyReport,
                 sendKeyboardKeyReport = sendKeyboardKeyReport
             )
@@ -170,12 +184,14 @@ fun RemoteScreen(
                         modifier = modifier
                     )
                 }
-                showKeyboardBottomSheet -> {
+                showKeyboard && (!useAdvancedKeyboard || !useAdvancedKeyboardIntegrated) -> {
                     KeyboardModalBottomSheet(
-                        settingsViewModel = settingsViewModel,
+                        useAdvancedKeyboard = useAdvancedKeyboard,
+                        keyboardLanguage = keyboardLanguage,
+                        mustClearInputField = mustClearInputField,
                         sendKeyboardKeyReport = sendKeyboardKeyReport,
                         sendTextReport = sendTextReport,
-                        onShowKeyboardChanged = { showKeyboardBottomSheet = it }
+                        onShowKeyboardChanged = { showKeyboard = it }
                     )
                 }
             }
@@ -303,35 +319,50 @@ private fun RemotePortraitView(
 @Composable
 private fun RemoteLayout(
     useMinimalistRemote: Boolean,
+    showAdvancedKeyboard: Boolean,
+    keyboardLanguage: KeyboardLanguage,
     sendRemoteKeyReport: (ByteArray) -> Unit,
     sendKeyboardKeyReport: (ByteArray) -> Unit,
 ) {
-    if(useMinimalistRemote) {
-        var showTVChannelButtons: Boolean by remember { mutableStateOf(false) }
-
-        MinimalistRemoteView(
-            sendRemoteKeyReport = sendRemoteKeyReport,
-            showTVChannelButtons = {
-                showTVChannelButtons = !showTVChannelButtons
-            },
-            modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_normal))
-        )
-
-        if(showTVChannelButtons) {
-            TVChannelDialog(
-                sendRemoteKeyReport = sendRemoteKeyReport,
-                sendNumberKeyReport = sendKeyboardKeyReport,
-                onDismissRequest = {
-                    showTVChannelButtons = false
-                }
+    FadeAnimatedContent(targetState = showAdvancedKeyboard) {
+        if (it) {
+            AdvancedKeyboard(
+                keyboardLanguage = keyboardLanguage,
+                sendKeyboardKeyReport = sendKeyboardKeyReport,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(dimensionResource(R.dimen.padding_large)),
+                elevation = dimensionResource(id = R.dimen.elevation_1)
             )
+        } else {
+            if (useMinimalistRemote) {
+                var showTVChannelButtons: Boolean by remember { mutableStateOf(false) }
+
+                MinimalistRemoteView(
+                    sendRemoteKeyReport = sendRemoteKeyReport,
+                    showTVChannelButtons = {
+                        showTVChannelButtons = !showTVChannelButtons
+                    },
+                    modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_normal))
+                )
+
+                if (showTVChannelButtons) {
+                    TVChannelDialog(
+                        sendRemoteKeyReport = sendRemoteKeyReport,
+                        sendNumberKeyReport = sendKeyboardKeyReport,
+                        onDismissRequest = {
+                            showTVChannelButtons = false
+                        }
+                    )
+                }
+            } else {
+                RemoteView(
+                    sendRemoteKeyReport = sendRemoteKeyReport,
+                    sendNumberKeyReport = sendKeyboardKeyReport,
+                    modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_normal))
+                )
+            }
         }
-    } else {
-        RemoteView(
-            sendRemoteKeyReport = sendRemoteKeyReport,
-            sendNumberKeyReport = sendKeyboardKeyReport,
-            modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_normal))
-        )
     }
 }
 
@@ -382,27 +413,20 @@ private fun NavigationLayout(
 
 @Composable
 private fun KeyboardModalBottomSheet(
-    settingsViewModel: SettingsViewModel,
+    useAdvancedKeyboard: Boolean,
+    keyboardLanguage: KeyboardLanguage,
+    mustClearInputField: Boolean,
     sendKeyboardKeyReport: (ByteArray) -> Unit,
     sendTextReport: (String, VirtualKeyboardLayout) -> Unit,
     onShowKeyboardChanged: (Boolean) -> Unit,
 ) {
-    val useAdvancedKeyboard: Boolean by settingsViewModel.useAdvancedKeyboard
-        .collectAsStateWithLifecycle(initialValue = false)
-
-    val keyboardLanguage: KeyboardLanguage by settingsViewModel.keyboardLanguage
-        .collectAsStateWithLifecycle(initialValue = KeyboardLanguage.ENGLISH_US)
-
     if (useAdvancedKeyboard) {
-        AdvancedKeyboardLayoutView(
+        AdvancedKeyboardModalBottomSheet(
             keyboardLanguage = keyboardLanguage,
             sendKeyboardKeyReport = sendKeyboardKeyReport,
             onShowKeyboardBottomSheetChanged = onShowKeyboardChanged
         )
     } else {
-        val mustClearInputField: Boolean by settingsViewModel.mustClearInputField
-            .collectAsStateWithLifecycle(initialValue = false)
-
         var virtualKeyboardLayout: VirtualKeyboardLayout by remember {
             mutableStateOf(getKeyboardLayout(keyboardLanguage))
         }
@@ -411,7 +435,7 @@ private fun KeyboardModalBottomSheet(
             virtualKeyboardLayout = getKeyboardLayout(keyboardLanguage)
         }
 
-        VirtualKeyboardView(
+        VirtualKeyboardModalBottomSheet(
             mustClearInputField = mustClearInputField,
             sendKeyboardKeyReport = sendKeyboardKeyReport,
             sendTextReport = { sendTextReport(it, virtualKeyboardLayout) },
@@ -426,6 +450,7 @@ private fun TopBarActions(
     disconnectDevice: () -> Unit,
     navigationToggle: NavigationToggle,
     onNavigationToggleChanged: (NavigationToggle) -> Unit,
+    useAdvancedKeyboardIntegrated: Boolean,
     showKeyboard: Boolean,
     onShowKeyboardChanged: (Boolean) -> Unit,
     showHelpBottomSheet: Boolean,
@@ -453,11 +478,33 @@ private fun TopBarActions(
         }
     }
 
-    KeyboardAction(
-        showKeyboard = {
-            onShowKeyboardChanged(!showKeyboard)
+    if(useAdvancedKeyboardIntegrated) {
+        FadeAnimatedContent(targetState = showKeyboard) {
+            when (it) {
+                true -> {
+                    RemoteAction(
+                        showRemote = {
+                            onShowKeyboardChanged(false)
+                        }
+                    )
+                }
+
+                false -> {
+                    KeyboardAction(
+                        showKeyboard = {
+                            onShowKeyboardChanged(true)
+                        }
+                    )
+                }
+            }
         }
-    )
+    } else {
+        KeyboardAction(
+            showKeyboard = {
+                onShowKeyboardChanged(!showKeyboard)
+            }
+        )
+    }
 
     MoreOverflowMenu { closeDropdownMenu: () -> Unit ->
         if(showBrightnessButtons) {

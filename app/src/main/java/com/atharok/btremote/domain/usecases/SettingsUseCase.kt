@@ -58,6 +58,11 @@ class SettingsUseCase(private val repository: SettingsRepository) {
         repository.saveUseAdvancedKeyboard(useAdvancedKeyboard)
     }
 
+    fun useAdvancedKeyboardIntegrated(): Flow<Boolean> = repository.useAdvancedKeyboardIntegrated()
+    suspend fun saveUseAdvancedKeyboardIntegrated(useAdvancedKeyboardIntegrated: Boolean) {
+        repository.saveUseAdvancedKeyboardIntegrated(useAdvancedKeyboardIntegrated)
+    }
+
     fun useMinimalistRemote(): Flow<Boolean> = repository.useMinimalistRemote()
     suspend fun saveUseMinimalistRemote(useMinimalistRemote: Boolean) {
         repository.saveUseMinimalistRemote(useMinimalistRemote)

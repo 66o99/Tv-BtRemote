@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -16,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
 import com.atharok.btremote.domain.entity.remoteInput.keyboard.advancedKeyboard.IconAdvancedKeyboardKey
 import com.atharok.btremote.domain.entity.remoteInput.keyboard.advancedKeyboard.TextAdvancedKeyboardKey
@@ -29,13 +29,14 @@ fun KeyboardKeyView(
     touchDown: () -> Unit,
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
-    shape: Shape = RoundedCornerShape(dimensionResource(id = R.dimen.keyboard_key_corner_radius)),
+    shape: Shape/* = RoundedCornerShape(dimensionResource(id = R.dimen.keyboard_key_corner_radius))*/,
+    elevation: Dp /*= dimensionResource(id = R.dimen.elevation_3),*/,
     content: @Composable () -> Unit
 ) {
     RemoteButtonSurface(
         modifier = modifier,
         shape = shape,
-        elevation = dimensionResource(id = R.dimen.elevation_3)
+        elevation = elevation
     ) {
         ButtonContentTemplate(
             touchDown = touchDown,
@@ -52,12 +53,16 @@ fun TextAdvancedKeyboardKeyView(
     keyboardKey: TextAdvancedKeyboardKey,
     touchDown: () -> Unit,
     touchUp: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    shape: Shape/* = RoundedCornerShape(dimensionResource(id = R.dimen.keyboard_key_corner_radius))*/,
+    elevation: Dp /*= dimensionResource(id = R.dimen.elevation_3),*/
 ) {
     KeyboardKeyView(
         touchDown = touchDown,
         touchUp = touchUp,
         modifier = modifier,
+        shape = shape,
+        elevation = elevation
     ) {
         Column(
             modifier = Modifier
@@ -106,12 +111,16 @@ fun IconAdvancedKeyboardKeyView(
     keyboardKey: IconAdvancedKeyboardKey,
     touchDown: () -> Unit,
     touchUp: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    shape: Shape/* = RoundedCornerShape(dimensionResource(id = R.dimen.keyboard_key_corner_radius))*/,
+    elevation: Dp /*= dimensionResource(id = R.dimen.elevation_3),*/
 ) {
     KeyboardKeyView(
         touchDown = touchDown,
         touchUp = touchUp,
         modifier = modifier,
+        shape = shape,
+        elevation = elevation
     ) {
         Icon(
             imageVector = keyboardKey.icon,
@@ -126,12 +135,16 @@ fun TextAdvancedKeyboardModifierKeyView(
     keyboardKey: TextAdvancedKeyboardModifierKey,
     touchDown: () -> Unit,
     touchUp: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    shape: Shape/* = RoundedCornerShape(dimensionResource(id = R.dimen.keyboard_key_corner_radius))*/,
+    elevation: Dp /*= dimensionResource(id = R.dimen.elevation_3),*/
 ) {
     KeyboardKeyView(
         touchDown = touchDown,
         touchUp = touchUp,
         modifier = modifier,
+        shape = shape,
+        elevation = elevation
     ) {
         Box(
             modifier = Modifier

@@ -24,11 +24,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
@@ -36,7 +38,7 @@ import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
 import com.atharok.btremote.domain.entity.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
 
 @Composable
-fun VirtualKeyboardView(
+fun VirtualKeyboardModalBottomSheet(
     mustClearInputField: Boolean,
     sendKeyboardKeyReport: (ByteArray) -> Unit,
     sendTextReport: (String) -> Unit,
@@ -131,7 +133,7 @@ private fun StatelessKeyboardView(
         }
 
         CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
-            AdditionalKeyboardKeys(
+            AdditionalKeyboardKeysLayout(
                 sendKeyboardKeyReport = sendKeyboardKeyReport,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -144,7 +146,7 @@ private fun StatelessKeyboardView(
 
 
 @Composable
-private fun AdditionalKeyboardKeys(
+private fun AdditionalKeyboardKeysLayout(
     sendKeyboardKeyReport: (ByteArray) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -229,12 +231,16 @@ private fun VirtualKeyboardKey(
     contentDescription: String,
     bytes: ByteArray,
     sendKeyboardKey: (ByteArray) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    shape: Shape = RoundedCornerShape(dimensionResource(id = R.dimen.keyboard_key_corner_radius)),
+    elevation: Dp = dimensionResource(id = R.dimen.elevation_3)
 ) {
     KeyboardKeyView(
         touchDown = { sendKeyboardKey(bytes) },
         touchUp = { sendKeyboardKey(REMOTE_INPUT_NONE) },
         modifier = modifier,
+        shape = shape,
+        elevation = elevation
     ) {
         Icon(
             imageVector = image,

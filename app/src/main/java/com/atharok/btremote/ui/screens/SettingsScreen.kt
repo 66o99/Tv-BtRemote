@@ -6,7 +6,6 @@ import android.os.Build
 import android.provider.Settings
 import androidx.activity.compose.LocalActivity
 import androidx.annotation.StringRes
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -51,6 +50,7 @@ import com.atharok.btremote.domain.entity.ThemeEntity
 import com.atharok.btremote.domain.entity.remoteInput.keyboard.KeyboardLanguage
 import com.atharok.btremote.presentation.viewmodel.SettingsViewModel
 import com.atharok.btremote.ui.components.AppScaffold
+import com.atharok.btremote.ui.components.FadeAnimatedContent
 import com.atharok.btremote.ui.components.ListDialog
 import com.atharok.btremote.ui.components.NavigateUpAction
 import com.atharok.btremote.ui.components.TextNormal
@@ -96,6 +96,7 @@ fun SettingsScreen(
             val keyboardLanguage: KeyboardLanguage by settingsViewModel.keyboardLanguage.collectAsStateWithLifecycle(initialValue = KeyboardLanguage.ENGLISH_US)
             val mustClearInputField: Boolean by settingsViewModel.mustClearInputField.collectAsStateWithLifecycle(initialValue = true)
             val useAdvancedKeyboard: Boolean by settingsViewModel.useAdvancedKeyboard.collectAsStateWithLifecycle(initialValue = false)
+            val useAdvancedKeyboardIntegrated: Boolean by settingsViewModel.useAdvancedKeyboardIntegrated.collectAsStateWithLifecycle(initialValue = false)
 
             // ---- Appearance ----
 
@@ -318,21 +319,36 @@ fun SettingsScreen(
                     )
             )
 
-            AnimatedVisibility(
-                visible = !useAdvancedKeyboard
+            FadeAnimatedContent(
+                targetState = useAdvancedKeyboard
             ) {
-                SettingsSwitch(
-                    primaryText = stringResource(id = R.string.clear_input_field),
-                    secondaryText = null,
-                    checked = mustClearInputField,
-                    onCheckedChange = { settingsViewModel.saveMustClearInputField(it) },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(
-                            horizontal = horizontalPadding,
-                            vertical = verticalPadding
-                        )
-                )
+                if(it) {
+                    SettingsSwitch(
+                        primaryText = stringResource(id = R.string.integrate_advanced_keyboard_into_the_view),
+                        secondaryText = null,
+                        checked = useAdvancedKeyboardIntegrated,
+                        onCheckedChange = { value -> settingsViewModel.saveUseAdvancedKeyboardIntegrated(value) },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                horizontal = horizontalPadding,
+                                vertical = verticalPadding
+                            )
+                    )
+                } else {
+                    SettingsSwitch(
+                        primaryText = stringResource(id = R.string.clear_input_field),
+                        secondaryText = null,
+                        checked = mustClearInputField,
+                        onCheckedChange = { value -> settingsViewModel.saveMustClearInputField(value) },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                horizontal = horizontalPadding,
+                                vertical = verticalPadding
+                            )
+                    )
+                }
             }
 
             HorizontalDivider(

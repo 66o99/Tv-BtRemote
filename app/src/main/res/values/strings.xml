@@ -108,6 +108,7 @@
     <string name="use_the_gyroscope_to_control_the_mouse">Use the gyroscope to control the mouse</string>
     <string name="keyboard_and_input_field">Keyboard and input field</string>
     <string name="clear_input_field">Clear input field after sending text</string>
+    <string name="integrate_advanced_keyboard_into_the_view">Integrate the advanced keyboard into the view</string>
     <string name="user_interface">Interface</string>
     <string name="use_minimalist_interface">Use the minimalist interface</string>
     <string name="minimalist_interface_info">Does not display the TV channel buttons</string>

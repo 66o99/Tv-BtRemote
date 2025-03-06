@@ -63,6 +63,11 @@ class SettingsViewModel(
         useCase.saveUseAdvancedKeyboard(useAdvancedKeyboard)
     }
 
+    val useAdvancedKeyboardIntegrated: Flow<Boolean> get() = useCase.useAdvancedKeyboardIntegrated()
+    fun saveUseAdvancedKeyboardIntegrated(useAdvancedKeyboardIntegrated: Boolean) = viewModelScope.launch {
+        useCase.saveUseAdvancedKeyboardIntegrated(useAdvancedKeyboardIntegrated)
+    }
+
     val useMinimalistRemote: Flow<Boolean> get() = useCase.useMinimalistRemote()
     fun saveUseMinimalistRemote(useMinimalistRemote: Boolean) = viewModelScope.launch {
         useCase.saveUseMinimalistRemote(useMinimalistRemote)

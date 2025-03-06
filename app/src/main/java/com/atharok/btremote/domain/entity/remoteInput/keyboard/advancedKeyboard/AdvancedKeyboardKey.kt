@@ -2,8 +2,10 @@ package com.atharok.btremote.domain.entity.remoteInput.keyboard.advancedKeyboard
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.ui.views.keyboard.IconAdvancedKeyboardKeyView
 import com.atharok.btremote.ui.views.keyboard.TextAdvancedKeyboardKeyView
 import com.atharok.btremote.ui.views.keyboard.TextAdvancedKeyboardModifierKeyView
@@ -14,7 +16,9 @@ sealed class AdvancedKeyboardKey {
     abstract val keyView: @Composable (
         touchDown: (Byte) -> Unit,
         touchUp: (Byte) -> Unit,
-        Modifier
+        Modifier,
+        shape: Shape,
+        elevation: Dp
     ) -> Unit
 }
 
@@ -28,8 +32,10 @@ data class TextAdvancedKeyboardKey(
     override val keyView: @Composable (
         (Byte) -> Unit,
         (Byte) -> Unit,
-        Modifier
-    ) -> Unit = { touchDown, touchUp, modifier ->
+        Modifier,
+        Shape,
+        Dp
+    ) -> Unit = { touchDown, touchUp, modifier, shape, elevation ->
         TextAdvancedKeyboardKeyView(
             keyboardKey = this,
             touchDown = {
@@ -38,7 +44,9 @@ data class TextAdvancedKeyboardKey(
             touchUp = {
                 touchUp(byte)
             },
-            modifier = modifier
+            modifier = modifier,
+            shape = shape,
+            elevation = elevation
         )
     }
 }
@@ -52,8 +60,10 @@ data class IconAdvancedKeyboardKey(
     override val keyView: @Composable (
             (Byte) -> Unit,
             (Byte) -> Unit,
-            Modifier
-    ) -> Unit = { touchDown, touchUp, modifier ->
+            Modifier,
+            Shape,
+            Dp
+    ) -> Unit = { touchDown, touchUp, modifier, shape, elevation ->
         IconAdvancedKeyboardKeyView(
             keyboardKey = this,
             touchDown = {
@@ -62,7 +72,9 @@ data class IconAdvancedKeyboardKey(
             touchUp = {
                 touchUp(byte)
             },
-            modifier = modifier
+            modifier = modifier,
+            shape = shape,
+            elevation = elevation
         )
     }
 }
@@ -76,8 +88,10 @@ data class TextAdvancedKeyboardModifierKey(
     override val keyView: @Composable (
             (Byte) -> Unit,
             (Byte) -> Unit,
-            Modifier
-    ) -> Unit = { touchDown, touchUp, modifier ->
+            Modifier,
+            Shape,
+            Dp
+    ) -> Unit = { touchDown, touchUp, modifier, shape, elevation ->
         TextAdvancedKeyboardModifierKeyView(
             keyboardKey = this,
             touchDown = {
@@ -86,7 +100,9 @@ data class TextAdvancedKeyboardModifierKey(
             touchUp = {
                 touchUp(byte)
             },
-            modifier = modifier
+            modifier = modifier,
+            shape = shape,
+            elevation = elevation
         )
     }
 }

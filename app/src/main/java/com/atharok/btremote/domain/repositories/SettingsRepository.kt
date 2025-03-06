@@ -36,6 +36,9 @@ interface SettingsRepository {
     fun useAdvancedKeyboard(): Flow<Boolean>
     suspend fun saveUseAdvancedKeyboard(useAdvancedKeyboard: Boolean)
 
+    fun useAdvancedKeyboardIntegrated(): Flow<Boolean>
+    suspend fun saveUseAdvancedKeyboardIntegrated(useAdvancedKeyboardIntegrated: Boolean)
+
     fun useMinimalistRemote(): Flow<Boolean>
     suspend fun saveUseMinimalistRemote(useMinimalistRemote: Boolean)
 

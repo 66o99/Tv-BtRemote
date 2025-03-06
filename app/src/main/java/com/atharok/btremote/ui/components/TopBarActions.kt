@@ -97,6 +97,19 @@ fun RefreshAction(
 }
 
 @Composable
+fun RemoteAction(
+    showRemote: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    TopAppBarAction(
+        onClick = showRemote,
+        image = AppIcons.RemoteControl,
+        contentDescription = stringResource(id = R.string.remote),
+        modifier = modifier
+    )
+}
+
+@Composable
 fun KeyboardAction(
     showKeyboard: () -> Unit,
     modifier: Modifier = Modifier
