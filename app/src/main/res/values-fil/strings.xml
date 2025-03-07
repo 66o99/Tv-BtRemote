@@ -185,4 +185,5 @@
     <string name="help_remote_control_buttons_are_not_working_message_2">Ang bawat application na gumagamit ng HID protocol ay maaaring umasa sa ibang profile. Kung dati mo nang ipinares ang iyong mga device sa pamamagitan ng isa pang application, maaaring kailanganin mong muling ipares ang mga ito upang i-reset ang profile. Kung wala ang hakbang na ito, maaaring hindi gumana ang mga button tulad ng inaasahan o maaaring magpadala ng mga maling value.</string>
     <string name="open">Buksan</string>
     <string name="connected_off">Walang mga nakakonektang device</string>
+    <string name="integrate_advanced_keyboard_into_the_view">I-integrate ang advanced na keyboard sa view</string>
 </resources>
