@@ -185,4 +185,5 @@
     <string name="open">Abrir</string>
     <string name="connected_off">Nenhum dispositivo conectado</string>
     <string name="help_remote_control_buttons_are_not_working_message_2">Cada aplicativo usando o protocolo HID pode depender num perfil diferente. Se você pareou seus dispositivos anteriormente por outro aplicativo, você pode ter que parear eles novamente para redefinir o perfil. Sem esse passo, os botões podem não funcionar corretamente ou enviar valores incorretos.</string>
+    <string name="integrate_advanced_keyboard_into_the_view">Integrar o teclado avançado na tela</string>
 </resources>
