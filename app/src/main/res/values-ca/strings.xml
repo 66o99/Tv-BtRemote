@@ -91,4 +91,10 @@
     <string name="keyboard_language_info">Assegureu-vos que la llengua del teclat seleccionada coincideixi amb la que s’ha configurada al dispositiu remot.</string>
     <string name="connected_off">No s’ha connectat cap dispositiu</string>
     <string name="pairing_from_a_remote_device_step_3_title">3. Desconnecteu els dispositius</string>
+    <string name="bluetooth_device_connecting_message">S’està provant de connectar al dispositiu «%1$s»…</string>
+    <string name="shift">Maj</string>
+    <string name="meta">Meta</string>
+    <string name="ctrl">Ctrl</string>
+    <string name="alt">Alt</string>
+    <string name="escape">Esc</string>
 </resources>
