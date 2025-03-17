@@ -89,8 +89,8 @@
     <string name="enter">Enter</string>
     <string name="escape">Esc</string>
     <string name="delete">Delete</string>
-    <string name="space_bar">Space Bar</string>
-    <string name="print_screen">Print Screen</string>
+    <string name="space_bar">Πλήκτρο Space Bar</string>
+    <string name="print_screen">Πλήκτρο Print Screen</string>
     <string name="shift">Shift</string>
     <string name="meta">Meta</string>
     <string name="ctrl">Ctrl</string>
@@ -179,7 +179,7 @@
     <string name="user_interface">Διεπαφή</string>
     <string name="minimalist_interface_info">Δεν εμφανίζει τα κουμπιά των τηλεοπτικών καναλιών</string>
     <string name="navigation_mode">Λειτουργία Πλοήγησης</string>
-    <string name="d_pad">D-Pad</string>
+    <string name="d_pad">Χειριστήριο D-Pad</string>
     <string name="touchpad">Επιφάνεια αφής</string>
     <string name="touchpad_description">Πλοήγηση μέσω χειρονομιών αφής</string>
     <string name="pairing_from_a_remote_device_intro_title">Οδηγός για τη σύζευξη μιας συσκευής από την απομακρυσμένη συσκευή</string>
@@ -206,4 +206,5 @@
     <string name="help_remote_control_buttons_are_not_working_message_2">Κάθε εφαρμογή που χρησιμοποιεί το πρωτόκολλο HID μπορεί να βασίζεται σε διαφορετικό προφίλ. Εάν έχετε προηγουμένως συνδέσει τις συσκευές σας μέσω άλλης εφαρμογής, ίσως χρειαστεί να τις επανασυνδέσετε για να επαναφέρετε το προφίλ. Χωρίς αυτό το βήμα, τα κουμπιά ενδέχεται να μην λειτουργούν όπως αναμένεται ή να στέλνουν εσφαλμένες τιμές.</string>
     <string name="connected_off">Καμία συνδεδεμένη συσκευή</string>
     <string name="open">Άνοιγμα</string>
+    <string name="integrate_advanced_keyboard_into_the_view">Ενοποίησε το προχωρημένο πληκτρολόγιο μέσα στην άποψη</string>
 </resources>
