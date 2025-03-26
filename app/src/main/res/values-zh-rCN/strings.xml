@@ -193,4 +193,5 @@
     <string name="help_device_failed_connection_message_4">如果您的设备启用了开发者选项，则“停用蓝牙 HID 设备配置文件”选项可能也已启用。如果您设备的开发者选项中提供此选项，则您需要将其停用以确保连接功能正常。</string>
     <string name="connected_off">未连接设备</string>
     <string name="open">打开</string>
+    <string name="integrate_advanced_keyboard_into_the_view">将高级键盘集成到视图中</string>
 </resources>
