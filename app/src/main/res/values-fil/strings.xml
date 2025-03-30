@@ -186,4 +186,5 @@
     <string name="open">Buksan</string>
     <string name="connected_off">Walang mga nakakonektang device</string>
     <string name="integrate_advanced_keyboard_into_the_view">I-integrate ang advanced na keyboard sa view</string>
+    <string name="keyboard_ukrainian">Ukrainian</string>
 </resources>
