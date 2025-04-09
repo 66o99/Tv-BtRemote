@@ -17,9 +17,9 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.advancedKeyboard.IconAdvancedKeyboardKey
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.advancedKeyboard.TextAdvancedKeyboardKey
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.advancedKeyboard.TextAdvancedKeyboardModifierKey
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.IconAdvancedKeyboardKey
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.TextAdvancedKeyboardKey
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.TextAdvancedKeyboardModifierKey
 import com.atharok.btremote.ui.components.AdaptiveText
 import com.atharok.btremote.ui.components.ButtonContentTemplate
 import com.atharok.btremote.ui.components.RemoteButtonSurface

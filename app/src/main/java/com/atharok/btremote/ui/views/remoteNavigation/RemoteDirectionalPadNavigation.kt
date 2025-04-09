@@ -26,7 +26,7 @@ import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.ArcShape
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
-import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
+import com.atharok.btremote.domain.entities.remoteInput.RemoteInput
 import com.atharok.btremote.ui.components.RemoteButtonSurface
 import com.atharok.btremote.ui.components.StatefulRemoteButton
 import com.atharok.btremote.ui.theme.dimensionElevation1

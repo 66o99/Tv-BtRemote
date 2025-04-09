@@ -1,7 +1,7 @@
 package com.atharok.btremote.domain.usecases
 
 import com.atharok.btremote.common.utils.REMOTE_REPORT_ID
-import com.atharok.btremote.domain.entity.DeviceHidConnectionState
+import com.atharok.btremote.domain.entities.DeviceHidConnectionState
 import com.atharok.btremote.domain.repositories.BluetoothHidProfileRepository
 import kotlinx.coroutines.flow.StateFlow
 

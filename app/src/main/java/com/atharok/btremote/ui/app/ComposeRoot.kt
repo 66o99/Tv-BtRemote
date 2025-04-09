@@ -15,7 +15,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.atharok.btremote.common.extensions.getActivity
-import com.atharok.btremote.domain.entity.remoteInput.MouseAction
+import com.atharok.btremote.domain.entities.remoteInput.MouseAction
 import com.atharok.btremote.presentation.viewmodel.BluetoothHidViewModel
 import com.atharok.btremote.presentation.viewmodel.BluetoothViewModel
 import com.atharok.btremote.presentation.viewmodel.SettingsViewModel

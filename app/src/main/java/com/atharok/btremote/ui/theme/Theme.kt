@@ -1,6 +1,5 @@
 package com.atharok.btremote.ui.theme
 
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -14,7 +13,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.dimensionResource
@@ -24,7 +22,7 @@ import com.atharok.btremote.R
 import com.atharok.btremote.common.extensions.getActivity
 import com.atharok.btremote.common.extensions.setFullScreen
 import com.atharok.btremote.common.utils.isDynamicColorsAvailable
-import com.atharok.btremote.domain.entity.ThemeEntity
+import com.atharok.btremote.domain.entities.ThemeEntity
 import com.atharok.btremote.presentation.viewmodel.SettingsViewModel
 
 private val lightScheme = lightColorScheme(

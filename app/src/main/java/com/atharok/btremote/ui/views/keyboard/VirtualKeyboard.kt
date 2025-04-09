@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
 import com.atharok.btremote.ui.theme.dimensionElevation3
 
 @Composable

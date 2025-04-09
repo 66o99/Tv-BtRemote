@@ -32,8 +32,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.atharok.btremote.R
 import com.atharok.btremote.common.extensions.parcelable
 import com.atharok.btremote.common.utils.checkBluetoothConnectPermission
-import com.atharok.btremote.domain.entity.DeviceEntity
-import com.atharok.btremote.domain.entity.DeviceHidConnectionState
+import com.atharok.btremote.domain.entities.DeviceEntity
+import com.atharok.btremote.domain.entities.DeviceHidConnectionState
 import com.atharok.btremote.ui.components.AppScaffold
 import com.atharok.btremote.ui.components.CheckMultiplePermissions
 import com.atharok.btremote.ui.components.HelpAction

@@ -14,8 +14,8 @@ import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.AppIcons.getIconModifier
-import com.atharok.btremote.domain.entity.remoteInput.ChannelInput
-import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
+import com.atharok.btremote.domain.entities.remoteInput.ChannelInput
+import com.atharok.btremote.domain.entities.remoteInput.RemoteInput
 import com.atharok.btremote.ui.components.AdaptiveText
 import com.atharok.btremote.ui.components.ButtonContentTemplate
 import com.atharok.btremote.ui.components.RemoteButtonContentTemplate

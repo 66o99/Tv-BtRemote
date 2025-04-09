@@ -17,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
-import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
+import com.atharok.btremote.domain.entities.remoteInput.RemoteInput
 import com.atharok.btremote.ui.components.RemoteButtonContentTemplate
 import com.atharok.btremote.ui.components.RemoteButtonSurface
 import com.atharok.btremote.ui.theme.dimensionElevation1

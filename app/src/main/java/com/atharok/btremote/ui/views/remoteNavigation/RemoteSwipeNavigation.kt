@@ -19,7 +19,7 @@ import androidx.compose.ui.res.stringResource
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
-import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
+import com.atharok.btremote.domain.entities.remoteInput.RemoteInput
 import com.atharok.btremote.ui.components.DefaultElevatedCard
 import kotlin.math.abs
 import kotlin.math.sqrt

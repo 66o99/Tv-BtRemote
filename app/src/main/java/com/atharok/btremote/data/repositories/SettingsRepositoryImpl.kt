@@ -1,9 +1,9 @@
 package com.atharok.btremote.data.repositories
 
 import com.atharok.btremote.data.dataStore.SettingsDataStore
-import com.atharok.btremote.domain.entity.RemoteNavigationEntity
-import com.atharok.btremote.domain.entity.ThemeEntity
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.KeyboardLanguage
+import com.atharok.btremote.domain.entities.RemoteNavigationEntity
+import com.atharok.btremote.domain.entities.ThemeEntity
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardLanguage
 import com.atharok.btremote.domain.repositories.SettingsRepository
 import kotlinx.coroutines.flow.Flow
 

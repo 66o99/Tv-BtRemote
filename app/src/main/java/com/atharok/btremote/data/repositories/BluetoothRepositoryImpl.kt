@@ -1,7 +1,7 @@
 package com.atharok.btremote.data.repositories
 
 import com.atharok.btremote.data.bluetooth.BluetoothInteractions
-import com.atharok.btremote.domain.entity.DeviceEntity
+import com.atharok.btremote.domain.entities.DeviceEntity
 import com.atharok.btremote.domain.repositories.BluetoothRepository
 
 class BluetoothRepositoryImpl(

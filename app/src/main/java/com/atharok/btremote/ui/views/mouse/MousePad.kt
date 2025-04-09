@@ -10,7 +10,7 @@ import androidx.compose.ui.input.pointer.PointerInputChange
 import androidx.compose.ui.input.pointer.changedToDown
 import androidx.compose.ui.input.pointer.changedToUp
 import androidx.compose.ui.input.pointer.pointerInput
-import com.atharok.btremote.domain.entity.remoteInput.MouseAction
+import com.atharok.btremote.domain.entities.remoteInput.MouseAction
 import com.atharok.btremote.ui.components.DefaultElevatedCard
 import kotlin.jvm.internal.Ref.FloatRef
 

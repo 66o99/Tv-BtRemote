@@ -28,9 +28,9 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.getAdvancedKeyboardLayout
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.KeyboardLanguage
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.advancedKeyboard.AdvancedKeyboardLayout
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.advancedKeyboard.TextAdvancedKeyboardModifierKey
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardLanguage
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.AdvancedKeyboardLayout
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.TextAdvancedKeyboardModifierKey
 import com.atharok.btremote.ui.theme.dimensionElevation3
 
 @Composable

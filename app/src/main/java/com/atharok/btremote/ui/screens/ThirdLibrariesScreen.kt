@@ -20,7 +20,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
-import com.atharok.btremote.domain.entity.ThirdLibrary
+import com.atharok.btremote.domain.entities.ThirdLibrary
 import com.atharok.btremote.ui.components.AppScaffold
 import com.atharok.btremote.ui.components.MaterialFilledTonalButton
 import com.atharok.btremote.ui.components.NavigateUpAction

@@ -1,6 +1,6 @@
 package com.atharok.btremote.domain.repositories
 
-import com.atharok.btremote.domain.entity.DeviceEntity
+import com.atharok.btremote.domain.entities.DeviceEntity
 
 interface BluetoothRepository {
     fun isBluetoothSupported(): Boolean

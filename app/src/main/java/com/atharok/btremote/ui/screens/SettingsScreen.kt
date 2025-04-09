@@ -45,9 +45,9 @@ import com.atharok.btremote.common.utils.MOUSE_SPEED_DEFAULT_VALUE
 import com.atharok.btremote.common.utils.SOURCE_CODE_LINK
 import com.atharok.btremote.common.utils.WEB_SITE_LINK
 import com.atharok.btremote.common.utils.isDynamicColorsAvailable
-import com.atharok.btremote.domain.entity.RemoteNavigationEntity
-import com.atharok.btremote.domain.entity.ThemeEntity
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.KeyboardLanguage
+import com.atharok.btremote.domain.entities.RemoteNavigationEntity
+import com.atharok.btremote.domain.entities.ThemeEntity
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardLanguage
 import com.atharok.btremote.presentation.viewmodel.SettingsViewModel
 import com.atharok.btremote.ui.components.AppScaffold
 import com.atharok.btremote.ui.components.FadeAnimatedContent

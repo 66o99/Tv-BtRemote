@@ -10,7 +10,7 @@ import com.atharok.btremote.R
 import com.atharok.btremote.common.extensions.unpair
 import com.atharok.btremote.common.utils.checkBluetoothConnectPermission
 import com.atharok.btremote.common.utils.checkBluetoothScanPermission
-import com.atharok.btremote.domain.entity.DeviceEntity
+import com.atharok.btremote.domain.entities.DeviceEntity
 
 
 class BluetoothInteractions(

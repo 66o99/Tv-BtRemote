@@ -7,9 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.atharok.btremote.common.utils.KEYBOARD_REPORT_ID
 import com.atharok.btremote.common.utils.MOUSE_REPORT_ID
 import com.atharok.btremote.common.utils.REMOTE_REPORT_ID
-import com.atharok.btremote.domain.entity.DeviceHidConnectionState
-import com.atharok.btremote.domain.entity.remoteInput.MouseAction
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
+import com.atharok.btremote.domain.entities.DeviceHidConnectionState
+import com.atharok.btremote.domain.entities.remoteInput.MouseAction
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
 import com.atharok.btremote.domain.usecases.BluetoothHidUseCase
 import com.atharok.btremote.presentation.services.BluetoothHidService
 import kotlinx.coroutines.flow.Flow

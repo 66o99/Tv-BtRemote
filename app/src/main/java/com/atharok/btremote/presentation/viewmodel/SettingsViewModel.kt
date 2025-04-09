@@ -2,9 +2,9 @@ package com.atharok.btremote.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.atharok.btremote.domain.entity.RemoteNavigationEntity
-import com.atharok.btremote.domain.entity.ThemeEntity
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.KeyboardLanguage
+import com.atharok.btremote.domain.entities.RemoteNavigationEntity
+import com.atharok.btremote.domain.entities.ThemeEntity
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardLanguage
 import com.atharok.btremote.domain.usecases.SettingsUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch

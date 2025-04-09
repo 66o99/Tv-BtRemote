@@ -1,6 +1,6 @@
 package com.atharok.btremote.domain.usecases
 
-import com.atharok.btremote.domain.entity.DeviceEntity
+import com.atharok.btremote.domain.entities.DeviceEntity
 import com.atharok.btremote.domain.repositories.BluetoothRepository
 
 class BluetoothUseCase(private val bluetoothRepository: BluetoothRepository) {

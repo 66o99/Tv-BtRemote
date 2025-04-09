@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
-import com.atharok.btremote.domain.entity.remoteInput.RemoteInput
+import com.atharok.btremote.domain.entities.remoteInput.RemoteInput
 import com.atharok.btremote.domain.usecases.BluetoothHidServiceUseCase
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject

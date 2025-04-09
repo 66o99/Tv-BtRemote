@@ -19,7 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
-import com.atharok.btremote.domain.entity.remoteInput.MouseAction
+import com.atharok.btremote.domain.entities.remoteInput.MouseAction
 import kotlin.jvm.internal.Ref.BooleanRef
 import kotlin.jvm.internal.Ref.FloatRef
 

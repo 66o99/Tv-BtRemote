@@ -1,7 +1,7 @@
 package com.atharok.btremote.domain.repositories
 
-import com.atharok.btremote.domain.entity.DeviceHidConnectionState
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
+import com.atharok.btremote.domain.entities.DeviceHidConnectionState
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 

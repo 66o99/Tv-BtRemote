@@ -10,9 +10,9 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import com.atharok.btremote.common.extensions.dataStore
 import com.atharok.btremote.common.utils.MOUSE_SPEED_DEFAULT_VALUE
 import com.atharok.btremote.common.utils.isDynamicColorsAvailable
-import com.atharok.btremote.domain.entity.RemoteNavigationEntity
-import com.atharok.btremote.domain.entity.ThemeEntity
-import com.atharok.btremote.domain.entity.remoteInput.keyboard.KeyboardLanguage
+import com.atharok.btremote.domain.entities.RemoteNavigationEntity
+import com.atharok.btremote.domain.entities.ThemeEntity
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardLanguage
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map

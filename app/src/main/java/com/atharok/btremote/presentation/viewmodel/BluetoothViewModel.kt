@@ -3,7 +3,7 @@ package com.atharok.btremote.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.atharok.btremote.common.extensions.capitalizeFirstChar
-import com.atharok.btremote.domain.entity.DeviceEntity
+import com.atharok.btremote.domain.entities.DeviceEntity
 import com.atharok.btremote.domain.usecases.BluetoothUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

@@ -7,7 +7,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.atharok.btremote.domain.entity.DeviceHidConnectionState
+import com.atharok.btremote.domain.entities.DeviceHidConnectionState
 import kotlinx.coroutines.flow.StateFlow
 
 @Composable
