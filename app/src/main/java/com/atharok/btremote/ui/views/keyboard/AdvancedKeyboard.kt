@@ -75,16 +75,16 @@ fun AdvancedKeyboard(
         mutableStateOf(getAdvancedKeyboardLayout(keyboardLanguage))
     }
 
-    LaunchedEffect(keyboardLanguage) {
-        keyboardLayout = getAdvancedKeyboardLayout(keyboardLanguage)
-    }
-
     var modifierKeyByte: Byte by remember {
         mutableStateOf(0x00)
     }
 
     var keyByte: Byte by remember {
         mutableStateOf(0x00)
+    }
+
+    LaunchedEffect(keyboardLanguage) {
+        keyboardLayout = getAdvancedKeyboardLayout(keyboardLanguage)
     }
 
     LaunchedEffect(modifierKeyByte, keyByte) {

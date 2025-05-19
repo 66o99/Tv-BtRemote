@@ -99,7 +99,7 @@ class SettingsDataStore(private val context: Context) {
         context.dataStore.data
             .catchException()
             .map { preferences ->
-                preferences[useBlackColorForDarkThemeKey] ?: false
+                preferences[useBlackColorForDarkThemeKey] == true
             }
     }
 
@@ -113,7 +113,7 @@ class SettingsDataStore(private val context: Context) {
         context.dataStore.data
             .catchException()
             .map { preferences ->
-                preferences[useFullScreenKey] ?: false
+                preferences[useFullScreenKey] == true
             }
     }
 
@@ -143,7 +143,7 @@ class SettingsDataStore(private val context: Context) {
         context.dataStore.data
             .catchException()
             .map { preferences ->
-                preferences[invertMouseScrollingDirectionKey] ?: false
+                preferences[invertMouseScrollingDirectionKey] == true
             }
     }
 
@@ -157,7 +157,7 @@ class SettingsDataStore(private val context: Context) {
         context.dataStore.data
             .catchException()
             .map { preferences ->
-                preferences[useGyroscopeKey] ?: false
+                preferences[useGyroscopeKey] == true
             }
     }
 
@@ -193,7 +193,7 @@ class SettingsDataStore(private val context: Context) {
         context.dataStore.data
             .catchException()
             .map { preferences ->
-                preferences[mustClearInputFieldKey] ?: true
+                preferences[mustClearInputFieldKey] != false
             }
     }
 
@@ -207,7 +207,7 @@ class SettingsDataStore(private val context: Context) {
         context.dataStore.data
             .catchException()
             .map { preferences ->
-                preferences[useAdvancedKeyboardKey] ?: false
+                preferences[useAdvancedKeyboardKey] == true
             }
     }
 
@@ -221,7 +221,7 @@ class SettingsDataStore(private val context: Context) {
         context.dataStore.data
             .catchException()
             .map { preferences ->
-                preferences[useAdvancedKeyboardIntegratedKey] ?: false
+                preferences[useAdvancedKeyboardIntegratedKey] == true
             }
     }
 
@@ -237,7 +237,7 @@ class SettingsDataStore(private val context: Context) {
         context.dataStore.data
             .catchException()
             .map { preferences ->
-                preferences[useMinimalistRemoteKey] ?: false
+                preferences[useMinimalistRemoteKey] == true
             }
     }
 

@@ -12,6 +12,7 @@ import com.atharok.btremote.domain.entities.remoteInput.MouseAction
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
 import com.atharok.btremote.domain.usecases.BluetoothHidUseCase
 import com.atharok.btremote.presentation.services.BluetoothHidService
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -64,9 +65,10 @@ class BluetoothHidViewModel(
 
     fun sendKeyboardKeyReport(bytes: ByteArray): Boolean = sendReport(KEYBOARD_REPORT_ID, bytes)
 
-    fun sendTextReport(text: String, virtualKeyboardLayout: VirtualKeyboardLayout): Boolean {
-        return useCase.sendTextReport(text, virtualKeyboardLayout)
-    }
+    fun sendTextReport(text: String, virtualKeyboardLayout: VirtualKeyboardLayout) =
+        viewModelScope.launch(Dispatchers.Default) {
+            useCase.sendTextReport(text, virtualKeyboardLayout)
+        }
 
     private fun sendReport(id: Int, bytes: ByteArray): Boolean {
         return useCase.sendReport(id, bytes)

@@ -145,7 +145,6 @@ private fun StatelessKeyboardView(
     }
 }
 
-
 @Composable
 private fun AdditionalKeyboardKeysLayout(
     sendKeyboardKeyReport: (ByteArray) -> Unit,

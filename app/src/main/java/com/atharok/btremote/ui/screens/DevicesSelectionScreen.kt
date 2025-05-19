@@ -312,7 +312,6 @@ private fun StatelessDevicesSelectionScreen(
             SnackbarHost(hostState = snackbarHostState)
         }
     ) { innerPadding ->
-
         DevicesListView(
             devices = devices,
             connectDevice = connectDevice,
@@ -421,7 +420,6 @@ private fun BluetoothAddressDialog(
     close: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-
     val focusRequester = remember { FocusRequester() }
     val textState = remember { mutableStateOf("") }
     val showError = remember { mutableStateOf(false) }
@@ -465,6 +463,7 @@ private fun BluetoothAddressDialog(
                 }
             }
         },
+        modifier = modifier,
         confirmButtonText = stringResource(id = R.string.connection),
         onConfirmation = {
             if(isMacAddress(textState.value)) {
@@ -474,7 +473,6 @@ private fun BluetoothAddressDialog(
             }
         },
         dismissButtonText = stringResource(id = R.string.close),
-        onDismissRequest = close,
-        modifier = modifier
+        onDismissRequest = close
     )
 }

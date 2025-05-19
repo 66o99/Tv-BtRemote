@@ -21,7 +21,7 @@ class BluetoothInteractions(
 
     fun isBluetoothSupported(): Boolean = adapter != null
 
-    fun isBluetoothEnabled(): Boolean = adapter?.isEnabled ?: false
+    fun isBluetoothEnabled(): Boolean = adapter?.isEnabled == true
 
     // ---- About local device ----
 
@@ -106,17 +106,17 @@ class BluetoothInteractions(
 
     fun startDiscoveryDevices(): Boolean {
         return if (checkBluetoothScanPermission(context)) {
-            adapter?.startDiscovery() ?: false
+            adapter?.startDiscovery() == true
         } else false
     }
 
     fun cancelDiscoveryDevices(): Boolean {
         return if (checkBluetoothScanPermission(context)) {
-            adapter?.cancelDiscovery() ?: false
+            adapter?.cancelDiscovery() == true
         } else false
     }
 
     // ---- Unpair ----
 
-    fun unpairDevice(address: String): Boolean = adapter?.getRemoteDevice(address)?.unpair() ?: false
+    fun unpairDevice(address: String): Boolean = adapter?.getRemoteDevice(address)?.unpair() == true
 }

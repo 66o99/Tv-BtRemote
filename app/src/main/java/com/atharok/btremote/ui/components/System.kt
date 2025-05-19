@@ -1,6 +1,7 @@
 package com.atharok.btremote.ui.components
 
 import android.Manifest
+import android.bluetooth.BluetoothAdapter
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -170,5 +171,21 @@ fun RequestMultiplePermissions(
     DisposableEffect(Unit) {
         launcher.launch(permissions)
         onDispose {}
+    }
+}
+
+@Composable
+fun CheckBluetoothActivation(
+    isBluetoothEnabled: Boolean,
+    onBluetoothEnabledChanged: (Boolean) -> Unit
+) {
+    SystemBroadcastReceiver(systemAction = BluetoothAdapter.ACTION_STATE_CHANGED) { intent ->
+        if(intent?.action == BluetoothAdapter.ACTION_STATE_CHANGED) {
+            val state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR)
+            (state == BluetoothAdapter.STATE_ON).let {
+                if(isBluetoothEnabled != it)
+                    onBluetoothEnabledChanged(it)
+            }
+        }
     }
 }

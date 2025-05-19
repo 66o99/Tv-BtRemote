@@ -27,11 +27,11 @@ import com.atharok.btremote.ui.theme.dimensionElevation1
 fun TemplateDialog(
     title: @Composable () -> Unit,
     content: @Composable () -> Unit,
+    modifier: Modifier = Modifier,
     confirmButtonText: String? = null,
     onConfirmation: () -> Unit = {},
     dismissButtonText: String? = null,
-    onDismissRequest: () -> Unit = {},
-    modifier: Modifier = Modifier
+    onDismissRequest: () -> Unit = {}
 ) {
     AlertDialog(
         title = title,
@@ -65,11 +65,11 @@ fun SimpleDialog(
         content = {
             TextNormal(text = dialogText)
         },
+        modifier = modifier,
         confirmButtonText = confirmButtonText,
         onConfirmation = onConfirmation,
         dismissButtonText = dismissButtonText,
-        onDismissRequest = onDismissRequest,
-        modifier = modifier
+        onDismissRequest = onDismissRequest
     )
 }
 

@@ -32,12 +32,12 @@ fun TVChannelDialog(
             TVChannelLayout(
                 sendRemoteKeyReport = sendRemoteKeyReport,
                 sendNumberKeyReport = sendNumberKeyReport,
-                modifier = Modifier.aspectRatio(3f/4f)
+                modifier = Modifier.aspectRatio(3f / 4f)
             )
         },
+        modifier = modifier,
         dismissButtonText = stringResource(R.string.close),
-        onDismissRequest = onDismissRequest,
-        modifier = modifier
+        onDismissRequest = onDismissRequest
     )
 }
 

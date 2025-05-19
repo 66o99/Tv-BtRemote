@@ -32,7 +32,6 @@ class BluetoothHidProfile(
     private val adapter: BluetoothAdapter?,
     private val hidSettings: BluetoothHidDeviceAppSdpSettings
 ) {
-
     companion object {
         private const val DATA_STORE_AUTO_CONNECT_DEVICE_ADDRESS_KEY = "auto_connect_device_address_key"
     }
@@ -82,7 +81,6 @@ class BluetoothHidProfile(
 
         override fun onServiceDisconnected(i: Int) {}
     }
-
 
     // ---- BluetoothHidDevice.Callback implementation ----
 

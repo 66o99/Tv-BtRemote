@@ -118,4 +118,3 @@ private fun ButtonOpenInBrowser(
         icon = AppIcons.OpenInBrowser
     )
 }
-
