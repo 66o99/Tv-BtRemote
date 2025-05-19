@@ -197,6 +197,7 @@
     <!-- Help messages -->
     <string name="information">Information</string>
     <string name="help_info_message">If you experience any issues, please check the help section.</string>
+    <string name="help_info_hid_service_not_initialized_message">The HID service has not been initialized. Please consult the help section.</string>
 
     <string name="help">Help</string>
 
@@ -209,7 +210,6 @@
     <string name="help_device_failed_connection_check_2">• Make sure that the Bluetooth function is enabled on the remote device.</string>
     <string name="help_device_failed_connection_check_3">• Make sure that both devices are close enough to each other.</string>
     <string name="help_device_failed_connection_check_4">• Try connecting several times.</string>
-    <string name="help_device_failed_connection_message_4">If the developer options are enabled on your device, it is possible that the \'Disable Bluetooth HID Device Profile\' option is also activated. If this option is available in the developer options on your device, you will need to disable it to ensure proper connection functionality.</string>
     <string name="help_device_failed_connection_message_2">If despite these checks you still cannot connect to the remote device, proceed as follows:</string>
     <string name="help_device_failed_connection_check_5">• Unpair the two devices, both on the current device and on the remote device.</string>
     <string name="help_device_failed_connection_check_6">• Re-pair the two devices by pressing the icon located in the top bar.</string>
@@ -232,6 +232,11 @@
     <string name="help_remote_control_buttons_are_not_working_check_4">• Then, re-pair the two devices using this application.</string>
     <string name="help_remote_control_buttons_are_not_working_message_2">Each application using the HID protocol may rely on a different profile. If you have previously paired your devices through another application, you might need to re-pair them to reset the profile. Without this step, the buttons may not function as expected or might send incorrect values.</string>
     <string name="help_keyboard_wrong_character_sent_message">If the characters being sent are incorrect, you need to configure the physical keyboard on the remote device to match the language selected in the application settings.</string>
+
+    <string name="help_hid_service_not_initialized_title">HID Service Not Initialized</string>
+    <string name="help_hid_service_not_initialized_message_1">If a message indicates that the HID service has not been initialized, please go to your device\'s developer options and look for the option \"Disable Bluetooth HID Device Profile\":</string>
+    <string name="help_hid_service_not_initialized_message_2">• If this option is available, disable it, then restart your device. After restarting, the HID profile should function normally.</string>
+    <string name="help_hid_service_not_initialized_message_3">• If this option is not available, your device may not support the HID profile. In that case, unfortunately, you won\'t be able to use this application on this device.</string>
 
     <!-- No translatable -->
 

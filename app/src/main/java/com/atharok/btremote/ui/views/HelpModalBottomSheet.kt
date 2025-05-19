@@ -67,8 +67,6 @@ fun DevicesSelectionScreenHelpModalBottomSheet(
                 append("\n")
                 append(stringResource(id = R.string.help_device_failed_connection_check_4))
                 append("\n\n")
-                append(stringResource(id = R.string.help_device_failed_connection_message_4))
-                append("\n\n")
                 append(stringResource(id = R.string.help_device_failed_connection_message_2))
                 append("\n\n")
                 append(stringResource(id = R.string.help_device_failed_connection_check_5))
@@ -76,6 +74,18 @@ fun DevicesSelectionScreenHelpModalBottomSheet(
                 append(stringResource(id = R.string.help_device_failed_connection_check_6))
                 append("\n\n")
                 append(stringResource(id = R.string.help_device_failed_connection_message_3))
+            }
+        )
+
+        // HID Service Not Initialized
+        Section(
+            title = stringResource(id = R.string.help_hid_service_not_initialized_title),
+            message = buildString {
+                append(stringResource(id = R.string.help_hid_service_not_initialized_message_1))
+                append("\n\n")
+                append(stringResource(id = R.string.help_hid_service_not_initialized_message_2))
+                append("\n")
+                append(stringResource(id = R.string.help_hid_service_not_initialized_message_3))
             }
         )
 
@@ -154,8 +164,6 @@ fun BluetoothScanningScreenHelpModalBottomSheet(
                 append(stringResource(id = R.string.help_device_failed_connection_check_3))
                 append("\n")
                 append(stringResource(id = R.string.help_device_failed_connection_check_4))
-                append("\n\n")
-                append(stringResource(id = R.string.help_device_failed_connection_message_4))
             }
         )
     }

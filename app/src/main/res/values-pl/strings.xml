@@ -155,7 +155,6 @@
     <string name="pairing_from_a_remote_device_step_3_title">3. Rozłącz urządzenia</string>
     <string name="pairing_from_a_remote_device_step_3_content_1">Jeśli parowanie powiodło się, urządzenie z systemem Android powinno automatycznie połączyć się z urządzeniem zdalnym. Jednak połączenie to nie wykorzystuje protokołu HID (Human Interface Device), co uniemożliwia działanie pilota zdalnego sterowania. Aby rozwiązać ten problem:</string>
     <string name="help_info_message">W razie jakichkolwiek problemów, sprawdź sekcję pomocy.</string>
-    <string name="help_device_failed_connection_message_4">Jeśli w urządzeniu włączone są opcje programistyczne, możliwe jest, że opcja \"Wyłącz profil urządzenia Bluetooth HID\" jest również aktywna. Jeśli ta opcja jest dostępna w opcjach programistycznych urządzenia, należy ją wyłączyć, aby zapewnić prawidłowe działanie połączenia.</string>
     <string name="help_remote_control_buttons_are_not_working_message_2">Każda aplikacja korzystająca z protokołu HID może opierać się na innym profilu. Jeśli urządzenia zostały wcześniej sparowane za pomocą innej aplikacji, konieczne może być ich ponowne sparowanie w celu zresetowania profilu. Bez tego kroku przyciski mogą nie działać zgodnie z oczekiwaniami lub mogą wysyłać nieprawidłowe wartości.</string>
     <string name="power">Zasilanie</string>
     <string name="information">Informacja</string>

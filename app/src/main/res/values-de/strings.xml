@@ -181,7 +181,6 @@
     <string name="bluetooth_address_prompt">Bitte gebe die Bluetooth-Adresse des entfernten Geräts ein:</string>
     <string name="tv">TV</string>
     <string name="keyboard_bulgarian">Bulgarisch</string>
-    <string name="help_device_failed_connection_message_4">Wenn die Entwickleroptionen auf deinem Gerät aktiviert sind könnte es sein, dass „HID-Geräteprofil über Bluetooth deaktivieren“ ebenfalls aktiviert ist. Wenn diese Option in den Entwickleroptionen deines Geräts verfügbar ist, musst du sie für die ordnungsgemäße Verbindung deaktivieren.</string>
     <string name="help_remote_control_buttons_are_not_working_message_2">Jede Anwendung die das HID-Protokoll benutzt, könnte auf ein anderes Protokoll zurückgreifen. Wenn du deine Geräte zuvor durch eine andere Anwendung gekoppelt hast, kann es sein, dass du sie erneut koppeln musst, um das Profil zurückzusetzen. Ohne diesen Schritt könnten Knöpfe nicht richtig funktionieren und falsche Werte senden.</string>
     <string name="open">Öffnen</string>
     <string name="connected_off">Keine Geräte verbunden</string>

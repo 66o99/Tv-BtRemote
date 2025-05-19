@@ -169,7 +169,6 @@
     <string name="help_device_failed_connection_check_2">• مطمئن شوید که بلوتوث در دستگاه راه دور روشن است.</string>
     <string name="help_device_failed_connection_check_3">• مطمئن شوید که هر دو دستگاه به اندازه کافی به هم نزدیک هستند.</string>
     <string name="help_device_failed_connection_check_4">• چندین بار تلاش کنید.</string>
-    <string name="help_device_failed_connection_message_4">اگر گزینه‌های توسعه‌دهنده در دستگاه شما روشن است، ممکن است گزینه «خاموش کردن پروفایل دستگاه HID بلوتوث» نیز روشن باشد. اگر این گزینه در گزینه‌های توسعه‌دهنده دستگاه شما موجود است، باید آن را خاموش کنید تا پیوند به درستی برقرار شود.</string>
     <string name="help_device_failed_connection_message_2">اگر با این بررسی‌ها همچنان نمی‌توانید به دستگاه راه دور بپیوندید، این گونه ادامه دهید:</string>
     <string name="help_device_failed_connection_check_5">• هر دو دستگاه را، هم در دستگاه کنونی و هم در دستگاه راه دور، جدا کنید.</string>
     <string name="help_device_failed_connection_check_6">• با فشار دادن نماد موجود در نوار بالا، دو دستگاه را دوباره جفت کنید.</string>

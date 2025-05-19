@@ -169,7 +169,6 @@
     <string name="integrate_advanced_keyboard_into_the_view">Gelişmiş klavyeyi görünüme entegre edin</string>
     <string name="unknown">Bilinmiyor</string>
     <string name="pairing_from_a_remote_device_step_3_content_1">Eşleştirme başarılı olduysa, Android cihaz otomatik olarak uzak cihaza bağlanmalıdır. Ancak bu bağlantı, uzaktan kumandanın çalışmasını engelleyen HID (İnsan Arayüz Cihazı) protokolünü kullanmaz. Bu sorunu çözmek için:</string>
-    <string name="help_device_failed_connection_message_4">Cihazınızda geliştirici seçenekleri etkinleştirilmişse, \'Bluetooth HID Cihaz Profilini Devre Dışı Bırak\' seçeneğinin de etkinleştirilmiş olması mümkündür. Bu seçenek cihazınızdaki geliştirici seçeneklerinde mevcutsa, düzgün bağlantı işlevselliği sağlamak için devre dışı bırakmanız gerekecektir.</string>
     <string name="help_remote_control_buttons_are_not_working_message_2">HID protokolünü kullanan her uygulama farklı bir profil kullanabilir. Cihazlarınızı daha önce başka bir uygulama aracılığıyla eşleştirdiyseniz, profili sıfırlamak için yeniden eşleştirmeniz gerekebilir. Bu adım atılmazsa düğmeler beklendiği gibi çalışmayabilir veya yanlış değerler gönderebilir.</string>
     <string name="use_the_gyroscope_to_control_the_mouse">Fareyi kontrol etmek için jiroskopu kullanın</string>
     <string name="open">Açık</string>

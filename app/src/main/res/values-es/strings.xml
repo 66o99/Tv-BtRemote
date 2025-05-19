@@ -168,7 +168,6 @@
     <string name="minimalist_interface_info">No mostrar los botones del canal de TV</string>
     <string name="connected_off">Ningún dispositivo conectado</string>
     <string name="use_minimalist_interface">Usar la interfaz minimalística</string>
-    <string name="help_device_failed_connection_message_4">Si las opciones de desarrollador están habilitadas en su dispositivo, es posible que la opción \'Deshabilitar el perfil HID del dispositivo Bluetooth\' esté también activada. Si esta opción está disponible en las opciones de desarrollador en ss dispositivo, necesitará desactivarla para asegurar el correcto funcionamiento de la conexión.</string>
     <string name="help_remote_control_buttons_are_not_working_message_2">Cada aplicación que usa el protocolo HID puede estar relacionado a un perfil diferente. Si anteriormente ha emparejado sus dispositivos a través de otra aplicación, puede que necesite reemparejarlos para restablecer el perfil. Sin este paso, los botones puede que no funcionen correctamente o envíen valores incorrectos.</string>
     <string name="keyboard_bulgarian">Búlgaro</string>
     <string name="information">Información</string>

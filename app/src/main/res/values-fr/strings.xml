@@ -182,6 +182,7 @@
     <!-- Help messages -->
     <string name="information">Information</string>
     <string name="help_info_message">Si vous rencontrez un problème, veuillez consulter la section d\'aide.</string>
+    <string name="help_info_hid_service_not_initialized_message">Le service HID n\'a pas été initialisé. Veuillez consulter la section d\'aide pour plus d\'informations.</string>
     <string name="help">Aide</string>
     <string name="help_select_device_from_list">Sélectionnez l\'appareil auquel vous souhaitez vous connecter dans la liste des appareils enregistrés.</string>
     <string name="help_missing_device_title">Appareil manquant</string>
@@ -192,7 +193,6 @@
     <string name="help_device_failed_connection_check_2">• Vérifiez que la fonction Bluetooth est activée sur l\'appareil distant.</string>
     <string name="help_device_failed_connection_check_3">• Assurez-vous que les deux appareils sont suffisamment proches l\'un de l\'autre.</string>
     <string name="help_device_failed_connection_check_4">• Essayez de vous reconnecter plusieurs fois.</string>
-    <string name="help_device_failed_connection_message_4">Si les options pour les développeurs sont activées sur votre appareil, il se peut que l\'option \'Désactiver le profil HID des appareils Bluetooth\' soit également activée. Si cette option est disponible dans les options pour les développeurs de votre appareil, il est nécessaire de la désactiver pour assurer le bon fonctionnement de la connexion.</string>
     <string name="help_device_failed_connection_message_2">Si malgré ces vérifications vous ne parvenez toujours pas à vous connecter à l\'appareil distant, procédez comme suit :</string>
     <string name="help_device_failed_connection_check_5">• Dissociez les deux appareils, à la fois sur l\'appareil actuel et sur l\'appareil distant.</string>
     <string name="help_device_failed_connection_check_6">• Réassociez les deux appareils en appuyant sur l\'icône située dans la barre supérieure.</string>
@@ -210,4 +210,8 @@
     <string name="help_remote_control_buttons_are_not_working_check_4">• Réassociez ensuite les deux appareils via cette application.</string>
     <string name="help_remote_control_buttons_are_not_working_message_2">Chaque application utilisant le protocole HID peut utiliser un profil différent. Si vous avez appairé vos appareils via une autre application, il peut être nécessaire de les réappairer pour réinitialiser le profil. Sans cette étape, les boutons pourraient ne pas fonctionner comme prévu ou envoyer des valeurs incorrectes.</string>
     <string name="help_keyboard_wrong_character_sent_message">Si les caractères envoyés ne sont pas corrects, vous devez configurer le clavier physique sur l\'appareil distant pour qu\'il soit dans la même langue que celle sélectionnée dans les paramètres de l\'application.</string>
+    <string name="help_hid_service_not_initialized_title">Service HID non initialisé</string>
+    <string name="help_hid_service_not_initialized_message_1">Si un message vous indique que le service HID n\'a pas été initialisé, veuillez accéder aux options pour les développeurs de votre appareil et recherchez l\'option « Désactiver le profil HID des appareils Bluetooth » :</string>
+    <string name="help_hid_service_not_initialized_message_2">• Si cette option est présente, désactivez-la, puis redémarrez votre appareil. Après le redémarrage, le profil HID devrait fonctionner normalement.</string>
+    <string name="help_hid_service_not_initialized_message_3">• Si cette option n\'est pas disponible, il est possible que votre appareil ne prenne pas en charge le profil HID. Dans ce cas, vous ne pourrez malheureusement pas utiliser cette application sur cet appareil.</string>
 </resources>

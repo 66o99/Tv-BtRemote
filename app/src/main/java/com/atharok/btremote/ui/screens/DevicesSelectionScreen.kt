@@ -178,8 +178,7 @@ fun DevicesSelectionScreen(
         },
         helpBottomSheet = {
             DevicesSelectionScreenHelpModalBottomSheet(
-                onDismissRequest = { showHelpBottomSheet = false },
-                //modifier = modifier
+                onDismissRequest = { showHelpBottomSheet = false }
             )
         },
         unpairDeviceDialog = {
@@ -318,6 +317,7 @@ private fun StatelessDevicesSelectionScreen(
             autoConnectDeviceAddress = autoConnectDeviceAddress,
             autoConnect = onDeviceToAutoConnectChanged,
             unpairDevice = onDeviceToUnpairChanged,
+            isBluetoothServiceStarted = isBluetoothServiceStarted,
             modifier = Modifier,
             contentPadding = innerPadding
         )
@@ -341,6 +341,7 @@ private fun DevicesListView(
     autoConnectDeviceAddress: String,
     autoConnect: (InternalDevice) -> Unit,
     unpairDevice: (InternalDevice) -> Unit,
+    isBluetoothServiceStarted: Boolean,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp)
 ) {
@@ -350,6 +351,7 @@ private fun DevicesListView(
     ) {
         item {
             InfoView(
+                isBluetoothServiceStarted = isBluetoothServiceStarted,
                 modifier = Modifier.padding(
                     horizontal = dimensionResource(R.dimen.padding_max),
                     vertical = dimensionResource(R.dimen.padding_large)
@@ -386,6 +388,7 @@ private fun DevicesListView(
 
 @Composable
 private fun InfoView(
+    isBluetoothServiceStarted: Boolean,
     modifier: Modifier = Modifier
 ) {
     DefaultElevatedCard(modifier = modifier) {
@@ -409,7 +412,13 @@ private fun InfoView(
                 )
                 TextMedium(text = stringResource(R.string.information))
             }
-            TextNormalSecondary(text = stringResource(R.string.help_info_message))
+            if(!isBluetoothServiceStarted) {
+                TextNormalError(
+                    text = stringResource(R.string.help_info_hid_service_not_initialized_message)
+                )
+            } else {
+                TextNormalSecondary(text = stringResource(R.string.help_info_message))
+            }
         }
     }
 }
