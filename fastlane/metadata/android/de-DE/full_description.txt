@@ -1,0 +1,15 @@
+MAche dein Smartphone zu einer Bluetooth-Fernbedienung um einfach durch Android TV zu navigieren und damit zu interagieren.
+
+Funktionen:
+
+- Drahtlose steuerung mittels Bluetooth-Verbindung.
+- Beinhaltet alle nötigen Tasten für die Fernsteuerung deines Geräts.
+- Unterstützung für integrierte Maus und Tastatur.
+- Dank HID-Protokoll keine weiteren App-Installation auf deinem Android TV notwendig.
+- Moderne und flexible Benutzeroberfläche.
+- Mit Kotlin, Jetpack, Compose und Material 3 entwickelt.
+- Datenschutz ist wichtig, keine Datensammlung (Internetberechtigung deaktiviert).
+- Keine Werbung.
+- Open Source.
+
+Der Quelltext ist hier verfügbar: https://gitlab.com/Atharok/BtRemote

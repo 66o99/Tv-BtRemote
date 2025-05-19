@@ -1,0 +1,10 @@
+1.7.0
+
+Pełna lista zmian tutaj: https://gitlab.com/Atharok/BtRemote/-/releases
+
+- Zaktualizowane tłumaczenia.
+- Poprawiono czytelność czarnego motywu OLED.
+- Dodano opcję integracji zaawansowanej klawiatury bezpośrednio z widokiem.
+- Dodano kafelek do uruchamiania aplikacji z poziomu Szybkich ustawień.
+- Ulepszenia kodu.
+- Zaktualizowano zależności.
