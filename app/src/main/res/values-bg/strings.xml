@@ -186,4 +186,10 @@
     <string name="open">Отвори</string>
     <string name="integrate_advanced_keyboard_into_the_view">Интегриране на разширената клавиатура в изгледа</string>
     <string name="keyboard_ukrainian">Украински</string>
+    <string name="help_hid_service_not_initialized_title">HID услугата не е инициализирана</string>
+    <string name="help_hid_service_not_initialized_message_2">• Ако тази опция е налична, деактивирайте я и рестартирайте устройството си. След рестартиране, HID профилът би трябвало да функционира нормално.</string>
+    <string name="keyboard_persian">Персийски</string>
+    <string name="help_hid_service_not_initialized_message_1">Ако съобщение показва, че услугата HID не е инициализирана, моля, отидете в опциите за разработчици на вашето устройство и потърсете опцията „Деактивиране на профила на Bluetooth HID устройство“:</string>
+    <string name="help_hid_service_not_initialized_message_3">• Ако тази опция не е налична, е възможно устройството ви да не поддържа HID профила. В този случай, за съжаление, няма да можете да използвате това приложение на това устройство.</string>
+    <string name="help_info_hid_service_not_initialized_message">Услугата HID не е инициализирана. Моля, вижте раздела за помощ.</string>
 </resources>
