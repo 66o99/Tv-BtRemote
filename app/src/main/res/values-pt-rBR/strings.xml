@@ -9,7 +9,7 @@
     <string name="help_pairing_missing_device_check_location_for_android_11_or_less">• Certifique-se que os serviços de localização estão ativados no seu dispositivo.</string>
     <string name="close">Fechar</string>
     <string name="error">Erro</string>
-    <string name="retry">Repetir</string>
+    <string name="retry">Tentar de novo</string>
     <string name="bluetooth_not_supported_message">O seu dispositivo não tem suporte ao Bluetooth.</string>
     <string name="permission">Permissão</string>
     <string name="bluetooth_permission_not_granted">Permissão não concedida</string>
