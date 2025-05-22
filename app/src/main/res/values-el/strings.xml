@@ -207,4 +207,10 @@
     <string name="open">Άνοιγμα</string>
     <string name="integrate_advanced_keyboard_into_the_view">Ενοποίησε το προχωρημένο πληκτρολόγιο μέσα στην άποψη</string>
     <string name="keyboard_ukrainian">Ουκρανικό</string>
+    <string name="help_info_hid_service_not_initialized_message">Η υπηρεσία HID δεν έχει αρχικοποιηθεί. Συμβουλευτείτε την ενότητα βοήθειας.</string>
+    <string name="help_hid_service_not_initialized_message_2">• Εάν αυτή η επιλογή είναι διαθέσιμη, απενεργοποιήστε την και στη συνέχεια επανεκκινήστε τη συσκευή σας. Μετά την επανεκκίνηση, το προφίλ HID θα πρέπει να λειτουργεί κανονικά.</string>
+    <string name="keyboard_persian">Περσικά</string>
+    <string name="help_hid_service_not_initialized_title">Η υπηρεσία HID δεν έχει αρχικοποιηθεί</string>
+    <string name="help_hid_service_not_initialized_message_1">Εάν ένα μήνυμα υποδεικνύει ότι η υπηρεσία hid δεν έχει αρχικοποιηθεί, μεταβείτε στις επιλογές προγραμματιστή της συσκευής σας και αναζητήστε την επιλογή \"Απενεργοποίηση προφίλ bluetooth HID συσκευής\":</string>
+    <string name="help_hid_service_not_initialized_message_3">• Εάν αυτή η επιλογή δεν είναι διαθέσιμη, η συσκευή σας ενδέχεται να μην υποστηρίζει το προφίλ HID. Σε αυτήν την περίπτωση, δυστυχώς δε θα μπορείτε να χρησιμοποιήσετε αυτήν την εφαρμογή σε αυτήν τη συσκευή.</string>
 </resources>
