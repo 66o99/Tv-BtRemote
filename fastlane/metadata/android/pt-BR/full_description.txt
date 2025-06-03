@@ -8,8 +8,8 @@ Recursos:
 - Não é necessário instalar apps na sua Android TV graças ao protocolo HID.
 - Interface de usuário moderna e responsiva.
 - Desenvolvido com Kotlin, Jetpack Compose, e Material 3.
-- Focado na privacidade, sem alguma coleta de dados (a permissão de internet é desativada).
+- Focado na privacidade, sem nenhuma coleta de dados (a permissão de internet é desativada).
 - Sem anúncios.
 - Código aberto.
 
-O código-fonte pode ser encontrado aqui: https://gitlab.com/Atharok/BtRemote
+O código-fonte pode ser encontrado em: https://gitlab.com/Atharok/BtRemote
