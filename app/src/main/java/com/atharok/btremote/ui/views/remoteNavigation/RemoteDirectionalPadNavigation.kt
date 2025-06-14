@@ -27,6 +27,7 @@ import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.ArcShape
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
 import com.atharok.btremote.domain.entities.remoteInput.RemoteInput
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardKey
 import com.atharok.btremote.ui.components.RemoteButtonSurface
 import com.atharok.btremote.ui.components.StatefulRemoteButton
 import com.atharok.btremote.ui.theme.dimensionElevation1
@@ -38,7 +39,9 @@ private val RightArcShape = ArcShape(-45f, 90f)
 
 @Composable
 fun RemoteDirectionalPadNavigation(
-    sendRemoteKeyReport: (bytes: ByteArray) -> Unit,
+    sendRemoteKeyReport: (ByteArray) -> Unit,
+    sendKeyboardKeyReport: (ByteArray) -> Unit,
+    useEnterForSelection: Boolean,
     modifier: Modifier = Modifier,
     elevation: Dp = dimensionElevation1()
 ) {
@@ -95,9 +98,12 @@ fun RemoteDirectionalPadNavigation(
                 shape = CircleShape,
                 elevation = elevation
             ) {
-                DPadButton(sendReport = sendRemoteKeyReport, bytes = RemoteInput.REMOTE_INPUT_MENU_PICK)
+                if(useEnterForSelection) {
+                    DPadButton(sendReport = sendKeyboardKeyReport, bytes = byteArrayOf(0x00, KeyboardKey.KEY_ENTER.byte))
+                } else {
+                    DPadButton(sendReport = sendRemoteKeyReport, bytes = RemoteInput.REMOTE_INPUT_MENU_PICK)
+                }
             }
-
         }
 
         // ---- Icons ----

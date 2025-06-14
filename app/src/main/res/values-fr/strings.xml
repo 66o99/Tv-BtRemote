@@ -107,6 +107,8 @@
     <string name="d_pad_description">Navigation avec les flèches directionnelles</string>
     <string name="touchpad">Pavé tactile</string>
     <string name="touchpad_description">Navigation par gestes tactiles</string>
+    <string name="use_enter_for_selection_title">Utiliser la touche Entrée pour la sélection</string>
+    <string name="use_enter_for_selection_summary">Activez cette option uniquement si le bouton de sélection ne fonctionne pas</string>
     <string name="about">À propos</string>
     <string name="language">Langue</string>
     <string name="third_party_library">Bibliothèques tierces</string>

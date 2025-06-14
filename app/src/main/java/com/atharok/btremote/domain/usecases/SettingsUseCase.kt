@@ -73,4 +73,10 @@ class SettingsUseCase(private val repository: SettingsRepository) {
     suspend fun saveRemoteNavigation(remoteNavigationEntity: RemoteNavigationEntity) {
         repository.saveRemoteNavigation(remoteNavigationEntity)
     }
+
+    fun useEnterForSelection(): Flow<Boolean> = repository.useEnterForSelection()
+
+    suspend fun saveUseEnterForSelection(useEnterForSelection: Boolean) {
+        repository.saveUseEnterForSelection(useEnterForSelection)
+    }
 }

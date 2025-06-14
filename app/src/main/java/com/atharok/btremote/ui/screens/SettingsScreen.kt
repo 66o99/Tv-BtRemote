@@ -88,6 +88,7 @@ fun SettingsScreen(
             // Remote
             val useMinimalistRemote: Boolean by settingsViewModel.useMinimalistRemote.collectAsStateWithLifecycle(initialValue = false)
             val remoteNavigation: RemoteNavigationEntity by settingsViewModel.remoteNavigation.collectAsStateWithLifecycle(initialValue = RemoteNavigationEntity.D_PAD)
+            val useEnterForSelection: Boolean by settingsViewModel.useEnterForSelection.collectAsStateWithLifecycle(initialValue = false)
             // Mouse
             val mouseSpeed by settingsViewModel.mouseSpeed.collectAsStateWithLifecycle(initialValue = MOUSE_SPEED_DEFAULT_VALUE)
             val shouldInvertMouseScrollingDirection: Boolean by settingsViewModel.shouldInvertMouseScrollingDirection.collectAsStateWithLifecycle(initialValue = false)
@@ -205,6 +206,19 @@ fun SettingsScreen(
             SettingsRemoteNavigationSelector(
                 remoteNavigation = remoteNavigation,
                 onRemoteNavigationChange = { settingsViewModel.saveRemoteNavigation(it) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        horizontal = horizontalPadding,
+                        vertical = verticalPadding
+                    )
+            )
+
+            SettingsSwitch(
+                primaryText = stringResource(id = R.string.use_enter_for_selection_title),
+                secondaryText = stringResource(id = R.string.use_enter_for_selection_summary),
+                checked = useEnterForSelection,
+                onCheckedChange = { settingsViewModel.saveUseEnterForSelection(it) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(

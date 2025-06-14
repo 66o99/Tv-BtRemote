@@ -44,4 +44,7 @@ interface SettingsRepository {
 
     fun getRemoteNavigation(): Flow<RemoteNavigationEntity>
     suspend fun saveRemoteNavigation(remoteNavigationEntity: RemoteNavigationEntity)
+
+    fun useEnterForSelection(): Flow<Boolean>
+    suspend fun saveUseEnterForSelection(useEnterForSelection: Boolean)
 }

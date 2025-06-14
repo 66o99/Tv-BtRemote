@@ -20,6 +20,7 @@ import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
 import com.atharok.btremote.domain.entities.remoteInput.RemoteInput
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardKey
 import com.atharok.btremote.ui.components.DefaultElevatedCard
 import kotlin.math.abs
 import kotlin.math.sqrt
@@ -38,6 +39,8 @@ private const val SWIPE_PAD_DETECTION_DISTANCE = 5
 @Composable
 fun RemoteSwipeNavigation(
     sendRemoteKeyReport: (bytes: ByteArray) -> Unit,
+    sendKeyboardKeyReport: (ByteArray) -> Unit,
+    useEnterForSelection: Boolean,
     modifier: Modifier = Modifier,
     shape: Shape = RoundedCornerShape(dimensionResource(id = R.dimen.card_corner_radius))
 ) {
@@ -53,9 +56,16 @@ fun RemoteSwipeNavigation(
                 .pointerInput(Unit) {
                     detectDirection(
                         onDirectionDetected = {
-                            sendRemoteKeyReport(it.bytes)
                             if(it == SwipeDirection.PICK) {
-                                sendRemoteKeyReport(SwipeDirection.NONE.bytes)
+                                if(useEnterForSelection) {
+                                    sendKeyboardKeyReport(byteArrayOf(0x00, KeyboardKey.KEY_ENTER.byte))
+                                    sendKeyboardKeyReport(SwipeDirection.NONE.bytes)
+                                } else {
+                                    sendRemoteKeyReport(it.bytes)
+                                    sendRemoteKeyReport(SwipeDirection.NONE.bytes)
+                                }
+                            } else {
+                                sendRemoteKeyReport(it.bytes)
                             }
                             if(it != SwipeDirection.NONE) {
                                 haptic.performHapticFeedback(HapticFeedbackType.LongPress)

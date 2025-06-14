@@ -117,6 +117,8 @@
     <string name="d_pad_description">Navigation via directional controls</string>
     <string name="touchpad">Touchpad</string>
     <string name="touchpad_description">Navigation via touch gestures</string>
+    <string name="use_enter_for_selection_title">Use the Enter key for selection</string>
+    <string name="use_enter_for_selection_summary">Enable this option only if the select button does not work</string>
     <string name="about">About</string>
     <string name="language">Language</string>
     <string name="third_party_library">Third-party libraries</string>

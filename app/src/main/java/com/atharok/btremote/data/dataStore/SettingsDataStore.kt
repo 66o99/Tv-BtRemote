@@ -34,6 +34,7 @@ class SettingsDataStore(private val context: Context) {
         private const val USE_ADVANCED_KEYBOARD_INTEGRATED_KEY = "use_advanced_keyboard_integrated_key"
         private const val USE_MINIMALIST_REMOTE_KEY = "use_minimalist_remote_key"
         private const val REMOTE_NAVIGATION_KEY = "remote_navigation_key"
+        private const val USE_ENTER_FOR_SELECTION_KEY = "use_enter_for_selection_key"
     }
 
     private val themeKey = stringPreferencesKey(THEME_KEY)
@@ -49,6 +50,7 @@ class SettingsDataStore(private val context: Context) {
     private val useAdvancedKeyboardIntegratedKey  = booleanPreferencesKey(USE_ADVANCED_KEYBOARD_INTEGRATED_KEY)
     private val useMinimalistRemoteKey = booleanPreferencesKey(USE_MINIMALIST_REMOTE_KEY)
     private val remoteNavigationKey = stringPreferencesKey(REMOTE_NAVIGATION_KEY)
+    private val useEnterForSelectionKey = booleanPreferencesKey(USE_ENTER_FOR_SELECTION_KEY)
 
     private fun Flow<Preferences>.catchException(): Flow<Preferences> = this.catch {
         if (it is IOException) {
@@ -231,7 +233,7 @@ class SettingsDataStore(private val context: Context) {
         }
     }
 
-    // ---- Interface ----
+    // ---- Remote ----
 
     val useMinimalistRemoteFlow: Flow<Boolean> by lazy {
         context.dataStore.data
@@ -264,6 +266,20 @@ class SettingsDataStore(private val context: Context) {
     suspend fun saveRemoteNavigation(remoteNavigationEntity: RemoteNavigationEntity) {
         context.dataStore.edit {
             it[remoteNavigationKey] = remoteNavigationEntity.name
+        }
+    }
+
+    val useEnterForSelectionFlow: Flow<Boolean> by lazy {
+        context.dataStore.data
+            .catchException()
+            .map { preferences ->
+                preferences[useEnterForSelectionKey] == true
+            }
+    }
+
+    suspend fun saveUseEnterForSelection(useEnterForSelection: Boolean) {
+        context.dataStore.edit {
+            it[useEnterForSelectionKey] = useEnterForSelection
         }
     }
 }

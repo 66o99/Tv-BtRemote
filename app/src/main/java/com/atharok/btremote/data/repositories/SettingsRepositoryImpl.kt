@@ -77,4 +77,10 @@ class SettingsRepositoryImpl(
     override suspend fun saveRemoteNavigation(remoteNavigationEntity: RemoteNavigationEntity) {
         settingsDataStore.saveRemoteNavigation(remoteNavigationEntity)
     }
+
+    override fun useEnterForSelection(): Flow<Boolean> = settingsDataStore.useEnterForSelectionFlow
+
+    override suspend fun saveUseEnterForSelection(useEnterForSelection: Boolean) {
+        settingsDataStore.saveUseEnterForSelection(useEnterForSelection)
+    }
 }

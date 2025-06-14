@@ -101,6 +101,8 @@ fun RemoteScreen(
         .collectAsStateWithLifecycle(initialValue = false)
     val remoteNavigationMode: RemoteNavigationEntity by settingsViewModel.remoteNavigation
         .collectAsStateWithLifecycle(initialValue = RemoteNavigationEntity.D_PAD)
+    val useEnterForSelection: Boolean by settingsViewModel.useEnterForSelection
+        .collectAsStateWithLifecycle(initialValue = false)
 
     // Keyboard
     var showKeyboard: Boolean by rememberSaveable { mutableStateOf(false) }
@@ -164,8 +166,10 @@ fun RemoteScreen(
                 settingsViewModel = settingsViewModel,
                 remoteNavigationMode = remoteNavigationMode,
                 sendRemoteKeyReport = sendRemoteKeyReport,
+                sendKeyboardKeyReport = sendKeyboardKeyReport,
                 sendMouseKeyReport = sendMouseKeyReport,
-                navigationToggle = navigationToggle
+                navigationToggle = navigationToggle,
+                useEnterForSelection = useEnterForSelection
             )
         },
         overlayView = {
@@ -323,7 +327,7 @@ private fun RemoteLayout(
     showAdvancedKeyboard: Boolean,
     keyboardLanguage: KeyboardLanguage,
     sendRemoteKeyReport: (ByteArray) -> Unit,
-    sendKeyboardKeyReport: (ByteArray) -> Unit,
+    sendKeyboardKeyReport: (ByteArray) -> Unit
 ) {
     FadeAnimatedContent(targetState = showAdvancedKeyboard) {
         if (it) {
@@ -371,9 +375,11 @@ private fun RemoteLayout(
 private fun NavigationLayout(
     settingsViewModel: SettingsViewModel,
     remoteNavigationMode: RemoteNavigationEntity,
-    sendRemoteKeyReport: (bytes: ByteArray) -> Unit,
+    sendRemoteKeyReport: (ByteArray) -> Unit,
+    sendKeyboardKeyReport: (ByteArray) -> Unit,
     sendMouseKeyReport: (input: MouseAction, x: Float, y: Float, wheel: Float) -> Unit,
-    navigationToggle: NavigationToggle
+    navigationToggle: NavigationToggle,
+    useEnterForSelection: Boolean
 ) {
     FadeAnimatedContent(targetState = navigationToggle) {
         when(it) {
@@ -381,11 +387,15 @@ private fun NavigationLayout(
                 if(remoteNavigationMode == RemoteNavigationEntity.D_PAD) {
                     RemoteDirectionalPadNavigation(
                         sendRemoteKeyReport = sendRemoteKeyReport,
+                        sendKeyboardKeyReport = sendKeyboardKeyReport,
+                        useEnterForSelection = useEnterForSelection,
                         modifier = Modifier.aspectRatio(1f)
                     )
                 } else {
                     RemoteSwipeNavigation(
                         sendRemoteKeyReport = sendRemoteKeyReport,
+                        sendKeyboardKeyReport = sendKeyboardKeyReport,
+                        useEnterForSelection = useEnterForSelection,
                         modifier = Modifier
                     )
                 }

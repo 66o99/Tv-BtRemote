@@ -77,4 +77,10 @@ class SettingsViewModel(
     fun saveRemoteNavigation(remoteNavigationEntity: RemoteNavigationEntity) = viewModelScope.launch {
         useCase.saveRemoteNavigation(remoteNavigationEntity)
     }
+
+    val useEnterForSelection: Flow<Boolean> get() = useCase.useEnterForSelection()
+
+    fun saveUseEnterForSelection(useEnterForSelection: Boolean) = viewModelScope.launch {
+        useCase.saveUseEnterForSelection(useEnterForSelection)
+    }
 }
