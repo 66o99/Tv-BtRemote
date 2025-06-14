@@ -1,0 +1,8 @@
+1.7.2
+
+Liste complète des modifications : https://gitlab.com/Atharok/BtRemote/-/releases
+
+- Mise à jour des traductions.
+- Ajout d’une option dans les paramètres permettant de remplacer le bouton de sélection par la touche Entrée du clavier. Utile si le bouton de sélection ne fonctionne pas sur votre appareil.
+- Correction de la transmission de caractères à travers le champ de saisie, qui n'était pas toujours correctement interceptée par certains appareils.
+- Mise à jour des dépendances.

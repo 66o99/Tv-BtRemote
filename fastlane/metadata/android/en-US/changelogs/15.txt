@@ -1,0 +1,8 @@
+1.7.2
+
+Full list of changes here: https://gitlab.com/Atharok/BtRemote/-/releases
+
+- Updated translations.
+- Added a setting option to replace the select button with the Enter key. Useful if the select button does not work on your device.
+- Fix for the transmission of characters through the input field, which was not always correctly intercepted by certain devices.
+- Updated dependencies.
