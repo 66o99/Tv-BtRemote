@@ -192,4 +192,6 @@
     <string name="help_info_hid_service_not_initialized_message">Служба HID не була ініціалізована. Будь ласка, ознайомтесь з довідкою.</string>
     <string name="help_hid_service_not_initialized_message_1">Якщо повідомлення вказує на те, що служба HID не була ініціалізована, перейдіть до параметрів розробника пристрою і знайдіть опцію \"Вимкнути профіль пристрою Bluetooth HID\":</string>
     <string name="help_hid_service_not_initialized_message_3">• Якщо ця опція недоступна, можливо, пристрій не підтримує профіль HID. У такому випадку, можливо, не зможете використовувати цю програму на цьому пристрої.</string>
+    <string name="use_enter_for_selection_summary">Вмикайте цю опцію лише якщо клавіша вибору не працює</string>
+    <string name="use_enter_for_selection_title">Використовувати клавішу Ввести для вибирання</string>
 </resources>
