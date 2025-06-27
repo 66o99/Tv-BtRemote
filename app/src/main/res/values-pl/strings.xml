@@ -27,8 +27,8 @@
     <string name="settings">Ustawienia</string>
     <string name="appearance">Wygląd</string>
     <string name="send">Wyślij</string>
-    <string name="app_name">BT Remote</string>
-    <string name="remote">Zdalne</string>
+    <string name="app_name">Pilot BT</string>
+    <string name="remote">Pilot</string>
     <string name="keyboard_french">Francuski</string>
     <string name="delete">Usuń</string>
     <string name="bluetooth_permission_message">Musisz zezwolić na dostęp do Bluetooth.</string>
@@ -37,7 +37,7 @@
     <string name="paired_devices">Sparowane urządzenia</string>
     <string name="pairing_a_device">Parowanie urządzenia</string>
     <string name="available_devices">Dostępne urządzenia</string>
-    <string name="bluetooth_device_connecting_message">Próba połączenia z urządzeniem \"%1$s\"…</string>
+    <string name="bluetooth_device_connecting_message">Łączenie z urządzeniem „%1$s”…</string>
     <string name="retry">Ponów</string>
     <string name="bluetooth_permission_denied_message">Odmówiłeś/aś dostępu do Bluetooth.</string>
     <string name="bluetooth_disabled_info">Bluetooth wyłączony</string>
@@ -81,7 +81,7 @@
     <string name="mouse_pointer_speed">Szybkość kursora</string>
     <string name="invert_mouse_scrolling_direction">Odwróć kierunek przewijania</string>
     <string name="keyboard_and_input_field">Klawiatura i pole wprowadzania</string>
-    <string name="escape">Wyjdź</string>
+    <string name="escape">Esc</string>
     <string name="play">Odtwórz</string>
     <string name="previous">Poprzedni</string>
     <string name="next">Następny</string>
@@ -110,7 +110,7 @@
     <string name="help_pairing_device_failed_connection_message_1">Jeśli udało Ci się sparować oba urządzenia, ale nie możesz połączyć się z urządzeniem sparowanym, postępuj zgodnie z poniższymi instrukcjami:</string>
     <string name="help_keyboard_wrong_character_sent_message">Jeśli wysyłane znaki są nieprawidłowe, należy skonfigurować fizyczną klawiaturę na urządzeniu obsługiwanym zdalnie, aby odpowiadała językowi wybranemu w ustawieniach aplikacji.</string>
     <string name="direction_arrows">Strzałki kierunkowe</string>
-    <string name="enter">Zatwierdzenie</string>
+    <string name="enter">Enter</string>
     <string name="up">Góra</string>
     <string name="down">Dół</string>
     <string name="left">Lewo</string>
@@ -138,7 +138,7 @@
     <string name="use_minimalist_interface">Używaj minimalistycznego interfejsu</string>
     <string name="minimalist_interface_info">Nie wyświetla przycisków kanałów telewizyjnych</string>
     <string name="navigation_mode">Tryb nawigacji</string>
-    <string name="d_pad">D-Pad</string>
+    <string name="d_pad">D-pad</string>
     <string name="d_pad_description">Nawigacja za pomocą przycisków kierunkowych</string>
     <string name="touchpad">Touchpad</string>
     <string name="touchpad_description">Nawigacja poprzez gesty dotykowe</string>
@@ -185,4 +185,12 @@
     <string name="bluetooth_address_prompt">Wprowadź adres Bluetooth urządzenia zdalnego:</string>
     <string name="bluetooth_address_wrong_format">Wprowadzony adres ma nieprawidłowy format. Musi on zawierać 6 par znaków szesnastkowych.\nPrzykład: 00:1A:2B:3C:4D:5E.</string>
     <string name="full_screen">Pełny ekran</string>
+    <string name="help_hid_service_not_initialized_title">Usługa HID nie została zainicjowana</string>
+    <string name="help_hid_service_not_initialized_message_2">• Jeśli ta opcja jest dostępna, wyłącz ją, a następnie uruchom ponownie urządzenie. Po restarcie profil HID powinien działać normalnie.</string>
+    <string name="use_enter_for_selection_summary">Włącz tę opcję tylko wtedy, gdy przycisk wyboru nie działa</string>
+    <string name="help_hid_service_not_initialized_message_3">• Jeśli ta opcja nie jest dostępna, urządzenie może nie obsługiwać profilu HID. W takim przypadku niestety nie będzie można korzystać z tej aplikacji na tym urządzeniu.</string>
+    <string name="use_enter_for_selection_title">Używaj klawisza Enter do wyboru</string>
+    <string name="help_info_hid_service_not_initialized_message">Usługa HID nie została zainicjowana. Proszę zapoznać się z sekcją pomocy.</string>
+    <string name="keyboard_persian">Perski</string>
+    <string name="help_hid_service_not_initialized_message_1">Jeśli komunikat wskazuje, że usługa HID nie została zainicjowana, przejdź do opcji programistycznych urządzenia i poszukaj opcji „Wyłącz profil urządzenia Bluetooth HID”:</string>
 </resources>
