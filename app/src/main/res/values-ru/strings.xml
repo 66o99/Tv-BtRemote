@@ -34,7 +34,7 @@
     <!-- Bluetooth Connecting -->
     <string name="refresh">Обновить</string>
     <string name="connection">Соединение</string>
-    <string name="bluetooth_device_connecting_message">Попытка подключения к устройству «%1$s»…</string>
+    <string name="bluetooth_device_connecting_message">Попытка подключения к устройству \"%1$s\"…</string>
     <string name="bluetooth_device_disconnecting_message">Отключение «%1$s»…</string>
     <string name="bluetooth_failed_to_register_app_message">Невозможность зарегистрировать приложение. Убедитесь, что никакая другая служба Bluetooth не работает в фоновом режиме. Если ошибка не устранена, возможно, процесс Bluetooth был неожиданно прерван. Чтобы решить эту проблему, отключите Bluetooth на своем устройстве, а затем снова включите его.</string>
     <string name="bluetooth_failed_to_connect_to_device">Попытка подключения к удаленному устройству не удалась.</string>
@@ -213,4 +213,6 @@
     <string name="help_hid_service_not_initialized_message_1">Если сообщение указывает на то, что служба HID не инициализирована, перейдите в настройки разработчика вашего устройства и найдите параметр «Отключить профиль устройства Bluetooth HID»:</string>
     <string name="help_info_hid_service_not_initialized_message">Служба HID не инициализирована. Пожалуйста, ознакомьтесь со справкой.</string>
     <string name="help_hid_service_not_initialized_message_2">• Если эта опция доступна, отключите её, затем перезапустите устройство. После перезапуска профиль HID должен работать нормально.</string>
+    <string name="use_enter_for_selection_title">Для выбора используйте клавишу Ввод</string>
+    <string name="use_enter_for_selection_summary">Включите эту опцию только если клавиша выбора не работает</string>
 </resources>
