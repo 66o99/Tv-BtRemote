@@ -55,7 +55,7 @@
     <string name="bluetooth_address_prompt">Будь ласка, введіть адресу Bluetooth віддаленого пристрою:</string>
     <string name="bluetooth_address_wrong_format">Введена адреса має неправильний формат. Вона повинна містити 6 пар шістнадцяткових символів.\nПриклад: 00:1A:2B:3C:4D:5E.</string>
     <string name="connection">З\'єднання</string>
-    <string name="bluetooth_device_connecting_message">Спроба під\'єднання до пристрою \"%1$s\"…</string>
+    <string name="bluetooth_device_connecting_message">Під\'єднання до пристрою \"%1$s\"…</string>
     <string name="bluetooth_device_disconnecting_message">Від\'єднання \"%1$s\"…</string>
     <string name="bluetooth_failed_to_connect_to_device">Спроба під\'єднання до віддаленого пристрою не вдалася.</string>
     <string name="bluetooth_failed_try_again">Будь ласка, спробуйте знову.</string>
@@ -72,7 +72,7 @@
     <string name="user_interface">Інтерфейс</string>
     <string name="use_minimalist_interface">Використовувати мінімалістичний інтерфейс</string>
     <string name="navigation_mode">Режим навігації</string>
-    <string name="d_pad">D-Pad</string>
+    <string name="d_pad">D-pad</string>
     <string name="d_pad_description">Навігація за допомогою керування напрямком руху</string>
     <string name="touchpad">Сенсорна панель</string>
     <string name="about">Про це</string>
