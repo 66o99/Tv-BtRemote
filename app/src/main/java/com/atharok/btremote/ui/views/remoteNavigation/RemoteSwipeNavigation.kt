@@ -7,6 +7,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
@@ -18,33 +23,65 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
-import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
-import com.atharok.btremote.domain.entities.remoteInput.RemoteInput
-import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardKey
 import com.atharok.btremote.ui.components.DefaultElevatedCard
 import kotlin.math.abs
 import kotlin.math.sqrt
 
-enum class SwipeDirection(val bytes: ByteArray) {
-    NONE(REMOTE_INPUT_NONE),
-    UP(RemoteInput.REMOTE_INPUT_MENU_UP),
-    LEFT(RemoteInput.REMOTE_INPUT_MENU_LEFT),
-    RIGHT(RemoteInput.REMOTE_INPUT_MENU_RIGHT),
-    DOWN(RemoteInput.REMOTE_INPUT_MENU_DOWN),
-    PICK(RemoteInput.REMOTE_INPUT_MENU_PICK)
+enum class SwipeAction() {
+    NONE,
+    UP,
+    LEFT,
+    RIGHT,
+    DOWN,
+    PICK
 }
 
 private const val SWIPE_PAD_DETECTION_DISTANCE = 5
 
 @Composable
 fun RemoteSwipeNavigation(
-    sendRemoteKeyReport: (bytes: ByteArray) -> Unit,
-    sendKeyboardKeyReport: (ByteArray) -> Unit,
-    useEnterForSelection: Boolean,
+    upTouchDown: () -> Unit,
+    downTouchDown: () -> Unit,
+    leftTouchDown: () -> Unit,
+    rightTouchDown: () -> Unit,
+    pickTouchDown: () -> Unit,
+    directionTouchUp: () -> Unit,
+    pickTouchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RoundedCornerShape(dimensionResource(id = R.dimen.card_corner_radius))
 ) {
     val haptic = LocalHapticFeedback.current
+
+    var action: SwipeAction by remember { mutableStateOf(SwipeAction.NONE) }
+
+    LaunchedEffect(action) {
+        when(action) {
+            SwipeAction.NONE -> {
+                directionTouchUp()
+            }
+            SwipeAction.UP -> {
+                upTouchDown()
+                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+            }
+            SwipeAction.LEFT -> {
+                leftTouchDown()
+                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+            }
+            SwipeAction.RIGHT -> {
+                rightTouchDown()
+                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+            }
+            SwipeAction.DOWN -> {
+                downTouchDown()
+                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+            }
+            SwipeAction.PICK -> {
+                pickTouchDown()
+                pickTouchUp()
+                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+            }
+        }
+    }
 
     DefaultElevatedCard(
         modifier = modifier,
@@ -54,24 +91,7 @@ fun RemoteSwipeNavigation(
             modifier = Modifier
                 .fillMaxSize()
                 .pointerInput(Unit) {
-                    detectDirection(
-                        onDirectionDetected = {
-                            if(it == SwipeDirection.PICK) {
-                                if(useEnterForSelection) {
-                                    sendKeyboardKeyReport(byteArrayOf(0x00, KeyboardKey.KEY_ENTER.byte))
-                                    sendKeyboardKeyReport(SwipeDirection.NONE.bytes)
-                                } else {
-                                    sendRemoteKeyReport(it.bytes)
-                                    sendRemoteKeyReport(SwipeDirection.NONE.bytes)
-                                }
-                            } else {
-                                sendRemoteKeyReport(it.bytes)
-                            }
-                            if(it != SwipeDirection.NONE) {
-                                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                            }
-                        }
-                    )
+                    detectDirection(onSwipeActionDetected = { action = it })
                 },
             contentAlignment = Alignment.Center
         ) {
@@ -88,7 +108,7 @@ fun RemoteSwipeNavigation(
 // ---- Actions ----
 
 suspend fun PointerInputScope.detectDirection(
-    onDirectionDetected: (SwipeDirection) -> Unit
+    onSwipeActionDetected: (SwipeAction) -> Unit
 ) {
     awaitEachGesture {
         var initialX: Float? = null
@@ -113,15 +133,15 @@ suspend fun PointerInputScope.detectDirection(
                             if(distance >= SWIPE_PAD_DETECTION_DISTANCE) {
                                 if (abs(deltaX) > abs(deltaY)) {
                                     if (deltaX > 0) {
-                                        onDirectionDetected(SwipeDirection.RIGHT)
+                                        onSwipeActionDetected(SwipeAction.RIGHT)
                                     } else {
-                                        onDirectionDetected(SwipeDirection.LEFT)
+                                        onSwipeActionDetected(SwipeAction.LEFT)
                                     }
                                 } else {
                                     if (deltaY > 0) {
-                                        onDirectionDetected(SwipeDirection.DOWN)
+                                        onSwipeActionDetected(SwipeAction.DOWN)
                                     } else {
-                                        onDirectionDetected(SwipeDirection.UP)
+                                        onSwipeActionDetected(SwipeAction.UP)
                                     }
                                 }
                             }
@@ -132,14 +152,14 @@ suspend fun PointerInputScope.detectDirection(
                         initialY = null
                         isTouching = false
                         distance = 0f
-                        onDirectionDetected(SwipeDirection.PICK)
+                        onSwipeActionDetected(SwipeAction.PICK)
                     }
                     !position.pressed && isTouching && distance >= SWIPE_PAD_DETECTION_DISTANCE -> {
                         initialX = null
                         initialY = null
                         isTouching = false
                         distance = 0f
-                        onDirectionDetected(SwipeDirection.NONE)
+                        onSwipeActionDetected(SwipeAction.NONE)
                     }
                 }
                 position.consume()

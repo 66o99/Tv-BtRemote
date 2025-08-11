@@ -25,9 +25,6 @@ import androidx.compose.ui.unit.dp
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.ArcShape
-import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
-import com.atharok.btremote.domain.entities.remoteInput.RemoteInput
-import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardKey
 import com.atharok.btremote.ui.components.RemoteButtonSurface
 import com.atharok.btremote.ui.components.StatefulRemoteButton
 import com.atharok.btremote.ui.theme.dimensionElevation1
@@ -39,9 +36,13 @@ private val RightArcShape = ArcShape(-45f, 90f)
 
 @Composable
 fun RemoteDirectionalPadNavigation(
-    sendRemoteKeyReport: (ByteArray) -> Unit,
-    sendKeyboardKeyReport: (ByteArray) -> Unit,
-    useEnterForSelection: Boolean,
+    upTouchDown: () -> Unit,
+    downTouchDown: () -> Unit,
+    leftTouchDown: () -> Unit,
+    rightTouchDown: () -> Unit,
+    pickTouchDown: () -> Unit,
+    directionTouchUp: () -> Unit,
+    pickTouchUp: () -> Unit,
     modifier: Modifier = Modifier,
     elevation: Dp = dimensionElevation1()
 ) {
@@ -62,7 +63,7 @@ fun RemoteDirectionalPadNavigation(
                 shape = TopArcShape,
                 elevation = elevation
             ) {
-                DPadButton(sendReport = sendRemoteKeyReport, bytes = RemoteInput.REMOTE_INPUT_MENU_UP)
+                DPadButton(touchDown = upTouchDown, touchUp = directionTouchUp)
             }
 
             // ---- Bottom ----
@@ -71,7 +72,7 @@ fun RemoteDirectionalPadNavigation(
                 shape = BottomArcShape,
                 elevation = elevation
             ) {
-                DPadButton(sendReport = sendRemoteKeyReport, bytes = RemoteInput.REMOTE_INPUT_MENU_DOWN)
+                DPadButton(touchDown = downTouchDown, touchUp = directionTouchUp)
             }
 
             // ---- Left ----
@@ -80,7 +81,7 @@ fun RemoteDirectionalPadNavigation(
                 shape = LeftArcShape,
                 elevation = elevation
             ) {
-                DPadButton(sendReport = sendRemoteKeyReport, bytes = RemoteInput.REMOTE_INPUT_MENU_LEFT)
+                DPadButton(touchDown = leftTouchDown, touchUp = directionTouchUp)
             }
 
             // ---- Right ----
@@ -89,7 +90,7 @@ fun RemoteDirectionalPadNavigation(
                 shape = RightArcShape,
                 elevation = elevation
             ) {
-                DPadButton(sendReport = sendRemoteKeyReport, bytes = RemoteInput.REMOTE_INPUT_MENU_RIGHT)
+                DPadButton(touchDown = rightTouchDown, touchUp = directionTouchUp)
             }
 
             // ---- Center ----
@@ -98,11 +99,7 @@ fun RemoteDirectionalPadNavigation(
                 shape = CircleShape,
                 elevation = elevation
             ) {
-                if(useEnterForSelection) {
-                    DPadButton(sendReport = sendKeyboardKeyReport, bytes = byteArrayOf(0x00, KeyboardKey.KEY_ENTER.byte))
-                } else {
-                    DPadButton(sendReport = sendRemoteKeyReport, bytes = RemoteInput.REMOTE_INPUT_MENU_PICK)
-                }
+                DPadButton(touchDown = pickTouchDown, touchUp = pickTouchUp)
             }
         }
 
@@ -174,12 +171,12 @@ fun RemoteDirectionalPadNavigation(
 
 @Composable
 private fun DPadButton(
-    bytes: ByteArray,
-    sendReport: (bytes: ByteArray) -> Unit
+    touchDown: () -> Unit,
+    touchUp: () -> Unit
 ) {
     StatefulRemoteButton(
-        touchDown = { sendReport(bytes) },
-        touchUp = { sendReport(REMOTE_INPUT_NONE) }
+        touchDown = touchDown,
+        touchUp = touchUp
     ) {
         Spacer(
             modifier = Modifier

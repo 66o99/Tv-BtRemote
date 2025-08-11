@@ -43,6 +43,7 @@ import com.atharok.btremote.domain.entities.DeviceHidConnectionState
 import com.atharok.btremote.domain.entities.RemoteNavigationEntity
 import com.atharok.btremote.domain.entities.remoteInput.MouseAction
 import com.atharok.btremote.domain.entities.remoteInput.RemoteInput
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardKey
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardLanguage
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
 import com.atharok.btremote.presentation.viewmodel.SettingsViewModel
@@ -384,21 +385,38 @@ private fun NavigationLayout(
     FadeAnimatedContent(targetState = navigationToggle) {
         when(it) {
             NavigationToggle.DIRECTION -> {
-                if(remoteNavigationMode == RemoteNavigationEntity.D_PAD) {
-                    RemoteDirectionalPadNavigation(
-                        sendRemoteKeyReport = sendRemoteKeyReport,
-                        sendKeyboardKeyReport = sendKeyboardKeyReport,
-                        useEnterForSelection = useEnterForSelection,
-                        modifier = Modifier.aspectRatio(1f)
-                    )
-                } else {
-                    RemoteSwipeNavigation(
-                        sendRemoteKeyReport = sendRemoteKeyReport,
-                        sendKeyboardKeyReport = sendKeyboardKeyReport,
-                        useEnterForSelection = useEnterForSelection,
-                        modifier = Modifier
-                    )
-                }
+                RemotePadLayout(
+                    remoteNavigationMode = remoteNavigationMode,
+                    upTouchDown = {
+                        sendRemoteKeyReport(RemoteInput.REMOTE_INPUT_MENU_UP)
+                    },
+                    downTouchDown = {
+                        sendRemoteKeyReport(RemoteInput.REMOTE_INPUT_MENU_DOWN)
+                    },
+                    leftTouchDown = {
+                        sendRemoteKeyReport(RemoteInput.REMOTE_INPUT_MENU_LEFT)
+                    },
+                    rightTouchDown = {
+                        sendRemoteKeyReport(RemoteInput.REMOTE_INPUT_MENU_RIGHT)
+                    },
+                    pickTouchDown = {
+                        if(useEnterForSelection) {
+                            sendKeyboardKeyReport(byteArrayOf(0x00, KeyboardKey.KEY_ENTER.byte))
+                        } else {
+                            sendRemoteKeyReport(RemoteInput.REMOTE_INPUT_MENU_PICK)
+                        }
+                    },
+                    directionTouchUp = {
+                        sendRemoteKeyReport(REMOTE_INPUT_NONE)
+                    },
+                    pickTouchUp = {
+                        if(useEnterForSelection) {
+                            sendKeyboardKeyReport(REMOTE_INPUT_NONE)
+                        } else {
+                            sendRemoteKeyReport(REMOTE_INPUT_NONE)
+                        }
+                    }
+                )
             }
 
             NavigationToggle.MOUSE -> {
@@ -419,6 +437,42 @@ private fun NavigationLayout(
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun RemotePadLayout(
+    remoteNavigationMode: RemoteNavigationEntity,
+    upTouchDown: () -> Unit,
+    downTouchDown: () -> Unit,
+    leftTouchDown: () -> Unit,
+    rightTouchDown: () -> Unit,
+    pickTouchDown: () -> Unit,
+    directionTouchUp: () -> Unit,
+    pickTouchUp: () -> Unit,
+) {
+    if(remoteNavigationMode == RemoteNavigationEntity.D_PAD) {
+        RemoteDirectionalPadNavigation(
+            upTouchDown = upTouchDown,
+            downTouchDown = downTouchDown,
+            leftTouchDown = leftTouchDown,
+            rightTouchDown = rightTouchDown,
+            pickTouchDown = pickTouchDown,
+            directionTouchUp = directionTouchUp,
+            pickTouchUp = pickTouchUp,
+            modifier = Modifier.aspectRatio(1f)
+        )
+    } else {
+        RemoteSwipeNavigation(
+            upTouchDown = upTouchDown,
+            downTouchDown = downTouchDown,
+            leftTouchDown = leftTouchDown,
+            rightTouchDown = rightTouchDown,
+            pickTouchDown = pickTouchDown,
+            directionTouchUp = directionTouchUp,
+            pickTouchUp = pickTouchUp,
+            modifier = Modifier
+        )
     }
 }
 
