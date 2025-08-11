@@ -3,7 +3,7 @@ package com.atharok.btremote.domain.entities.remoteInput.keyboard
 import androidx.annotation.StringRes
 import com.atharok.btremote.R
 
-enum class KeyboardLanguage(@StringRes val language: Int) {
+enum class KeyboardLanguage(@param:StringRes val language: Int) {
     ENGLISH_US(R.string.keyboard_english_us),
     ENGLISH_UK(R.string.keyboard_english_uk),
     SPANISH(R.string.keyboard_spanish),

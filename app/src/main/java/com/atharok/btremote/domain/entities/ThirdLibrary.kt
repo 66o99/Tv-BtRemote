@@ -4,12 +4,12 @@ import androidx.annotation.StringRes
 import com.atharok.btremote.R
 
 enum class ThirdLibrary(
-    @StringRes val title: Int,
-    @StringRes val id: Int,
-    @StringRes val codeHost: Int,
-    @StringRes val codeUrl: Int,
-    @StringRes val license: Int,
-    @StringRes val licenseUrl: Int,
+    @param:StringRes val title: Int,
+    @param:StringRes val id: Int,
+    @param:StringRes val codeHost: Int,
+    @param:StringRes val codeUrl: Int,
+    @param:StringRes val license: Int,
+    @param:StringRes val licenseUrl: Int,
 ) {
     CORE_KTX(
         title = R.string.androidx_core_ktx_name,
