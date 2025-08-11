@@ -56,7 +56,7 @@
     <string name="user_interface">Интерфейс</string>
     <string name="use_minimalist_interface">Използвайте минималистичен интерфейс</string>
     <string name="navigation_mode">Режим на управление</string>
-    <string name="d_pad">D-Pad</string>
+    <string name="d_pad">D-pad</string>
     <string name="touchpad">Сензорен панел</string>
     <string name="touchpad_description">Управление чрез жестове с докосване</string>
     <string name="language">Език</string>
@@ -167,7 +167,7 @@
     <string name="enabled_automatic_connection_message">Искате ли автоматично да се свързвате с това устройство при стартиране на приложението?</string>
     <string name="done">Готово</string>
     <string name="bluetooth_address_wrong_format">Въведеният адрес е в грешен формат. Трябва да съдържа 6 двойки шестнадесетични знаци.\nПример: 00:1A:2B:3C:4D:5E.</string>
-    <string name="bluetooth_device_connecting_message">Опит за свързване с \"%1$s\" устройство…</string>
+    <string name="bluetooth_device_connecting_message">Свързване с \"%1$s\" устройство…</string>
     <string name="unpair_device_warning_message">Това устройство ще бъде напълно раздвоено с вашето устройство. Наистина ли искате да продължите?</string>
     <string name="pairing_from_a_remote_device_intro_content">На някои устройства видимостта на Bluetooth може да е деактивирана, което не позволява да бъдат открити от приложението. Това ръководство ще ви помогне да разрешите проблема, като ви обясни как да сдвоите вашите устройства директно от отдалеченото устройство.</string>
     <string name="pairing_from_a_remote_device_step_2_content_2">- Отворете настройките на Bluetooth.\n- Изберете опцията за сдвояване на ново устройство.\n- Устройството \"%1$s\" трябва да се появи в списъка с налични устройства.\n- Изберете устройството \"%1$s\", за да започне сдвояване.</string>

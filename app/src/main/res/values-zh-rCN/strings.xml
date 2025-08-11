@@ -112,7 +112,7 @@
     <string name="standby">待机</string>
     <string name="next_channel">下一个频道</string>
     <string name="help_pairing_device_failed_connection_message_1">如果您已成功配对两个设备，但无法连接到远程设备，请遵循以下说明：</string>
-    <string name="bluetooth_device_connecting_message">尝试连接到“%1$s”设备…</string>
+    <string name="bluetooth_device_connecting_message">正在连接到“%1$s”设备…</string>
     <string name="bluetooth_failed_to_connect_to_device">尝试连接到远程设备失败。</string>
     <string name="previous_channel">上一个频道</string>
     <string name="mouse_click_left">单击左键</string>

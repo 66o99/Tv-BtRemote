@@ -38,7 +38,7 @@
     <string name="refresh">Ανανέωση</string>
     <!-- Bluetooth Connecting -->
     <string name="connection">Σύνδεση</string>
-    <string name="bluetooth_device_connecting_message">Προσπάθεια σύνδεσης στη \"%1$s\" συσκευή…</string>
+    <string name="bluetooth_device_connecting_message">Σύνδεση στη \"%1$s\" συσκευή…</string>
     <string name="bluetooth_device_disconnecting_message">Αποσύνδεση \"%1$s\"…</string>
     <string name="bluetooth_failed_to_register_app_message">Αποτυχία εγγραφής της εφαρμογής. Βεβαιωθείτε ότι καμία άλλη υπηρεσία Bluetooth δεν εκτελείται στο παρασκήνιο. Εάν το σφάλμα παραμένει, είναι πιθανό η διαδικασία Bluetooth να διακόπηκε απροσδόκητα. Για να διορθώσετε αυτό το πρόβλημα, απενεργοποιήστε το Bluetooth στη συσκευή σας και, στη συνέχεια, ενεργοποιήστε το ξανά.</string>
     <string name="bluetooth_failed_to_connect_to_device">Η προσπάθεια σύνδεσης με την απομακρυσμένη συσκευή απέτυχε.</string>
@@ -179,7 +179,7 @@
     <string name="user_interface">Διεπαφή</string>
     <string name="minimalist_interface_info">Δεν εμφανίζει τα κουμπιά των τηλεοπτικών καναλιών</string>
     <string name="navigation_mode">Λειτουργία Πλοήγησης</string>
-    <string name="d_pad">Χειριστήριο D-Pad</string>
+    <string name="d_pad">Χειριστήριο D-pad</string>
     <string name="touchpad">Επιφάνεια αφής</string>
     <string name="touchpad_description">Πλοήγηση μέσω χειρονομιών αφής</string>
     <string name="pairing_from_a_remote_device_intro_title">Οδηγός για τη σύζευξη μιας συσκευής από την απομακρυσμένη συσκευή</string>
@@ -213,4 +213,6 @@
     <string name="help_hid_service_not_initialized_title">Η υπηρεσία HID δεν έχει αρχικοποιηθεί</string>
     <string name="help_hid_service_not_initialized_message_1">Εάν ένα μήνυμα υποδεικνύει ότι η υπηρεσία hid δεν έχει αρχικοποιηθεί, μεταβείτε στις επιλογές προγραμματιστή της συσκευής σας και αναζητήστε την επιλογή \"Απενεργοποίηση προφίλ bluetooth HID συσκευής\":</string>
     <string name="help_hid_service_not_initialized_message_3">• Εάν αυτή η επιλογή δεν είναι διαθέσιμη, η συσκευή σας ενδέχεται να μην υποστηρίζει το προφίλ HID. Σε αυτήν την περίπτωση, δυστυχώς δε θα μπορείτε να χρησιμοποιήσετε αυτήν την εφαρμογή σε αυτήν τη συσκευή.</string>
+    <string name="use_enter_for_selection_title">Χρήση του κουμπιού Enter για επιλογή</string>
+    <string name="use_enter_for_selection_summary">Ενεργοποιήσετε το μόνο αν το κουμπί επιλογής δεν λειτουργεί</string>
 </resources>

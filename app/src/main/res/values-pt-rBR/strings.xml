@@ -25,7 +25,7 @@
     <string name="help_device_failed_connection_message_1">Se você não consegue se conectar ao dispositivo remoto, siga as instruções abaixo:</string>
     <string name="help_pairing_connection_initialization_error_message_1">Se você conseguiu emparelhar os dois dispositivos mas encontra os erros \"%1$s\" ou \"%2$s\":</string>
     <string name="bluetooth_failed_to_register_app_message">Falha ao registrar o aplicativo. Certifique-se que nenhum outro serviço Bluetooth está em execução em segundo plano. Se o erro persistir, é possível que o processo do Bluetooth foi interrompido inesperadamente. Para resolver este problema, desative o Bluetooth no seu dispositivo, e então ative ele novamente.</string>
-    <string name="bluetooth_device_connecting_message">Tentando se conectar ao dispositivo \"%1$s\"…</string>
+    <string name="bluetooth_device_connecting_message">Conectando ao dispositivo \"%1$s\"…</string>
     <string name="appearance">Aparência</string>
     <string name="help_select_device_from_list">Selecione o dispositivo que deseja se conectar da lista de dispositivos emparelhados.</string>
     <string name="help_device_failed_connection_check_6">• Emparelhe os dois dispositivos novamente pressionando o ícone localizado na barra superior.</string>

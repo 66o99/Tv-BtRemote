@@ -110,7 +110,7 @@
     <string name="help_remote_control_buttons_are_not_working_check_2">• Trenne dich von der Gegenstelle.</string>
     <string name="help_remote_control_buttons_are_not_working_check_3">• Löse die Verbindung der Geräte, auf diesem Gerät und auf der Gegenstelle.</string>
     <string name="help_remote_control_buttons_are_not_working_check_4">• Dann verbinde die Geräte in dieser App hier neu.</string>
-    <string name="bluetooth_device_connecting_message">Versuche zum „%1$s“-Gerät zu verbinden…</string>
+    <string name="bluetooth_device_connecting_message">Verbinde zum „%1$s“-Gerät…</string>
     <string name="help_pairing_device_failed_connection_message_1">Wenn du die Geräte erfolgreich verbunden hast, aber dich nicht zur Gegenstelle verbinden kannst, stelle sicher, der unten stehenden Anleitung zu folgen:</string>
     <string name="help_device_failed_connection_message_2">Solltest du trotz dieser Tests weiterhin keine Verbindung herstellen können, mache dies:</string>
     <string name="help_keyboard_wrong_character_sent_message">Wenn die Gesendeten Zeichen falsch sind, musst du die physikalische Tastatur der Gegenstelle so konfigurieren, dass die Sprache mit der Sprache aus den Einstellungen der App übereinstimmt.</string>
@@ -189,4 +189,9 @@
     <string name="help_info_hid_service_not_initialized_message">Dieses Gerät wurde noch nicht initialisiert. Bitte schaue im Hilfebereich nach.</string>
     <string name="keyboard_persian">Persisch</string>
     <string name="help_hid_service_not_initialized_title">Gerät nicht initialisiert</string>
+    <string name="use_enter_for_selection_title">Benutze Enter-Taste zur Auswahl</string>
+    <string name="use_enter_for_selection_summary">Aktiviere diese Option nur, wenn die Select-Taste nicht funktioniert</string>
+    <string name="help_hid_service_not_initialized_message_1">Wenn eine Nachricht darauf hinweist, dass das HID-Gerät nicht initialisiert wurde, gehe bitte in die Entwickleroptionen deines Geräts und sucht nach der Option „Deaktiviere Bluetooth-HID-Geräteprofil“:</string>
+    <string name="help_hid_service_not_initialized_message_2">• Wenn die Option verfügbar ist, deaktiviere sie und starte dein Gerät neu. Nach dem Neustart sollte das HID-Profil normal funktionieren.</string>
+    <string name="help_hid_service_not_initialized_message_3">• Wenn die Option nicht verfügbar ist, unterstützt dein Gerät das HID-Profil vermutlich nicht. In diesem Fall kannst du diese App auf diesem Gerät leider nicht benutzen.</string>
 </resources>

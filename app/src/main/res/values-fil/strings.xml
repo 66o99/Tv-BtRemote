@@ -38,7 +38,7 @@
     <string name="help_pairing_missing_device_check_location_for_android_11_or_less">• Siguraduhin na naka-enable ang mga serbisyo ng lokasyon sa iyong device.</string>
     <string name="help_pairing_device_failed_connection_message_1">Kung matagumpay mong mapares ang parehong device ngunit hindi makakonekta sa remote device, mangyaring siguraduhing sundan ang mga tagubilin sa ibaba:</string>
     <string name="bluetooth_disabled_message">Kailangang naka-enable ang Bluetooth sa iyong device upang kumonekta sa remote device.</string>
-    <string name="bluetooth_device_connecting_message">Sinusubukang kumonekta sa device na \"%1$s\"…</string>
+    <string name="bluetooth_device_connecting_message">Kumokonekta sa device na \"%1$s\"…</string>
     <string name="mouse_wheel_up">Mag-swipe pataas</string>
     <string name="notification_channel_name">Koneksyon ng Bluetooth HID</string>
     <string name="close">Isara</string>
@@ -173,7 +173,7 @@
     <string name="minimalist_interface_info">Hindi pinapakita ang mga TV channel na button</string>
     <string name="pairing_from_a_remote_device_step_4_content">Kung sinundan mo ang mga nakaraang hakbang, matagumpay ang pagpapares, at nadiskonekta ang parehong device, maari mong piliin ang \"%1$s\" na button. Dapat lumabas ang remote device sa listahan ng mga nakapares na device. Piliin iyan para i-establish ang koneksyon sa pamamagitan ng HID protocol.</string>
     <string name="navigation_mode">Mode ng Navigation</string>
-    <string name="d_pad">D-Pad</string>
+    <string name="d_pad">D-pad</string>
     <string name="d_pad_description">Navigation sa pamamagitan ng mga direksyonal na kontrol</string>
     <string name="touchpad">Touchpad</string>
     <string name="touchpad_description">Navigation sa pamamagitan ng mga touch gesture</string>

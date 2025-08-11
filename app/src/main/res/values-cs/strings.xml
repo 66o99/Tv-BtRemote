@@ -34,7 +34,7 @@
     <string name="refresh">Obnovit</string>
     <!-- Bluetooth Connecting -->
     <string name="connection">Připojení</string>
-    <string name="bluetooth_device_connecting_message">Pokus o připojení k  \"%1$s\" …</string>
+    <string name="bluetooth_device_connecting_message">Pokus o připojení k \"%1$s\" …</string>
     <string name="bluetooth_device_disconnecting_message">Odpojování od \"%1$s\"…</string>
     <string name="bluetooth_failed_to_register_app_message">Nepodařilo se registrovat aplikaci. Ujistěte se, že na pozadí neběží jiné služby Bluetooth. Pokud problém přetrvává, je možné že byl Bluetooth proces přerušen. Zkuste vypnout a zapnout Bluetooth.</string>
     <string name="bluetooth_failed_to_connect_to_device">Připojení k zařízení selhalo.</string>
