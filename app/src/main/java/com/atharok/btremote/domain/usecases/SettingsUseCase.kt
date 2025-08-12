@@ -69,14 +69,17 @@ class SettingsUseCase(private val repository: SettingsRepository) {
     }
 
     fun getRemoteNavigation(): Flow<RemoteNavigationEntity> = repository.getRemoteNavigation()
-
     suspend fun saveRemoteNavigation(remoteNavigationEntity: RemoteNavigationEntity) {
         repository.saveRemoteNavigation(remoteNavigationEntity)
     }
 
     fun useEnterForSelection(): Flow<Boolean> = repository.useEnterForSelection()
-
     suspend fun saveUseEnterForSelection(useEnterForSelection: Boolean) {
         repository.saveUseEnterForSelection(useEnterForSelection)
+    }
+
+    fun getFavoriteDevices(): Flow<List<String>> = repository.getFavoriteDevices()
+    suspend fun saveFavoriteDevices(macAddresses: List<String>) {
+        repository.saveFavoriteDevices(macAddresses)
     }
 }

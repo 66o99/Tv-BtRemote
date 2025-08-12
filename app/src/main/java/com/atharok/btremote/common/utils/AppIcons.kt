@@ -30,6 +30,7 @@ import androidx.compose.material.icons.rounded.ControlCamera
 import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.material.icons.rounded.DeviceUnknown
 import androidx.compose.material.icons.rounded.Dialpad
+import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.HealthAndSafety
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.Key
@@ -107,6 +108,7 @@ object AppIcons: KoinComponent {
     val OpenInBrowser get() = Icons.Rounded.OpenInBrowser
     val Lock get() = Icons.Rounded.Lock
     val Key get() = Icons.Rounded.Key
+    val Favorite get() = Icons.Rounded.Favorite
 
     // ---- Remote ----
 

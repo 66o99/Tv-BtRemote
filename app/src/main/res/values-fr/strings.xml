@@ -38,6 +38,9 @@
     <string name="enabled_automatic_connection_message">Souhaitez-vous vous connecter automatiquement à cet appareil au démarrage de l\'application ?</string>
     <string name="disabled_automatic_connection_message">Voulez-vous supprimer la connexion automatique ?</string>
     <string name="automatic_shorten">Auto</string>
+    <string name="favorites">Favoris</string>
+    <string name="add_to_favorites">Ajouter aux favoris</string>
+    <string name="remove_from_favorites">Retirer des favoris</string>
     <!-- Bluetooth Pairing -->
     <string name="pairing_a_device">Associer un appareil</string>
     <string name="available_devices">Appareils disponibles</string>

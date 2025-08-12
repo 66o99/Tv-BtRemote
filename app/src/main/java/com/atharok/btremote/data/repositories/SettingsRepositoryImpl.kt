@@ -73,14 +73,17 @@ class SettingsRepositoryImpl(
     }
 
     override fun getRemoteNavigation(): Flow<RemoteNavigationEntity> = settingsDataStore.remoteNavigationFlow
-
     override suspend fun saveRemoteNavigation(remoteNavigationEntity: RemoteNavigationEntity) {
         settingsDataStore.saveRemoteNavigation(remoteNavigationEntity)
     }
 
     override fun useEnterForSelection(): Flow<Boolean> = settingsDataStore.useEnterForSelectionFlow
-
     override suspend fun saveUseEnterForSelection(useEnterForSelection: Boolean) {
         settingsDataStore.saveUseEnterForSelection(useEnterForSelection)
+    }
+
+    override fun getFavoriteDevices(): Flow<List<String>> = settingsDataStore.favoriteDevicesFlow
+    override suspend fun saveFavoriteDevices(macAddresses: List<String>) {
+        settingsDataStore.saveFavoriteDevices(macAddresses)
     }
 }

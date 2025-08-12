@@ -16,6 +16,7 @@ import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardLanguag
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
+import kotlinx.serialization.json.Json
 import java.io.IOException
 
 class SettingsDataStore(private val context: Context) {
@@ -35,6 +36,7 @@ class SettingsDataStore(private val context: Context) {
         private const val USE_MINIMALIST_REMOTE_KEY = "use_minimalist_remote_key"
         private const val REMOTE_NAVIGATION_KEY = "remote_navigation_key"
         private const val USE_ENTER_FOR_SELECTION_KEY = "use_enter_for_selection_key"
+        private const val FAVORITE_DEVICES_KEY = "favorite_devices_key"
     }
 
     private val themeKey = stringPreferencesKey(THEME_KEY)
@@ -51,6 +53,7 @@ class SettingsDataStore(private val context: Context) {
     private val useMinimalistRemoteKey = booleanPreferencesKey(USE_MINIMALIST_REMOTE_KEY)
     private val remoteNavigationKey = stringPreferencesKey(REMOTE_NAVIGATION_KEY)
     private val useEnterForSelectionKey = booleanPreferencesKey(USE_ENTER_FOR_SELECTION_KEY)
+    private val favoriteDevicesKey = stringPreferencesKey(FAVORITE_DEVICES_KEY)
 
     private fun Flow<Preferences>.catchException(): Flow<Preferences> = this.catch {
         if (it is IOException) {
@@ -280,6 +283,22 @@ class SettingsDataStore(private val context: Context) {
     suspend fun saveUseEnterForSelection(useEnterForSelection: Boolean) {
         context.dataStore.edit {
             it[useEnterForSelectionKey] = useEnterForSelection
+        }
+    }
+
+    // ---- Favorite Devices ----
+
+    val favoriteDevicesFlow: Flow<List<String>> = context.dataStore.data
+        .catchException()
+        .map {
+            val jsonString: String? = it[favoriteDevicesKey]
+            if(jsonString == null) emptyList() else Json.decodeFromString(jsonString)
+        }
+
+    suspend fun saveFavoriteDevices(macAddresses: List<String>) {
+        val jsonString = Json.encodeToString(macAddresses)
+        context.dataStore.edit {
+            it[favoriteDevicesKey] = jsonString
         }
     }
 }

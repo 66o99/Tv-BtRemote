@@ -20,6 +20,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.atharok.btremote.R
 import com.atharok.btremote.ui.components.AutoConnectDropdownMenuItem
+import com.atharok.btremote.ui.components.FavoriteDeviceDropdownMenuItem
 import com.atharok.btremote.ui.components.MoreOverflowMenu
 import com.atharok.btremote.ui.components.TextMedium
 import com.atharok.btremote.ui.components.TextNormalSecondary
@@ -65,6 +66,8 @@ fun DeviceItemView(
     icon: ImageVector,
     isAutoConnectDeviceAddress: Boolean,
     autoConnect: () -> Unit,
+    isFavoriteDevice: Boolean,
+    onFavoriteDeviceChanged: () -> Unit,
     unpair: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -100,6 +103,13 @@ fun DeviceItemView(
                 AutoConnectDropdownMenuItem(
                     autoConnect = {
                         autoConnect()
+                        closeDropdownMenu()
+                    }
+                )
+                FavoriteDeviceDropdownMenuItem(
+                    isFavoriteDevice = isFavoriteDevice,
+                    onFavoriteDeviceChanged = {
+                        onFavoriteDeviceChanged()
                         closeDropdownMenu()
                     }
                 )

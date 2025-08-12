@@ -47,4 +47,7 @@ interface SettingsRepository {
 
     fun useEnterForSelection(): Flow<Boolean>
     suspend fun saveUseEnterForSelection(useEnterForSelection: Boolean)
+
+    fun getFavoriteDevices(): Flow<List<String>>
+    suspend fun saveFavoriteDevices(macAddresses: List<String>)
 }

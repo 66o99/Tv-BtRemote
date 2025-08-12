@@ -42,6 +42,9 @@
     <string name="enabled_automatic_connection_message">Do you want to automatically connect to this device on app startup?</string>
     <string name="disabled_automatic_connection_message">Do you want to disable the automatic connection?</string>
     <string name="automatic_shorten">Auto</string>
+    <string name="favorites">Favorites</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="remove_from_favorites">Remove from favorites</string>
 
     <!-- Bluetooth Pairing -->
     <string name="pairing_a_device">Pairing a device</string>

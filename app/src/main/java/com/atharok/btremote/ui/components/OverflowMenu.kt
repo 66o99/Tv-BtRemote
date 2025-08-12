@@ -220,6 +220,22 @@ fun AutoConnectDropdownMenuItem(
 }
 
 @Composable
+fun FavoriteDeviceDropdownMenuItem(
+    isFavoriteDevice: Boolean,
+    onFavoriteDeviceChanged: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    DropdownMenuItemTemplate(
+        onClick = onFavoriteDeviceChanged,
+        image = AppIcons.Favorite,
+        title = stringResource(
+            id = if(isFavoriteDevice) R.string.remove_from_favorites else R.string.add_to_favorites
+        ),
+        modifier = modifier
+    )
+}
+
+@Composable
 fun BluetoothPairingFromAScannedDeviceDropdownMenuItem(
     openBluetoothPairingScreen: () -> Unit,
     modifier: Modifier = Modifier

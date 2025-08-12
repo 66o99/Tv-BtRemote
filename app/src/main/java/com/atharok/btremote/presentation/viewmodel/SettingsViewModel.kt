@@ -79,8 +79,12 @@ class SettingsViewModel(
     }
 
     val useEnterForSelection: Flow<Boolean> get() = useCase.useEnterForSelection()
-
     fun saveUseEnterForSelection(useEnterForSelection: Boolean) = viewModelScope.launch {
         useCase.saveUseEnterForSelection(useEnterForSelection)
+    }
+
+    val favoriteDevices: Flow<List<String>> get() = useCase.getFavoriteDevices()
+    fun saveFavoriteDevices(macAddresses: List<String>) = viewModelScope.launch {
+        useCase.saveFavoriteDevices(macAddresses)
     }
 }

@@ -143,6 +143,10 @@ fun ComposeRoot(
                             saveAutoConnectionDeviceAddress = {
                                 hidViewModel.saveAutoConnectDeviceAddress(it)
                             },
+                            favoriteDevicesFlow = settingsViewModel.favoriteDevices,
+                            saveFavoriteDevicesAddress = {
+                                settingsViewModel.saveFavoriteDevices(it)
+                            },
                             openRemoteScreen = {
                                 navController.navigateTo(AppNavDestination.BluetoothRemoteDestination.route)
                             },

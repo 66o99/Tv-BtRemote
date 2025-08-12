@@ -85,6 +85,8 @@ fun DevicesSelectionScreen(
     unpairDevice: (address: String) -> Boolean,
     autoConnectionDeviceAddressFlow: Flow<String>,
     saveAutoConnectionDeviceAddress: (String) -> Unit,
+    favoriteDevicesFlow: Flow<List<String>>,
+    saveFavoriteDevicesAddress: (List<String>) -> Unit,
     openRemoteScreen: (deviceName: String) -> Unit,
     openPairingFromAScannedDeviceScreen: () -> Unit,
     openPairingFromARemoteDeviceScreen: () -> Unit,
@@ -97,6 +99,8 @@ fun DevicesSelectionScreen(
 
     val devices by devicesFlow.collectAsStateWithLifecycle()
     val autoConnectionDeviceAddress: String by autoConnectionDeviceAddressFlow.collectAsStateWithLifecycle("")
+
+    val favoriteDevices by favoriteDevicesFlow.collectAsStateWithLifecycle(listOf())
 
     var showBluetoothAddressDialog: Boolean by remember { mutableStateOf(false) }
     var showHelpBottomSheet: Boolean by remember { mutableStateOf(false) }
@@ -137,7 +141,8 @@ fun DevicesSelectionScreen(
         isBluetoothHidProfileRegistered = isBluetoothHidProfileRegistered,
         bluetoothDeviceHidConnectionState = bluetoothDeviceHidConnectionState,
 
-        devices = devices,
+        favoriteDevices = devices.filter { it.macAddress in favoriteDevices },
+        nonFavoriteDevices = devices.filter { it.macAddress !in favoriteDevices },
         connectDevice = connectDevice,
         autoConnectDeviceAddress = autoConnectionDeviceAddress,
         openPairingFromAScannedDeviceScreen = openPairingFromAScannedDeviceScreen,
@@ -243,6 +248,14 @@ fun DevicesSelectionScreen(
         onDeviceToUnpairChanged = { deviceToUnpair = it },
         deviceToAutoConnect = deviceToAutoConnect,
         onDeviceToAutoConnectChanged = { deviceToAutoConnect = it },
+        saveFavoriteDevice = {
+            if(favoriteDevices.contains(it)) {
+                saveFavoriteDevicesAddress(favoriteDevices - it)
+            } else {
+                saveFavoriteDevicesAddress(favoriteDevices + it)
+            }
+        },
+
         modifier = modifier
     )
 }
@@ -254,7 +267,8 @@ private fun StatelessDevicesSelectionScreen(
     isBluetoothHidProfileRegistered: Boolean,
     bluetoothDeviceHidConnectionState: DeviceHidConnectionState,
 
-    devices: List<DeviceEntity>,
+    favoriteDevices: List<DeviceEntity>,
+    nonFavoriteDevices: List<DeviceEntity>,
     connectDevice: (String) -> Unit,
     autoConnectDeviceAddress: String,
     openPairingFromAScannedDeviceScreen: () -> Unit,
@@ -276,6 +290,7 @@ private fun StatelessDevicesSelectionScreen(
     onDeviceToUnpairChanged: (InternalDevice) -> Unit,
     deviceToAutoConnect: InternalDevice,
     onDeviceToAutoConnectChanged: (InternalDevice) -> Unit,
+    saveFavoriteDevice: (String) -> Unit,
 
     modifier: Modifier = Modifier
 ) {
@@ -312,10 +327,12 @@ private fun StatelessDevicesSelectionScreen(
         }
     ) { innerPadding ->
         DevicesListView(
-            devices = devices,
+            favoriteDevices = favoriteDevices,
+            nonFavoriteDevices = nonFavoriteDevices,
             connectDevice = connectDevice,
             autoConnectDeviceAddress = autoConnectDeviceAddress,
             autoConnect = onDeviceToAutoConnectChanged,
+            saveFavoriteDevice = saveFavoriteDevice,
             unpairDevice = onDeviceToUnpairChanged,
             isBluetoothServiceStarted = isBluetoothServiceStarted,
             modifier = Modifier,
@@ -336,10 +353,12 @@ private fun StatelessDevicesSelectionScreen(
 
 @Composable
 private fun DevicesListView(
-    devices: List<DeviceEntity>,
+    favoriteDevices: List<DeviceEntity>,
+    nonFavoriteDevices: List<DeviceEntity>,
     connectDevice: (String) -> Unit,
     autoConnectDeviceAddress: String,
     autoConnect: (InternalDevice) -> Unit,
+    saveFavoriteDevice: (String) -> Unit,
     unpairDevice: (InternalDevice) -> Unit,
     isBluetoothServiceStarted: Boolean,
     modifier: Modifier = Modifier,
@@ -358,30 +377,73 @@ private fun DevicesListView(
                 )
             )
         }
-        item {
-            TextNormalSecondary(
-                text = stringResource(id = R.string.paired_devices),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(
-                        horizontal = dimensionResource(id = R.dimen.padding_max),
-                        vertical = dimensionResource(id = R.dimen.padding_normal)
-                    )
-            )
+
+        // Favorite devices
+
+        if(favoriteDevices.isNotEmpty()) {
+            item {
+                TextNormalSecondary(
+                    text = stringResource(id = R.string.favorites),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(
+                            horizontal = dimensionResource(id = R.dimen.padding_max),
+                            vertical = dimensionResource(id = R.dimen.padding_normal)
+                        )
+                )
+            }
+            items(favoriteDevices) { device ->
+                DeviceItemView(
+                    name = device.name,
+                    macAddress = device.macAddress,
+                    icon = device.imageVector,
+                    isAutoConnectDeviceAddress = autoConnectDeviceAddress == device.macAddress,
+                    autoConnect = { autoConnect(InternalDevice(device.name, device.macAddress)) },
+                    isFavoriteDevice = true,
+                    onFavoriteDeviceChanged = {
+                        saveFavoriteDevice(device.macAddress)
+                    },
+                    unpair = { unpairDevice(InternalDevice(device.name, device.macAddress)) },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { connectDevice(device.macAddress) }
+                        .padding(dimensionResource(id = R.dimen.padding_max))
+                )
+            }
         }
-        items(devices) { device ->
-            DeviceItemView(
-                name = device.name,
-                macAddress = device.macAddress,
-                icon = device.imageVector,
-                isAutoConnectDeviceAddress = autoConnectDeviceAddress == device.macAddress,
-                autoConnect = { autoConnect(InternalDevice(device.name, device.macAddress)) },
-                unpair = { unpairDevice(InternalDevice(device.name, device.macAddress)) },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clickable { connectDevice(device.macAddress) }
-                    .padding(dimensionResource(id = R.dimen.padding_max))
-            )
+
+        // Non favorite devices
+
+        if(nonFavoriteDevices.isNotEmpty()) {
+            item {
+                TextNormalSecondary(
+                    text = stringResource(id = R.string.paired_devices),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(
+                            horizontal = dimensionResource(id = R.dimen.padding_max),
+                            vertical = dimensionResource(id = R.dimen.padding_normal)
+                        )
+                )
+            }
+            items(nonFavoriteDevices) { device ->
+                DeviceItemView(
+                    name = device.name,
+                    macAddress = device.macAddress,
+                    icon = device.imageVector,
+                    isAutoConnectDeviceAddress = autoConnectDeviceAddress == device.macAddress,
+                    autoConnect = { autoConnect(InternalDevice(device.name, device.macAddress)) },
+                    isFavoriteDevice = false,
+                    onFavoriteDeviceChanged = {
+                        saveFavoriteDevice(device.macAddress)
+                    },
+                    unpair = { unpairDevice(InternalDevice(device.name, device.macAddress)) },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { connectDevice(device.macAddress) }
+                        .padding(dimensionResource(id = R.dimen.padding_max))
+                )
+            }
         }
     }
 }
