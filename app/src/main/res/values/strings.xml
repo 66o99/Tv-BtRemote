@@ -293,4 +293,9 @@
     <string name="koin_id" translatable="false">io.insert-koin:koin-androidx-compose</string>
     <string name="koin_url" translatable="false">https://github.com/InsertKoinIO/koin</string>
 
+    <!-- Kotlin Serialization Library -->
+    <string name="kotlin_serialization_name" translatable="false">Kotlin Serialization</string>
+    <string name="kotlin_serialization_id" translatable="false">org.jetbrains.kotlinx:kotlinx-serialization-json</string>
+    <string name="kotlin_serialization_url" translatable="false">https://github.com/Kotlin/kotlinx.serialization</string>
+
 </resources>
