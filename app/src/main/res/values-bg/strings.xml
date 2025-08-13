@@ -194,4 +194,9 @@
     <string name="help_info_hid_service_not_initialized_message">Услугата HID не е инициализирана. Моля, вижте раздела за помощ.</string>
     <string name="use_enter_for_selection_summary">Активирайте тази опция само ако бутонът за избор не работи</string>
     <string name="use_enter_for_selection_title">Използвайте клавиша Enter за избор</string>
+    <string name="favorites">Любими</string>
+    <string name="remove_from_favorites">Премахни от любими</string>
+    <string name="advanced_options">Разширени опции</string>
+    <string name="hide_bluetooth_activation_button">Скриване на бутона за активиране на Bluetooth при стартиране на приложението</string>
+    <string name="add_to_favorites">Добави към любими</string>
 </resources>
