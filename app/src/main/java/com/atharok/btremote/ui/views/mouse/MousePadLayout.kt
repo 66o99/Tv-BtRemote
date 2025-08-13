@@ -14,8 +14,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
@@ -122,6 +124,20 @@ private fun MouseButtonsLayout(
     onMouseActionChange: (MouseAction) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val layoutDirection = LocalLayoutDirection.current
+
+    if(layoutDirection == LayoutDirection.Rtl) {
+        MouseButtonsLayoutRTL(onMouseActionChange, modifier)
+    } else {
+        MouseButtonsLayoutLTR(onMouseActionChange, modifier)
+    }
+}
+
+@Composable
+private fun MouseButtonsLayoutLTR(
+    onMouseActionChange: (MouseAction) -> Unit,
+    modifier: Modifier = Modifier
+) {
     Row(modifier = modifier, horizontalArrangement = Arrangement.Absolute.Left) {
 
         // Start
@@ -168,6 +184,61 @@ private fun MouseButtonsLayout(
                 .weight(0.38f)
                 .fillMaxHeight()
                 .padding(start = dimensionResource(id = R.dimen.padding_min))
+        )
+    }
+}
+
+@Composable
+private fun MouseButtonsLayoutRTL(
+    onMouseActionChange: (MouseAction) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Row(modifier = modifier, horizontalArrangement = Arrangement.Absolute.Left) {
+
+        // Start
+        MouseButton(
+            touchDown = { onMouseActionChange(MouseAction.MOUSE_CLICK_LEFT) },
+            touchUp = { onMouseActionChange(MouseAction.NONE) },
+            shape = RoundedCornerShape(
+                topStart = 0.dp,
+                topEnd = 0.dp,
+                bottomEnd = dimensionResource(id = R.dimen.card_corner_radius),
+                bottomStart = 0.dp
+            ),
+            modifier = Modifier
+                .weight(0.38f)
+                .fillMaxHeight()
+                .padding(start = dimensionResource(id = R.dimen.padding_min))
+        )
+
+        // Center
+        MouseButton(
+            touchDown = { onMouseActionChange(MouseAction.MOUSE_CLICK_MIDDLE) },
+            touchUp = { onMouseActionChange(MouseAction.NONE) },
+            shape = RectangleShape,
+            modifier = Modifier
+                .weight(0.24f)
+                .fillMaxHeight()
+                .padding(
+                    start = dimensionResource(id = R.dimen.padding_min),
+                    end = dimensionResource(id = R.dimen.padding_min)
+                )
+        )
+
+        // End
+        MouseButton(
+            touchDown = { onMouseActionChange(MouseAction.MOUSE_CLICK_RIGHT) },
+            touchUp = { onMouseActionChange(MouseAction.NONE) },
+            shape = RoundedCornerShape(
+                topStart = 0.dp,
+                topEnd = 0.dp,
+                bottomEnd = 0.dp,
+                bottomStart = dimensionResource(id = R.dimen.card_corner_radius)
+            ),
+            modifier = Modifier
+                .weight(0.38f)
+                .fillMaxHeight()
+                .padding(end = dimensionResource(id = R.dimen.padding_min))
         )
     }
 }
