@@ -194,4 +194,9 @@
     <string name="help_hid_service_not_initialized_message_1">Kung may mensahe na nagpapahiwatig na hindi naka-initialize ang HID service, mangyaring pumunta sa mga opsyon ng developer ng iyong device at hanapin ang opsyon na \"Disable Bluetooth HID Device Profile\":</string>
     <string name="use_enter_for_selection_title">Gamitin ang Enter key para sa pagpili</string>
     <string name="use_enter_for_selection_summary">Paganahin lamang kung hindi gumagana ang select button</string>
+    <string name="favorites">Mga Paborito</string>
+    <string name="remove_from_favorites">Tanggalin mula sa mga paborito</string>
+    <string name="advanced_options">Mga Advanced na Opsyon</string>
+    <string name="add_to_favorites">Idagdag sa mga paborito</string>
+    <string name="hide_bluetooth_activation_button">Itago ang button ng pag-activate ng Bluetooth sa pagsimula ng app</string>
 </resources>
