@@ -165,7 +165,7 @@
     <string name="d_pad_description">Навигация через элементы управления направлением</string>
     <string name="touchpad">Сенсорная панель</string>
     <string name="minimalist_interface_info">Не отображаются кнопки ТВ-каналов</string>
-    <string name="d_pad">D-Pad</string>
+    <string name="d_pad">Геймпад</string>
     <string name="keyboard_portuguese_br">Португальский (Бразилия)</string>
     <string name="keyboard_greek">Греческий</string>
     <string name="keyboard_hebrew">Иврит</string>
@@ -215,4 +215,9 @@
     <string name="help_hid_service_not_initialized_message_2">• Если эта опция доступна, отключите её, затем перезапустите устройство. После перезапуска профиль HID должен работать нормально.</string>
     <string name="use_enter_for_selection_title">Для выбора используйте клавишу Ввод</string>
     <string name="use_enter_for_selection_summary">Включите эту опцию только если клавиша выбора не работает</string>
+    <string name="remove_from_favorites">Убрать из избранного</string>
+    <string name="favorites">Избранное</string>
+    <string name="hide_bluetooth_activation_button">Скрыть кнопку активации Bluetooth при запуске приложения</string>
+    <string name="advanced_options">Расширенные опции</string>
+    <string name="add_to_favorites">Добавить в избранное</string>
 </resources>
