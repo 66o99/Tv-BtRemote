@@ -1,0 +1,16 @@
+1.8.1
+
+Correction d’un problème lors du build.
+
+1.8.0
+
+Liste complète des modifications : https://gitlab.com/Atharok/BtRemote/-/releases
+
+- Mise à jour des traductions.
+- Ajout de la possibilité de définir un ou plusieurs appareils comme favoris.
+- Correction d’un bug où la souris partait dans la direction opposée en dépassant les limites de l’écran (merci à X S).
+- Modifications apportées aux styles des textes.
+- Refactorisation du code.
+- Améliorations mineures.
+- Mise à jour vers Android 16.
+- Mise à jour des dépendances.
