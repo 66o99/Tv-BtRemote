@@ -24,7 +24,7 @@
     <string name="bluetooth_pairing_device_not_found">לא זוהה אף מכשיר.</string>
     <string name="refresh">רענן</string>
     <string name="connection">חיבור</string>
-    <string name="bluetooth_device_connecting_message">מנסה להתחבר למכשיר \"%1$s\"…</string>
+    <string name="bluetooth_device_connecting_message">מתחבר למכשיר \"%1$s\"…</string>
     <string name="bluetooth_device_disconnecting_message">מנתק \"%1$s\"…</string>
     <string name="bluetooth_failed_to_register_app_message">הרשמת היישום כשלה. נא לוודא שאין שירות Bluetooth אחר שרץ ברקע. אם השגיאה נמשכת, זה אפשרי שתהליך ה-Bluetooth נקטע באופן בלתי צפוי. כדי לתקן בעיה זו, נא להשבית את ה-Bluetooth במכשיר שלך, ואז לאפשר אותו מחדש.</string>
     <string name="bluetooth_failed_to_connect_to_device">הניסיון להתחבר למכשיר המרוחק נכשל.</string>
@@ -161,7 +161,7 @@
     <string name="use_minimalist_interface">השתמש בממשק המינימליסטי</string>
     <string name="minimalist_interface_info">אינו מציג את לחצני ערוץ הטלוויזיה</string>
     <string name="navigation_mode">מצב ניווט</string>
-    <string name="d_pad">D-Pad</string>
+    <string name="d_pad">D-pad</string>
     <string name="d_pad_description">ניווט באמצעות בקרות כיווניות</string>
     <string name="touchpad">משטח נגיעה</string>
     <string name="touchpad_description">ניווט באמצעות מחוות מגע</string>
@@ -186,4 +186,17 @@
     <string name="open">פתח</string>
     <string name="integrate_advanced_keyboard_into_the_view">שלב את המקלדת המתקדמת לתוך הנוף</string>
     <string name="keyboard_ukrainian">אוקראינית</string>
+    <string name="help_hid_service_not_initialized_title">שירות ה-HID אינו מאותחל</string>
+    <string name="help_info_hid_service_not_initialized_message">שירות ה-HID אינו מאותחל. נא לבדוק את מדור העזרה.</string>
+    <string name="favorites">מועדפים</string>
+    <string name="help_hid_service_not_initialized_message_1">אם ישנה הודעה שמצביעה כי שירות ה-HID אינו מאותחל, נא לעבור אל אפשרויות המפתח של המכשיר שלך ולחפש את האפשרות \"השבתת פרופיל התקן Bluetooth HID\":</string>
+    <string name="advanced_options">אפשרויות מתקדמות</string>
+    <string name="keyboard_persian">פרסית</string>
+    <string name="help_hid_service_not_initialized_message_3">• אם אפשרות זו אינה זמינה, ייתכן שהמכשיר שלך אינו תומך בפרופיל ה-HID. במקרה זה, לרוע המזל, לא תוכל להשתמש ביישום זה במכשיר זה.</string>
+    <string name="help_hid_service_not_initialized_message_2">• אם אפשרות זו זמינה, השבת אותה, ואז אתחל את המכשיר שלך. לאחר האתחול, פרופיל ה-HID אמור לתפקד באופן רגיל.</string>
+    <string name="use_enter_for_selection_title">השתמש במקש Enter עבור בחירה</string>
+    <string name="use_enter_for_selection_summary">אפשר אפשרות זו רק אם לחצן הבחירה אינו פועל</string>
+    <string name="add_to_favorites">הוספה למועדפים</string>
+    <string name="remove_from_favorites">הסרה מהמועדפים</string>
+    <string name="hide_bluetooth_activation_button">הסתר לחצן הפעלת Bluetooth בעת פתיחת היישום</string>
 </resources>
