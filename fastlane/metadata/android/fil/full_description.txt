@@ -6,7 +6,7 @@ Mga tampok:
 - Kasama ang lahat ng kinakailangang button para sa remote control ng iyong device.
 - Support para sa integrated mouse at keyboard.
 - Walang kinakailangan na karagdagang pag-install ng app sa iyong Android TV na device salamat sa HID protocol.
-- Modern at responsive na user interface
+- Modern at responsive na user interface.
 - Na-develop gamit ang Kotlin, Jetpack Compose, at Material 3.
 - Naka-focus sa privacy na may walang pangongolekta ng data (naka-disable ang pahintulot ng internet).
 - Walang mga advertisement.
