@@ -12,6 +12,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.atharok.btremote.common.extensions.dataStore
+import com.atharok.btremote.common.utils.DELAY_BETWEEN_KEY_PRESSES_IN_MILLIS
 import com.atharok.btremote.common.utils.KEYBOARD_REPORT_ID
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
 import com.atharok.btremote.common.utils.checkBluetoothConnectPermission
@@ -187,9 +188,9 @@ class BluetoothHidProfile(
                         if(!hidDevice.sendReport(device, KEYBOARD_REPORT_ID, virtualKeyboardLayout.getKeyboardKey(it))) {
                             success = false
                         }
-                        delay(10)
+                        delay(DELAY_BETWEEN_KEY_PRESSES_IN_MILLIS)
                         hidDevice.sendReport(device, KEYBOARD_REPORT_ID, REMOTE_INPUT_NONE)
-                        delay(10)
+                        delay(DELAY_BETWEEN_KEY_PRESSES_IN_MILLIS)
                     }
                 }
             }
