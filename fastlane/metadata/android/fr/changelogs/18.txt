@@ -1,0 +1,7 @@
+1.8.2
+
+Liste complète des modifications : https://gitlab.com/Atharok/BtRemote/-/releases
+
+- Mise à jour des traductions.
+- Modification du délai entre l'envoi des touches du clavier afin d'améliorer la fiabilité de la saisie.
+- Mise à jour des dépendances.

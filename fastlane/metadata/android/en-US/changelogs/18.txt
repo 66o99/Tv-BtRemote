@@ -1,0 +1,7 @@
+1.8.2
+
+Full list of changes here: https://gitlab.com/Atharok/BtRemote/-/releases
+
+- Updated translations.
+- Modified the delay between sending keyboard keys to improve input reliability.
+- Updated dependencies.
