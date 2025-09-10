@@ -1,0 +1,11 @@
+Full list of changes here: https://gitlab.com/Atharok/BtRemote/-/releases
+
+1.8.3
+
+- Fixed a bug affecting the touchpad (navigation via touch gestures).
+
+1.8.2
+
+- Updated translations.
+- Modified the delay between sending keyboard keys to improve input reliability.
+- Updated dependencies.

@@ -1,0 +1,11 @@
+Liste complète des modifications : https://gitlab.com/Atharok/BtRemote/-/releases
+
+1.8.3
+
+- Correction d’un bug affectant le pavé tactile (navigation par geste).
+
+1.8.2
+
+- Mise à jour des traductions.
+- Modification du délai entre l'envoi des touches du clavier afin d'améliorer la fiabilité de la saisie.
+- Mise à jour des dépendances.
