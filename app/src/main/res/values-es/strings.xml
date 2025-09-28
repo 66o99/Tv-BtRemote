@@ -18,7 +18,7 @@
     <string name="available_devices">Dispositivos disponibles</string>
     <string name="refresh">Actualizar</string>
     <string name="connection">Conexión</string>
-    <string name="bluetooth_device_connecting_message">Intentando conectar con el dispositivo «%1$s»…</string>
+    <string name="bluetooth_device_connecting_message">Conectando con el dispositivo «%1$s»…</string>
     <string name="bluetooth_device_disconnecting_message">Desconectando «%1$s»…</string>
     <string name="bluetooth_failed_to_connect_to_device">Ha fallado el intento de conexión con el dispositivo remoto.</string>
     <string name="bluetooth_failed_try_again">Por favor, inténtelo de nuevo.</string>
@@ -179,7 +179,7 @@
     <string name="bluetooth_address_wrong_format">La dirección ingresada está en un formato incorrecto. Debe de contener 6 pares de carácteres hexadecimales.\nEjemplo: 00:1A:2B:3C:4D:5E.</string>
     <string name="navigation_mode">Modo de navegación</string>
     <string name="touchpad_description">Navegación mediante gestos táctiles</string>
-    <string name="d_pad">D-Pad</string>
+    <string name="d_pad">D-pad</string>
     <string name="pairing_from_a_remote_device_step_2_content_2">- Abrir los ajustes del Bluetooth.\n- Seleccionar la opción para emparejar un nuevo dispositivo.\n- El dispositivo %1$s debe de aparecer en la lista de dispositivos disponibles.\n- Selecciona el dispositivo %1$s para iniciar el emparejamiento.</string>
     <string name="pairing_from_a_remote_device_step_4_content">Si ha seguido todos los pasos anteriores, el emparejamiento fue exitoso, y tiene desconectado ambos dispositivos, puede seleccionar el botón %1$s. El dispositivo remoto debería de aparecer en la lista de dispositivos emparejados. Selecciónelo para establecer la conexión usando el protocolo HID.</string>
     <string name="touchpad">Panel táctil</string>
@@ -187,4 +187,13 @@
     <string name="tv">TV</string>
     <string name="keyboard_ukrainian">Ucraniano</string>
     <string name="keyboard_persian">Persa</string>
+    <string name="favorites">Favoritos</string>
+    <string name="add_to_favorites">Añadir a favoritos</string>
+    <string name="remove_from_favorites">Quitar de favoritos</string>
+    <string name="use_enter_for_selection_title">Utiliza Enter para seleccionar</string>
+    <string name="use_enter_for_selection_summary">Habilita esta opción solo si el botón no funciona</string>
+    <string name="advanced_options">Opciones avanzadas</string>
+    <string name="hide_bluetooth_activation_button">Ocultar el botón para activar el Bluetooth al iniciar la aplicación</string>
+    <string name="help_info_hid_service_not_initialized_message">Servicio HID no inicializado. Consulte la ayuda.</string>
+    <string name="help_hid_service_not_initialized_title">El servicio HID no está inicializado</string>
 </resources>
