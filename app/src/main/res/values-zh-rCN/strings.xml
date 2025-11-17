@@ -207,6 +207,6 @@
     <string name="favorites">收藏</string>
     <string name="add_to_favorites">添加到收藏</string>
     <string name="advanced_options">高级选项</string>
-    <string name="connect">连接‌</string>
+    <string name="connect">连接</string>
     <string name="media_controls">媒体控制</string>
 </resources>
