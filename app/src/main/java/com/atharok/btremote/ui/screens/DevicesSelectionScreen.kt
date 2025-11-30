@@ -439,6 +439,20 @@ private fun DevicesListView(
                 )
             }
         }
+
+        if(favoriteDevices.isEmpty() && nonFavoriteDevices.isEmpty()) {
+            item {
+                TextNormalSecondary(
+                    text = stringResource(id = R.string.no_device_registered),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(
+                            horizontal = dimensionResource(id = R.dimen.padding_max),
+                            vertical = dimensionResource(id = R.dimen.padding_normal)
+                        )
+                )
+            }
+        }
     }
 }
 

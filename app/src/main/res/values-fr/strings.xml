@@ -41,6 +41,7 @@
     <string name="favorites">Favoris</string>
     <string name="add_to_favorites">Ajouter aux favoris</string>
     <string name="remove_from_favorites">Retirer des favoris</string>
+    <string name="no_device_registered">Aucun appareil n’est enregistré sur cet appareil.</string>
     <!-- Bluetooth Pairing -->
     <string name="pairing_a_device">Associer un appareil</string>
     <string name="available_devices">Appareils disponibles</string>
