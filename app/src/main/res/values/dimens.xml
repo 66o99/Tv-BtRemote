@@ -18,4 +18,6 @@
     <dimen name="notification_button_inner_padding">8dp</dimen>
     <dimen name="notification_button_height">48dp</dimen>
     <dimen name="notification_button_corner_radius">6dp</dimen>
+    <dimen name="glance_button_radius_outer">24dp</dimen>
+    <dimen name="glance_button_radius_inner">2dp</dimen>
 </resources>

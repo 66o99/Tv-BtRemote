@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#33000000">
+
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white"/>
+            <corners
+                android:topLeftRadius="@dimen/glance_button_radius_outer"
+                android:bottomLeftRadius="@dimen/glance_button_radius_outer"
+                android:topRightRadius="@dimen/glance_button_radius_inner"
+                android:bottomRightRadius="@dimen/glance_button_radius_inner"
+                />
+        </shape>
+    </item>
+
+</ripple>

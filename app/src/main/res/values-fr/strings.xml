@@ -86,6 +86,9 @@
     <string name="more">Plus</string>
     <string name="disconnect">Se déconnecter</string>
     <string name="direction_arrows">Flèches de direction</string>
+    <!-- Widgets -->
+    <string name="connect">Se connecter</string>
+    <string name="media_controls">Contrôles multimédia</string>
     <!-- Settings -->
     <string name="settings">Paramètres</string>
     <string name="appearance">Apparence</string>

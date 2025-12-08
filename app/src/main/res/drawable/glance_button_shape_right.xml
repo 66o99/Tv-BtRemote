@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/white"/>
+    <corners
+        android:topLeftRadius="@dimen/glance_button_radius_inner"
+        android:bottomLeftRadius="@dimen/glance_button_radius_inner"
+        android:topRightRadius="@dimen/glance_button_radius_outer"
+        android:bottomRightRadius="@dimen/glance_button_radius_outer"
+        />
+</shape>
