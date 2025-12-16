@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="notification_button_color">#664D4D4D</color>
+    <color name="ic_launcher_background">#FF1E2531</color>
+    <color name="ic_launcher_foreground">#FFECF0FF</color>
 </resources>
