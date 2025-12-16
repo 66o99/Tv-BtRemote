@@ -4,6 +4,7 @@ import androidx.annotation.StringRes
 import com.atharok.btremote.R
 
 enum class KeyboardLanguage(@param:StringRes val language: Int) {
+    ANSI_ENGLISH_US(R.string.keyboard_ansi_english_us),
     ENGLISH_US(R.string.keyboard_english_us),
     ENGLISH_UK(R.string.keyboard_english_uk),
     SPANISH(R.string.keyboard_spanish),

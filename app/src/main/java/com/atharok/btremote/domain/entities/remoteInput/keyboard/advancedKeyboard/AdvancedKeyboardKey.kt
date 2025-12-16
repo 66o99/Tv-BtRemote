@@ -13,6 +13,7 @@ import com.atharok.btremote.ui.views.keyboard.TextAdvancedKeyboardModifierKeyVie
 sealed class AdvancedKeyboardKey {
     abstract val byte: Byte
     abstract val weight: Float
+    abstract val fraction: Float
     abstract val keyView: @Composable (
         touchDown: (Byte) -> Unit,
         touchUp: (Byte) -> Unit,
@@ -24,7 +25,8 @@ sealed class AdvancedKeyboardKey {
 
 data class TextAdvancedKeyboardKey(
     override val byte: Byte,
-    override val weight: Float,
+    override val weight: Float = 0f,
+    override val fraction: Float = 0f,
     val text: String,
     val textSecondary: String? = null,
     val textTertiary: String? = null
@@ -53,7 +55,8 @@ data class TextAdvancedKeyboardKey(
 
 data class IconAdvancedKeyboardKey(
     override val byte: Byte,
-    override val weight: Float,
+    override val weight: Float = 0f,
+    override val fraction: Float = 0f,
     val icon: ImageVector,
     val contentDescription: String? = null
 ): AdvancedKeyboardKey() {
@@ -81,7 +84,8 @@ data class IconAdvancedKeyboardKey(
 
 data class TextAdvancedKeyboardModifierKey(
     override val byte: Byte,
-    override val weight: Float,
+    override val weight: Float = 0f,
+    override val fraction: Float = 0f,
     val text: String,
     val textAlign: TextAlign
 ): AdvancedKeyboardKey() {

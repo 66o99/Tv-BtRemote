@@ -8,6 +8,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
@@ -87,6 +88,7 @@ private fun TextRemoteButton(
             text = text,
             percent = 0.45f,
             modifier = Modifier.fillMaxSize(),
+            fontFamily = FontFamily.Monospace,
             fontWeight = FontWeight.SemiBold,
             textAlign = TextAlign.Center
         )

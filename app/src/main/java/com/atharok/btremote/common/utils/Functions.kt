@@ -2,6 +2,7 @@ package com.atharok.btremote.common.utils
 
 import android.os.Build
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardLanguage
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.ANSIEnglishUSAdvancedKeyboardLayout
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.AdvancedKeyboardLayout
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.BulgarianAdvancedKeyboardLayout
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.CzechAdvancedKeyboardLayout
@@ -19,6 +20,7 @@ import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboar
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.SpanishAdvancedKeyboardLayout
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.TurkishAdvancedKeyboardLayout
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.UkrainianAdvancedKeyboardLayout
+import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard.ANSIEnglishUSVirtualKeyboardLayout
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard.BulgarianVirtualKeyboardLayout
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard.CzechVirtualKeyboardLayout
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard.EnglishUKVirtualKeyboardLayout
@@ -42,6 +44,7 @@ fun isDynamicColorsAvailable(): Boolean = Build.VERSION.SDK_INT >= Build.VERSION
 
 fun getKeyboardLayout(language: KeyboardLanguage): VirtualKeyboardLayout {
     return when(language) {
+        KeyboardLanguage.ANSI_ENGLISH_US -> getKoin().get<ANSIEnglishUSVirtualKeyboardLayout>()
         KeyboardLanguage.ENGLISH_US -> getKoin().get<EnglishUSVirtualKeyboardLayout>()
         KeyboardLanguage.ENGLISH_UK -> getKoin().get<EnglishUKVirtualKeyboardLayout>()
         KeyboardLanguage.SPANISH -> getKoin().get<SpanishVirtualKeyboardLayout>()
@@ -63,6 +66,7 @@ fun getKeyboardLayout(language: KeyboardLanguage): VirtualKeyboardLayout {
 
 fun getAdvancedKeyboardLayout(language: KeyboardLanguage): AdvancedKeyboardLayout {
     return when(language) {
+        KeyboardLanguage.ANSI_ENGLISH_US -> getKoin().get<ANSIEnglishUSAdvancedKeyboardLayout>()
         KeyboardLanguage.ENGLISH_US -> getKoin().get<EnglishUSAdvancedKeyboardLayout>()
         KeyboardLanguage.ENGLISH_UK -> getKoin().get<EnglishUKAdvancedKeyboardLayout>()
         KeyboardLanguage.SPANISH -> getKoin().get<SpanishAdvancedKeyboardLayout>()

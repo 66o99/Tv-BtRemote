@@ -8,6 +8,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -29,9 +30,11 @@ fun Context.setFullScreen(isFullScreen: Boolean) {
         if(isFullScreen) {
             windowInsetsController.hide(WindowInsetsCompat.Type.statusBars())
             windowInsetsController.hide(WindowInsetsCompat.Type.navigationBars())
+            windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         } else {
             windowInsetsController.show(WindowInsetsCompat.Type.statusBars())
             windowInsetsController.show(WindowInsetsCompat.Type.navigationBars())
+            windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_DEFAULT
         }
     }
 }

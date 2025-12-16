@@ -13,7 +13,7 @@ abstract class AdvancedKeyboardLayout(protected val context: Context) {
     abstract val line3: Array<AdvancedKeyboardKey>
     abstract val line4: Array<AdvancedKeyboardKey>
 
-    val layout by lazy {
+    open val layout by lazy {
 
         arrayOf<Array<AdvancedKeyboardKey>>(
 
@@ -106,7 +106,7 @@ abstract class AdvancedKeyboardLayout(protected val context: Context) {
                     icon = AppIcons.KeyboardArrowUp
                 ),
                 IconAdvancedKeyboardKey(
-                    byte = KeyboardKey.KEY_DELETE.byte,
+                    byte = KeyboardKey.KEY_BACKSPACE.byte,
                     weight = 1.5f,
                     icon = AppIcons.KeyboardBackspace
                 ),

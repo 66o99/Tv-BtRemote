@@ -12,6 +12,7 @@ import com.atharok.btremote.common.utils.DEFAULT_KEYBOARD_LANGUAGE
 import com.atharok.btremote.common.utils.DEFAULT_MOUSE_SPEED
 import com.atharok.btremote.common.utils.DEFAULT_MUST_CLEAR_INPUT_FIELD
 import com.atharok.btremote.common.utils.DEFAULT_REMOTE_NAVIGATION
+import com.atharok.btremote.common.utils.DEFAULT_SCROLL_SPEED
 import com.atharok.btremote.common.utils.DEFAULT_SHOULD_INVERT_MOUSE_SCROLLING_DIRECTION
 import com.atharok.btremote.common.utils.DEFAULT_THEME
 import com.atharok.btremote.common.utils.DEFAULT_USE_ADVANCED_KEYBOARD
@@ -42,6 +43,7 @@ class SettingsDataStore(private val context: Context) {
         private const val FULL_SCREEN_KEY = "full_screen_key"
 
         private const val MOUSE_SPEED_KEY = "mouse_speed_key"
+        private const val SCROLL_SPEED_KEY = "scroll_speed_key"
         private const val INVERT_MOUSE_SCROLLING_DIRECTION_KEY = "invert_mouse_scrolling_direction_key"
         private const val USE_GYROSCOPE_KEY = "use_gyroscope_key"
         private const val KEYBOARD_LANGUAGE = "keyboard_language"
@@ -62,6 +64,7 @@ class SettingsDataStore(private val context: Context) {
     private val useBlackColorForDarkThemeKey = booleanPreferencesKey(BLACK_COLOR_KEY)
     private val useFullScreenKey = booleanPreferencesKey(FULL_SCREEN_KEY)
     private val mouseSpeedKey = floatPreferencesKey(MOUSE_SPEED_KEY)
+    private val scrollSpeedKey = floatPreferencesKey(SCROLL_SPEED_KEY)
     private val invertMouseScrollingDirectionKey = booleanPreferencesKey(INVERT_MOUSE_SCROLLING_DIRECTION_KEY)
     private val useGyroscopeKey = booleanPreferencesKey(USE_GYROSCOPE_KEY)
     private val keyboardLanguageKey = stringPreferencesKey(KEYBOARD_LANGUAGE)
@@ -133,6 +136,7 @@ class SettingsDataStore(private val context: Context) {
             RemoteSettings(
                 // ---- Mouse ----
                 mouseSpeed = preferences[mouseSpeedKey] ?: DEFAULT_MOUSE_SPEED,
+                scrollSpeed = preferences[scrollSpeedKey] ?: DEFAULT_SCROLL_SPEED,
                 shouldInvertMouseScrollingDirection = preferences[invertMouseScrollingDirectionKey] ?: DEFAULT_SHOULD_INVERT_MOUSE_SCROLLING_DIRECTION,
                 useGyroscope = preferences[useGyroscopeKey] ?: DEFAULT_USE_GYROSCOPE,
 
@@ -162,6 +166,12 @@ class SettingsDataStore(private val context: Context) {
     suspend fun saveMouseSpeed(mouseSpeed: Float) {
         context.dataStore.edit {
             it[mouseSpeedKey] = mouseSpeed
+        }
+    }
+
+    suspend fun saveScrollSpeed(scrollSpeed: Float) {
+        context.dataStore.edit {
+            it[scrollSpeedKey] = scrollSpeed
         }
     }
 

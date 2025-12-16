@@ -36,6 +36,7 @@ import androidx.compose.material.icons.rounded.Key
 import androidx.compose.material.icons.rounded.Keyboard
 import androidx.compose.material.icons.rounded.KeyboardArrowDown
 import androidx.compose.material.icons.rounded.KeyboardArrowUp
+import androidx.compose.material.icons.rounded.KeyboardCapslock
 import androidx.compose.material.icons.rounded.Link
 import androidx.compose.material.icons.rounded.LinkOff
 import androidx.compose.material.icons.rounded.Lock
@@ -138,6 +139,7 @@ object AppIcons: KoinComponent {
 
     val Keyboard get() = Icons.Rounded.Keyboard
     val KeyboardTab get() = Icons.AutoMirrored.Rounded.KeyboardTab
+    val KeyboardCapslock get() = Icons.Rounded.KeyboardCapslock
     val KeyboardScreenshot get() = Icons.Rounded.ScreenshotMonitor
     val KeyboardBackspace get() = Icons.AutoMirrored.Rounded.Backspace
     val KeyboardEnter get() = Icons.AutoMirrored.Rounded.KeyboardReturn

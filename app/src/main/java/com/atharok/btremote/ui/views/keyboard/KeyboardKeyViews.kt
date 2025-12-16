@@ -14,6 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.R
@@ -75,6 +77,8 @@ fun TextAdvancedKeyboardKeyView(
                     text = it,
                     percent = 0.8f,
                     modifier = Modifier.fillMaxWidth().weight(1f),
+                    fontFamily = FontFamily.Monospace,
+                    fontWeight = FontWeight.SemiBold,
                     textAlign = TextAlign.Start
                 )
             } ?: run {
@@ -87,6 +91,8 @@ fun TextAdvancedKeyboardKeyView(
                 text = keyboardKey.text,
                 percent = 0.8f,
                 modifier = Modifier.fillMaxWidth().weight(1f),
+                fontFamily = FontFamily.Monospace,
+                fontWeight = FontWeight.SemiBold,
                 textAlign = TextAlign.Center
             )
 
@@ -95,6 +101,8 @@ fun TextAdvancedKeyboardKeyView(
                     text = it,
                     percent = 0.8f,
                     modifier = Modifier.fillMaxWidth().weight(1f),
+                    fontFamily = FontFamily.Monospace,
+                    fontWeight = FontWeight.SemiBold,
                     textAlign = TextAlign.End
                 )
             } ?: run {
@@ -159,6 +167,8 @@ fun TextAdvancedKeyboardModifierKeyView(
                 text = keyboardKey.text,
                 percent = 0.8f,
                 modifier = Modifier.fillMaxWidth().fillMaxHeight(0.333f),
+                fontFamily = FontFamily.Monospace,
+                fontWeight = FontWeight.SemiBold,
                 textAlign = keyboardKey.textAlign
             )
         }

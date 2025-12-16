@@ -43,6 +43,10 @@ class SettingsViewModel(
         useCase.saveMouseSpeed(mouseSpeed)
     }
 
+    fun saveScrollSpeed(scrollSpeed: Float) = viewModelScope.launch {
+        useCase.saveScrollSpeed(scrollSpeed)
+    }
+
     fun saveInvertMouseScrollingDirection(invertScrollingDirection: Boolean) = viewModelScope.launch {
         useCase.saveInvertMouseScrollingDirection(invertScrollingDirection)
     }

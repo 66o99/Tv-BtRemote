@@ -34,8 +34,8 @@ fun StatefulRemoteButton(
         interactionSource.interactions.collect { interaction ->
             when (interaction) {
                 is PressInteraction.Press -> {
-                    haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                     touchDown()
+                    haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                 }
                 is PressInteraction.Release -> touchUp()
                 is PressInteraction.Cancel -> touchUp()

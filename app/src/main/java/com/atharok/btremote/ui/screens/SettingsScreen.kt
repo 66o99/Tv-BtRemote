@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import androidx.activity.compose.LocalActivity
+import androidx.annotation.IntRange
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -59,6 +60,7 @@ import com.atharok.btremote.ui.components.NavigateUpAction
 import com.atharok.btremote.ui.components.TextNormal
 import com.atharok.btremote.ui.components.TextNormalSecondary
 import org.koin.androidx.compose.koinViewModel
+import java.util.Locale
 
 @Composable
 fun SettingsScreen(
@@ -242,9 +244,12 @@ fun SettingsScreen(
             )
 
             SettingsSlider(
+                valueRange = 0.1f..10f,
+                steps = 197,
                 value = remoteSettings.mouseSpeed,
                 onValueChange = { settingsViewModel.saveMouseSpeed(it) },
-                info = stringResource(id = R.string.mouse_pointer_speed) + " (x${remoteSettings.mouseSpeed})",
+                info = stringResource(id = R.string.mouse_pointer_speed) +
+                        " (x${"%.2f".format(Locale.ROOT, remoteSettings.mouseSpeed)})",
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(
@@ -253,6 +258,20 @@ fun SettingsScreen(
                     )
             )
 
+            SettingsSlider(
+                valueRange = 0.1f..10f,
+                steps = 197,
+                value = remoteSettings.scrollSpeed,
+                onValueChange = { settingsViewModel.saveScrollSpeed(it) },
+                info = stringResource(id = R.string.scroll_speed) +
+                        " (x${"%.2f".format(Locale.ROOT, remoteSettings.scrollSpeed)})",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(
+                        horizontal = horizontalPadding,
+                        vertical = verticalPadding
+                    )
+            )
             SettingsSwitch(
                 primaryText = stringResource(id = R.string.invert_mouse_scrolling_direction),
                 secondaryText = null,
@@ -630,10 +649,13 @@ private fun SettingsSwitch(
 
 @Composable
 private fun SettingsSlider(
+    valueRange: ClosedFloatingPointRange<Float>,
+    @IntRange(from = 0) steps: Int,
     value: Float,
     onValueChange: (Float) -> Unit,
     info: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    details: String? = null
 ) {
     Column(
         modifier = modifier
@@ -642,11 +664,14 @@ private fun SettingsSlider(
             text = info,
             modifier = Modifier.fillMaxWidth().padding(bottom = dimensionResource(R.dimen.padding_small))
         )
+        details?.let {
+            TextNormalSecondary(text = it)
+        }
         Slider(
+            valueRange = valueRange,
+            steps = steps,
             value = value,
             onValueChange = onValueChange,
-            valueRange = 1f..5f,
-            steps = 15,
         )
     }
 }

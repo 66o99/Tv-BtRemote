@@ -112,6 +112,7 @@
     <string name="dynamic_colors">Dynamic colors</string>
     <string name="full_screen">Full screen</string>
     <string name="mouse_pointer_speed">Pointer speed</string>
+    <string name="scroll_speed">Scroll speed</string>
     <string name="invert_mouse_scrolling_direction">Invert the scrolling direction</string>
     <string name="use_the_gyroscope_to_control_the_mouse">Use the gyroscope to control the mouse</string>
     <string name="keyboard_and_input_field">Keyboard and input field</string>
@@ -140,6 +141,7 @@
     <string name="keyboard_language">Keyboard language</string>
     <string name="keyboard_language_info">Ensure that the selected keyboard language matches the one configured on the remote device.</string>
     <string name="advanced_keyboard">Advanced keyboard</string>
+    <string name="keyboard_ansi_english_us">ANSI English (United States)</string>
     <string name="keyboard_english_us">English (United States)</string>
     <string name="keyboard_english_uk">English (United Kingdom)</string>
     <string name="keyboard_spanish">Spanish</string>

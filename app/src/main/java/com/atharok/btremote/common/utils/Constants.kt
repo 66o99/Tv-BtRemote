@@ -20,12 +20,13 @@ const val DEFAULT_USE_BLACK_COLOR_FOR_DARK_THEME: Boolean = false
 const val DEFAULT_USE_FULL_SCREEN: Boolean = false
 
 // ---- Mouse ----
-const val DEFAULT_MOUSE_SPEED: Float = 1.5f
+const val DEFAULT_MOUSE_SPEED: Float = 1f
+const val DEFAULT_SCROLL_SPEED: Float = 1f
 const val DEFAULT_SHOULD_INVERT_MOUSE_SCROLLING_DIRECTION: Boolean = false
 const val DEFAULT_USE_GYROSCOPE: Boolean = false
 
 // ---- Keyboard ----
-val DEFAULT_KEYBOARD_LANGUAGE: KeyboardLanguage = KeyboardLanguage.ENGLISH_US
+val DEFAULT_KEYBOARD_LANGUAGE: KeyboardLanguage = KeyboardLanguage.ANSI_ENGLISH_US
 const val DEFAULT_MUST_CLEAR_INPUT_FIELD: Boolean = true
 const val DEFAULT_USE_ADVANCED_KEYBOARD: Boolean = false
 const val DEFAULT_USE_ADVANCED_KEYBOARD_INTEGRATED: Boolean = false

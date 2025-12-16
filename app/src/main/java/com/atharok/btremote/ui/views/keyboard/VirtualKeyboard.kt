@@ -179,7 +179,7 @@ private fun AdditionalKeyboardKeysLayout(
             VirtualKeyboardKey(
                 image = AppIcons.KeyboardBackspace,
                 contentDescription = stringResource(id = R.string.delete),
-                bytes = VirtualKeyboardLayout.KEYBOARD_KEY_DELETE,
+                bytes = VirtualKeyboardLayout.KEYBOARD_KEY_BACKSPACE,
                 sendKeyboardKey = sendKeyboardKeyReport,
                 modifier = Modifier.weight(1f).padding(end = dimensionResource(id = R.dimen.padding_min))
             )

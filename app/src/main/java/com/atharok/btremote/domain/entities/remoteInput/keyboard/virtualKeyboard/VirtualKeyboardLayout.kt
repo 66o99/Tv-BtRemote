@@ -7,7 +7,7 @@ import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardKey
 abstract class VirtualKeyboardLayout {
     companion object {
         val KEYBOARD_KEY_ENTER by lazy { byteArrayOf(0x00, KeyboardKey.KEY_ENTER.byte) }
-        val KEYBOARD_KEY_DELETE by lazy { byteArrayOf(0x00, KeyboardKey.KEY_DELETE.byte) }
+        val KEYBOARD_KEY_BACKSPACE by lazy { byteArrayOf(0x00, KeyboardKey.KEY_BACKSPACE.byte) }
         val KEYBOARD_KEY_SPACE_BAR by lazy { byteArrayOf(0x00, KeyboardKey.KEY_SPACE_BAR.byte) }
         val KEYBOARD_KEY_UP by lazy { byteArrayOf(0x00, KeyboardKey.KEY_UP_ARROW.byte) }
         val KEYBOARD_KEY_DOWN by lazy { byteArrayOf(0x00, KeyboardKey.KEY_DOWN_ARROW.byte) }
