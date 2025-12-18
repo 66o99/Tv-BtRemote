@@ -199,4 +199,6 @@
     <string name="advanced_options">Розширені опції</string>
     <string name="hide_bluetooth_activation_button">Приховати кнопку активації Bluetooth при запуску програми</string>
     <string name="add_to_favorites">Додати до вибраних</string>
+    <string name="media_controls">Керування медіа</string>
+    <string name="connect">Під\'єднатись</string>
 </resources>

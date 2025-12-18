@@ -220,4 +220,6 @@
     <string name="add_to_favorites">Προσθήκη στα αγαπημένα</string>
     <string name="hide_bluetooth_activation_button">Απόκρυψη κουμπιού ενεργοποίησης Bluetooth κατά την εκκίνηση</string>
     <string name="advanced_options">Προχωρημένες ρυθμίσεις</string>
+    <string name="connect">Σύνδεση</string>
+    <string name="media_controls">Στοιχεία ελέγχου πολυμέσων</string>
 </resources>

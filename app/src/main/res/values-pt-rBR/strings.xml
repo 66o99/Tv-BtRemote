@@ -199,4 +199,6 @@
     <string name="advanced_options">Opções avançadas</string>
     <string name="hide_bluetooth_activation_button">Ocultar o botão de ativação do Bluetooth ao abrir o app</string>
     <string name="remove_from_favorites">Remover dos favoritos</string>
+    <string name="connect">Conectar</string>
+    <string name="media_controls">Controles de mídia</string>
 </resources>
