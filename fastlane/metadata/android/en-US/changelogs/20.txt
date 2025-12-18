@@ -1,0 +1,12 @@
+1.9.0
+
+Full list of changes here: https://gitlab.com/Atharok/BtRemote/-/releases
+
+- Added a media control widget (thanks to Yogesh Marwaha).
+- A few visual adjustments.
+- A few changes made to the icon.
+- Text style adjustments.
+- Code refactoring.
+- Bug fixes.
+- Updated translations.
+- Updated dependencies.
