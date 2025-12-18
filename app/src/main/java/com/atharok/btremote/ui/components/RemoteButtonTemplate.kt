@@ -6,7 +6,6 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -19,7 +18,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.Dp
-import com.atharok.btremote.ui.theme.dimensionElevation1
+import com.atharok.btremote.ui.theme.dimensionElevation2
 
 @Composable
 fun StatefulRemoteButton(
@@ -78,14 +77,13 @@ fun ButtonContentTemplate(
 fun RemoteButtonSurface(
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1(),
+    elevation: Dp = dimensionElevation2(),
     content: @Composable () -> Unit
 ) {
-    Surface(
+    DefaultElevatedCard(
         modifier = modifier,
         shape = shape,
-        tonalElevation = elevation,
-        shadowElevation = dimensionElevation1()
+        elevation = elevation
     ) {
         content()
     }

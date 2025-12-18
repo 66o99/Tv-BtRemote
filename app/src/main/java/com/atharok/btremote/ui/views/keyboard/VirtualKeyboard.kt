@@ -34,7 +34,7 @@ import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.REMOTE_INPUT_NONE
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard.VirtualKeyboardLayout
-import com.atharok.btremote.ui.theme.dimensionElevation3
+import com.atharok.btremote.ui.theme.dimensionElevation4
 
 @Composable
 fun VirtualKeyboardModalBottomSheet(
@@ -227,7 +227,7 @@ private fun VirtualKeyboardKey(
     sendKeyboardKey: (ByteArray) -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RoundedCornerShape(dimensionResource(id = R.dimen.keyboard_key_corner_radius)),
-    elevation: Dp = dimensionElevation3()
+    elevation: Dp = dimensionElevation4()
 ) {
     KeyboardKeyView(
         touchDown = { sendKeyboardKey(bytes) },

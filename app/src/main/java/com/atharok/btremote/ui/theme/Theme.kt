@@ -291,8 +291,8 @@ fun BtRemoteTheme(
             if (useDarkTheme) {
                 if(useBlackColorForDarkTheme) {
                     dynamicDarkColorScheme(context).copy(
-                        background = Color.Black,
-                        surface = Color.Black
+                        background = backgroundBlack,
+                        surface = surfaceBlack
                     )
                 } else {
                     dynamicDarkColorScheme(context)
@@ -302,8 +302,8 @@ fun BtRemoteTheme(
         useDarkTheme -> {
             if(useBlackColorForDarkTheme) {
                 darkScheme.copy(
-                    background = Color.Black,
-                    surface = Color.Black
+                    background = backgroundBlack,
+                    surface = surfaceBlack
                 )
             } else {
                 darkScheme

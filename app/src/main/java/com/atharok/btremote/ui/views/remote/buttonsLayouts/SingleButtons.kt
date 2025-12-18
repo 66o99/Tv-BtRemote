@@ -17,7 +17,7 @@ import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.ui.components.AdaptiveText
 import com.atharok.btremote.ui.components.ButtonContentTemplate
 import com.atharok.btremote.ui.components.RemoteButtonSurface
-import com.atharok.btremote.ui.theme.dimensionElevation1
+import com.atharok.btremote.ui.theme.dimensionElevation2
 
 @Composable
 private fun SingleRemoteButton(
@@ -25,7 +25,7 @@ private fun SingleRemoteButton(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1(),
+    elevation: Dp = dimensionElevation2(),
     content: @Composable () -> Unit
 ) {
     RemoteButtonSurface(
@@ -50,7 +50,7 @@ private fun IconRemoteButton(
     contentDescription: String,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     SingleRemoteButton(
         touchDown = touchDown,
@@ -74,7 +74,7 @@ private fun TextRemoteButton(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     SingleRemoteButton(
         touchDown = touchDown,
@@ -231,7 +231,7 @@ fun TVChannelButton1(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     TextRemoteButton(
         text = "1",
@@ -249,7 +249,7 @@ fun TVChannelButton2(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     TextRemoteButton(
         text = "2",
@@ -267,7 +267,7 @@ fun TVChannelButton3(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     TextRemoteButton(
         text = "3",
@@ -285,7 +285,7 @@ fun TVChannelButton4(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     TextRemoteButton(
         text = "4",
@@ -303,7 +303,7 @@ fun TVChannelButton5(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     TextRemoteButton(
         text = "5",
@@ -321,7 +321,7 @@ fun TVChannelButton6(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     TextRemoteButton(
         text = "6",
@@ -339,7 +339,7 @@ fun TVChannelButton7(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     TextRemoteButton(
         text = "7",
@@ -357,7 +357,7 @@ fun TVChannelButton8(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     TextRemoteButton(
         text = "8",
@@ -375,7 +375,7 @@ fun TVChannelButton9(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     TextRemoteButton(
         text = "9",
@@ -393,7 +393,7 @@ fun TVChannelButton0(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     TextRemoteButton(
         text = "0",
@@ -411,7 +411,7 @@ fun TVChannelPreviousButton(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     IconRemoteButton(
         touchDown = touchDown,
@@ -430,7 +430,7 @@ fun TVChannelNextButton(
     touchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     IconRemoteButton(
         touchDown = touchDown,

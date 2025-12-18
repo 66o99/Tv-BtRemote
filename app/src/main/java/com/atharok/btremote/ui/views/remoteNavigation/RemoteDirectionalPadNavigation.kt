@@ -27,7 +27,7 @@ import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.common.utils.ArcShape
 import com.atharok.btremote.ui.components.RemoteButtonSurface
 import com.atharok.btremote.ui.components.StatefulRemoteButton
-import com.atharok.btremote.ui.theme.dimensionElevation1
+import com.atharok.btremote.ui.theme.dimensionElevation2
 
 private val TopArcShape = ArcShape(-45f, -90f)
 private val BottomArcShape = ArcShape(45f, 90f)
@@ -44,7 +44,7 @@ fun RemoteDirectionalPadNavigation(
     directionTouchUp: () -> Unit,
     pickTouchUp: () -> Unit,
     modifier: Modifier = Modifier,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     Box(
         modifier = modifier.shadow(

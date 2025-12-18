@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.dimensionResource
 import com.atharok.btremote.R
 import com.atharok.btremote.common.extensions.autoMirroredIcon
-import com.atharok.btremote.ui.theme.dimensionElevation1
+import com.atharok.btremote.ui.theme.dimensionElevation2
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,7 +36,7 @@ fun TemplateModalBottomSheet(
     ModalBottomSheet(
         onDismissRequest = onDismissRequest,
         modifier = modifier,
-        containerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(dimensionElevation1()),
+        containerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(dimensionElevation2()),
         contentWindowInsets = {
             WindowInsets(0, 0, 0, 0)
         }

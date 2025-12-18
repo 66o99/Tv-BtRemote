@@ -31,16 +31,14 @@ import com.atharok.btremote.common.utils.getAdvancedKeyboardLayout
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.KeyboardLanguage
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.AdvancedKeyboardLayout
 import com.atharok.btremote.domain.entities.remoteInput.keyboard.advancedKeyboard.TextAdvancedKeyboardModifierKey
-import com.atharok.btremote.ui.theme.dimensionElevation3
+import com.atharok.btremote.ui.theme.dimensionElevation4
 
 @Composable
 fun AdvancedKeyboardModalBottomSheet(
     keyboardLanguage: KeyboardLanguage,
     sendKeyboardKeyReport: (bytes: ByteArray) -> Unit,
     onShowKeyboardBottomSheetChanged: (Boolean) -> Unit,
-    modifier: Modifier = Modifier,
-    shape: Shape = RoundedCornerShape(dimensionResource(id = R.dimen.keyboard_key_corner_radius)),
-    elevation: Dp = dimensionElevation3()
+    modifier: Modifier = Modifier
 ) {
     KeyboardModalBottomSheet(
         onShowKeyboardBottomSheetChanged = onShowKeyboardBottomSheetChanged,
@@ -53,9 +51,7 @@ fun AdvancedKeyboardModalBottomSheet(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(dimensionResource(R.dimen.padding_large))
-                .padding(bottom = dimensionResource(id = R.dimen.padding_max)),
-            shape = shape,
-            elevation = elevation
+                .padding(bottom = dimensionResource(id = R.dimen.padding_max))
         )
     }
 }
@@ -66,7 +62,7 @@ fun AdvancedKeyboard(
     sendKeyboardKeyReport: (bytes: ByteArray) -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RoundedCornerShape(dimensionResource(id = R.dimen.keyboard_key_corner_radius)),
-    elevation: Dp = dimensionElevation3()
+    keyElevation: Dp = dimensionElevation4()
 ) {
     val configuration = LocalConfiguration.current
     val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
@@ -130,7 +126,7 @@ fun AdvancedKeyboard(
                                 },
                                 Modifier.weight(keyboardKey.weight),
                                 shape,
-                                elevation
+                                keyElevation
                             )
                         }
                     }

@@ -26,7 +26,7 @@ import com.atharok.btremote.ui.components.TextMedium
 import com.atharok.btremote.ui.components.TextNormal
 import com.atharok.btremote.ui.components.TextNormalSecondary
 import com.atharok.btremote.ui.components.UnpairDropdownMenuItem
-import com.atharok.btremote.ui.theme.dimensionElevation3
+import com.atharok.btremote.ui.theme.dimensionElevation4
 
 @Composable
 fun DeviceItemView(
@@ -93,7 +93,7 @@ fun DeviceItemView(
                     horizontal = dimensionResource(id = R.dimen.padding_small)
                 ),
                 shape = CircleShape,
-                tonalElevation = dimensionElevation3()
+                tonalElevation = dimensionElevation4()
             ) {
                 TextNormal(
                     text = stringResource(id = R.string.automatic_shorten),

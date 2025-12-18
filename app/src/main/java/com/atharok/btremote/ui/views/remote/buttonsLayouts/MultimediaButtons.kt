@@ -19,7 +19,7 @@ import com.atharok.btremote.R
 import com.atharok.btremote.common.utils.AppIcons
 import com.atharok.btremote.ui.components.ButtonContentTemplate
 import com.atharok.btremote.ui.components.RemoteButtonSurface
-import com.atharok.btremote.ui.theme.dimensionElevation1
+import com.atharok.btremote.ui.theme.dimensionElevation2
 
 @Composable
 private fun MultimediaLayout(
@@ -28,7 +28,7 @@ private fun MultimediaLayout(
     next: @Composable () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     RemoteButtonSurface(
         modifier = modifier,
@@ -63,7 +63,7 @@ fun MultimediaLayout(
     remoteTouchUp: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    elevation: Dp = dimensionElevation1()
+    elevation: Dp = dimensionElevation2()
 ) {
     MultimediaLayout(
         previous = {
