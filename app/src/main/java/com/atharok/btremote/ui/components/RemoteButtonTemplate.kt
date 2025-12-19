@@ -19,6 +19,7 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.unit.Dp
 import com.atharok.btremote.ui.theme.dimensionElevation2
+import com.atharok.btremote.ui.theme.dimensionShadowElevation
 
 @Composable
 fun StatefulRemoteButton(
@@ -78,12 +79,14 @@ fun RemoteButtonSurface(
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
     elevation: Dp = dimensionElevation2(),
+    shadowElevation: Dp = dimensionShadowElevation(),
     content: @Composable () -> Unit
 ) {
     DefaultElevatedCard(
         modifier = modifier,
         shape = shape,
-        elevation = elevation
+        elevation = elevation,
+        shadowElevation = shadowElevation
     ) {
         content()
     }

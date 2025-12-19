@@ -28,6 +28,7 @@ import com.atharok.btremote.common.utils.ArcShape
 import com.atharok.btremote.ui.components.RemoteButtonSurface
 import com.atharok.btremote.ui.components.StatefulRemoteButton
 import com.atharok.btremote.ui.theme.dimensionElevation2
+import com.atharok.btremote.ui.theme.dimensionShadowElevation
 
 private val TopArcShape = ArcShape(-45f, -90f)
 private val BottomArcShape = ArcShape(45f, 90f)
@@ -48,7 +49,7 @@ fun RemoteDirectionalPadNavigation(
 ) {
     Box(
         modifier = modifier.shadow(
-            elevation = elevation,
+            elevation = dimensionShadowElevation(),
             shape = CircleShape
         )
     ) {
@@ -61,7 +62,8 @@ fun RemoteDirectionalPadNavigation(
             RemoteButtonSurface(
                 modifier = Modifier.fillMaxSize(),
                 shape = TopArcShape,
-                elevation = elevation
+                elevation = elevation,
+                shadowElevation = 0.dp
             ) {
                 DPadButton(touchDown = upTouchDown, touchUp = directionTouchUp)
             }
@@ -70,7 +72,8 @@ fun RemoteDirectionalPadNavigation(
             RemoteButtonSurface(
                 modifier = Modifier.fillMaxSize(),
                 shape = BottomArcShape,
-                elevation = elevation
+                elevation = elevation,
+                shadowElevation = 0.dp
             ) {
                 DPadButton(touchDown = downTouchDown, touchUp = directionTouchUp)
             }
@@ -79,7 +82,8 @@ fun RemoteDirectionalPadNavigation(
             RemoteButtonSurface(
                 modifier = Modifier.fillMaxSize(),
                 shape = LeftArcShape,
-                elevation = elevation
+                elevation = elevation,
+                shadowElevation = 0.dp
             ) {
                 DPadButton(touchDown = leftTouchDown, touchUp = directionTouchUp)
             }
@@ -88,7 +92,8 @@ fun RemoteDirectionalPadNavigation(
             RemoteButtonSurface(
                 modifier = Modifier.fillMaxSize(),
                 shape = RightArcShape,
-                elevation = elevation
+                elevation = elevation,
+                shadowElevation = 0.dp
             ) {
                 DPadButton(touchDown = rightTouchDown, touchUp = directionTouchUp)
             }
@@ -97,7 +102,8 @@ fun RemoteDirectionalPadNavigation(
             RemoteButtonSurface(
                 modifier = Modifier.fillMaxSize(0.3333f),
                 shape = CircleShape,
-                elevation = elevation
+                elevation = elevation,
+                shadowElevation = 0.dp
             ) {
                 DPadButton(touchDown = pickTouchDown, touchUp = pickTouchUp)
             }

@@ -4,6 +4,7 @@
     <dimen name="elevation_2">2dp</dimen>
     <dimen name="elevation_3">3dp</dimen>
     <dimen name="elevation_4">4dp</dimen>
+    <dimen name="shadow_elevation">1dp</dimen>
     <dimen name="keyboard_key_corner_radius">4dp</dimen>
     <dimen name="card_corner_radius">12dp</dimen>
     <dimen name="padding_min">2dp</dimen>

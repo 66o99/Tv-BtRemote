@@ -21,3 +21,7 @@ fun dimensionElevation3(): Dp = dimensionResource(id = R.dimen.elevation_3)
 @Composable
 @ReadOnlyComposable
 fun dimensionElevation4(): Dp = dimensionResource(id = R.dimen.elevation_4)
+
+@Composable
+@ReadOnlyComposable
+fun dimensionShadowElevation(): Dp = dimensionResource(id = R.dimen.shadow_elevation)
