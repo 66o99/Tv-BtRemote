@@ -222,4 +222,5 @@
     <string name="advanced_options">Προχωρημένες ρυθμίσεις</string>
     <string name="connect">Σύνδεση</string>
     <string name="media_controls">Στοιχεία ελέγχου πολυμέσων</string>
+    <string name="no_device_registered">Δεν έχει καταχωρηθεί συσκευή.</string>
 </resources>
