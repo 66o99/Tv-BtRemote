@@ -201,4 +201,5 @@
     <string name="add_to_favorites">Добави към любими</string>
     <string name="connect">Свържете се</string>
     <string name="media_controls">Контроли за медии</string>
+    <string name="no_device_registered">На това устройство не е регистрирано нито едно устройство.</string>
 </resources>
