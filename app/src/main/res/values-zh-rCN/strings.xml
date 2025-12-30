@@ -210,4 +210,5 @@
     <string name="connect">连接</string>
     <string name="media_controls">媒体控制</string>
     <string name="no_device_registered">此设备上未注册任何设备。</string>
+    <string name="code_version">版本 %1$s</string>
 </resources>
