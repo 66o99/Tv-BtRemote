@@ -223,4 +223,5 @@
     <string name="connect">Σύνδεση</string>
     <string name="media_controls">Στοιχεία ελέγχου πολυμέσων</string>
     <string name="no_device_registered">Δεν έχει καταχωρηθεί συσκευή.</string>
+    <string name="code_version">Έκδοση %1$s</string>
 </resources>
