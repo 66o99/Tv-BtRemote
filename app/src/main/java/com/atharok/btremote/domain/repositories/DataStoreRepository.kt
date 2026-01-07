@@ -45,6 +45,8 @@ interface DataStoreRepository {
 
     suspend fun saveUseEnterForSelection(useEnterForSelection: Boolean)
 
+    suspend fun saveUseMouseNavigationByDefault(useMouseNavigationByDefault: Boolean)
+
     // ---- Others ----
 
     fun getFavoriteDevices(): Flow<List<String>>

@@ -79,6 +79,10 @@ class DataStoreRepositoryImpl(
         settingsDataStore.saveUseEnterForSelection(useEnterForSelection)
     }
 
+    override suspend fun saveUseMouseNavigationByDefault(useMouseNavigationByDefault: Boolean) {
+        settingsDataStore.saveUseMouseNavigationByDefault(useMouseNavigationByDefault)
+    }
+
     // ---- Others ----
 
     override fun getFavoriteDevices(): Flow<List<String>> = settingsDataStore.favoriteDevicesFlow

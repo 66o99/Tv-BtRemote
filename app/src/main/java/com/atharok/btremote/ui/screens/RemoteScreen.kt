@@ -99,7 +99,7 @@ fun RemoteScreen(
         .remoteSettingsFlow.collectAsStateWithLifecycle(RemoteSettings())
 
     // Remote
-    var navigationToggle by rememberSaveable { mutableStateOf(NavigationToggle.DIRECTION) }
+    var navigationToggle by rememberSaveable(remoteSettings.useMouseNavigationByDefault) { mutableStateOf(if(remoteSettings.useMouseNavigationByDefault) NavigationToggle.MOUSE else NavigationToggle.DIRECTION) }
 
     // Keyboard
     var showKeyboard: Boolean by rememberSaveable { mutableStateOf(false) }

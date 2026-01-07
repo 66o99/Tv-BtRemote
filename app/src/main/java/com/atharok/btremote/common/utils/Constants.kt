@@ -37,6 +37,8 @@ const val DEFAULT_USE_ENTER_FOR_SELECTION: Boolean = false
 
 const val DELAY_BETWEEN_KEY_PRESSES_IN_MILLIS = 25L
 
+const val USE_MOUSE_NAVIGATION_BY_DEFAULT = false
+
 // ---- HID Descriptor ----
 
 const val KEYBOARD_REPORT_ID = 0x01

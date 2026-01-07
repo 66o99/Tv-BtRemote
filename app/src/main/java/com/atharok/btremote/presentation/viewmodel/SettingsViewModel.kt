@@ -79,6 +79,10 @@ class SettingsViewModel(
         useCase.saveUseEnterForSelection(useEnterForSelection)
     }
 
+    fun saveUseMouseNavigationByDefault(useMouseNavigationByDefault: Boolean) = viewModelScope.launch {
+        useCase.saveUseMouseNavigationByDefault(useMouseNavigationByDefault)
+    }
+
     // ---- Others ----
 
     val hideBluetoothActivationButtonFlow: Flow<Boolean> get() = useCase.hideBluetoothActivationButton()

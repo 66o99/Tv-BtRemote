@@ -5,6 +5,7 @@ import com.atharok.btremote.common.utils.DEFAULT_MOUSE_SPEED
 import com.atharok.btremote.common.utils.DEFAULT_MUST_CLEAR_INPUT_FIELD
 import com.atharok.btremote.common.utils.DEFAULT_REMOTE_NAVIGATION
 import com.atharok.btremote.common.utils.DEFAULT_SHOULD_INVERT_MOUSE_SCROLLING_DIRECTION
+import com.atharok.btremote.common.utils.USE_MOUSE_NAVIGATION_BY_DEFAULT
 import com.atharok.btremote.common.utils.DEFAULT_USE_ADVANCED_KEYBOARD
 import com.atharok.btremote.common.utils.DEFAULT_USE_ADVANCED_KEYBOARD_INTEGRATED
 import com.atharok.btremote.common.utils.DEFAULT_USE_ENTER_FOR_SELECTION
@@ -28,5 +29,6 @@ data class RemoteSettings(
     // ---- Remote ----
     val remoteNavigationEntity: RemoteNavigationEntity = DEFAULT_REMOTE_NAVIGATION,
     val useMinimalistRemote: Boolean = DEFAULT_USE_MINIMALIST_REMOTE,
-    val useEnterForSelection: Boolean = DEFAULT_USE_ENTER_FOR_SELECTION
+    val useEnterForSelection: Boolean = DEFAULT_USE_ENTER_FOR_SELECTION,
+    val useMouseNavigationByDefault: Boolean = USE_MOUSE_NAVIGATION_BY_DEFAULT
 )
