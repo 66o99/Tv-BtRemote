@@ -574,7 +574,7 @@ private fun KeyboardModalBottomSheet(
     keyboardLanguage: KeyboardLanguage,
     mustClearInputField: Boolean,
     sendKeyboardKeyReport: (ByteArray) -> Unit,
-    sendTextReport: (String, VirtualKeyboardLayout) -> Unit,
+    sendTextReport: (String, VirtualKeyboardLayout, Boolean) -> Unit,
     onShowKeyboardChanged: (Boolean) -> Unit,
 ) {
     if (useAdvancedKeyboard) {
@@ -595,7 +595,9 @@ private fun KeyboardModalBottomSheet(
         VirtualKeyboardModalBottomSheet(
             mustClearInputField = mustClearInputField,
             sendKeyboardKeyReport = sendKeyboardKeyReport,
-            sendTextReport = { sendTextReport(it, virtualKeyboardLayout) },
+            sendTextReport = { text: String, shouldSendEnter: Boolean ->
+                sendTextReport(text, virtualKeyboardLayout, shouldSendEnter)
+            },
             onShowKeyboardBottomSheetChanged = onShowKeyboardChanged
         )
     }

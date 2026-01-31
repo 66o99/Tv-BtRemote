@@ -40,7 +40,7 @@ import com.atharok.btremote.ui.theme.surfaceElevationHigh
 fun VirtualKeyboardModalBottomSheet(
     mustClearInputField: Boolean,
     sendKeyboardKeyReport: (ByteArray) -> Unit,
-    sendTextReport: (String) -> Unit,
+    sendTextReport: (String, Boolean) -> Unit,
     onShowKeyboardBottomSheetChanged: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -80,7 +80,7 @@ private fun StatelessKeyboardView(
     text: String,
     onTextChange: (String) -> Unit,
     sendKeyboardKeyReport: (ByteArray) -> Unit,
-    sendTextReport: (String) -> Unit,
+    sendTextReport: (String, Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
@@ -102,9 +102,7 @@ private fun StatelessKeyboardView(
                 ),
                 keyboardActions = KeyboardActions(
                     onDone = {
-                        sendTextReport(text)
-                        sendKeyboardKeyReport(VirtualKeyboardLayout.KEYBOARD_KEY_ENTER)
-                        sendKeyboardKeyReport(REMOTE_INPUT_NONE)
+                        sendTextReport(text, true)
                         if(mustClearInputField) {
                             onTextChange("")
                         }
@@ -113,7 +111,7 @@ private fun StatelessKeyboardView(
             )
             IconButton(
                 onClick = {
-                    sendTextReport(text)
+                    sendTextReport(text, false)
                     if(mustClearInputField) {
                         onTextChange("")
                     }

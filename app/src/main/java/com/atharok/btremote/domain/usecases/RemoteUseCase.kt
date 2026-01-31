@@ -27,7 +27,11 @@ class RemoteUseCase(
         return bluetoothRepository.sendReport(id, bytes)
     }
 
-    suspend fun sendTextReport(text: String, virtualKeyboardLayout: VirtualKeyboardLayout): Boolean {
-        return bluetoothRepository.sendTextReport(text, virtualKeyboardLayout)
+    suspend fun sendTextReport(
+        text: String,
+        virtualKeyboardLayout: VirtualKeyboardLayout,
+        shouldSendEnter: Boolean
+    ): Boolean {
+        return bluetoothRepository.sendTextReport(text, virtualKeyboardLayout, shouldSendEnter)
     }
 }

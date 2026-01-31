@@ -12,20 +12,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.dimensionResource
 import androidx.core.view.WindowCompat
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.atharok.btremote.R
 import com.atharok.btremote.common.extensions.getActivity
 import com.atharok.btremote.common.extensions.setFullScreen
 import com.atharok.btremote.common.utils.isDynamicColorsAvailable
 import com.atharok.btremote.domain.entities.settings.AppearanceSettings
 import com.atharok.btremote.domain.entities.settings.ThemeEntity
-import kotlinx.coroutines.flow.Flow
 
 private val lightScheme = lightColorScheme(
     primary = primaryLight,

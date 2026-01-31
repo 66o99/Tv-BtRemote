@@ -45,5 +45,9 @@ interface BluetoothRepository {
 
     fun sendReport(id: Int, bytes: ByteArray): Boolean
 
-    suspend fun sendTextReport(text: String, virtualKeyboardLayout: VirtualKeyboardLayout): Boolean
+    suspend fun sendTextReport(
+        text: String,
+        virtualKeyboardLayout: VirtualKeyboardLayout,
+        shouldSendEnter: Boolean
+    ): Boolean
 }

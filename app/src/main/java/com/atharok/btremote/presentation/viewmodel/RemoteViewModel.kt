@@ -10,6 +10,7 @@ import com.atharok.btremote.domain.entities.remoteInput.keyboard.virtualKeyboard
 import com.atharok.btremote.domain.entities.settings.RemoteSettings
 import com.atharok.btremote.domain.usecases.RemoteUseCase
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
@@ -47,9 +48,12 @@ class RemoteViewModel(
     val sendKeyboardReport: (ByteArray) -> Unit = { bytes -> sendReport(KEYBOARD_REPORT_ID, bytes) }
 
     // Text (Keyboard)
-    val sendTextReport: (String, VirtualKeyboardLayout) -> Unit = { text, virtualKeyboardLayout ->
-        viewModelScope.launch(Dispatchers.Default) {
-            useCase.sendTextReport(text, virtualKeyboardLayout)
+    private var sendTextJob: Job? = null
+    val sendTextReport: (String, VirtualKeyboardLayout, Boolean) -> Unit = { text, virtualKeyboardLayout, shouldSendEnter ->
+        if(sendTextJob?.isActive != true) {
+            sendTextJob = viewModelScope.launch(Dispatchers.Default) {
+                useCase.sendTextReport(text, virtualKeyboardLayout, shouldSendEnter)
+            }
         }
     }
 }

@@ -161,7 +161,11 @@ class BluetoothHidCore(
         return success
     }
 
-    suspend fun sendTextReport(text: String, virtualKeyboardLayout: VirtualKeyboardLayout): Boolean {
+    suspend fun sendTextReport(
+        text: String,
+        virtualKeyboardLayout: VirtualKeyboardLayout,
+        shouldSendEnter: Boolean
+    ): Boolean {
         var success = false
         bluetoothDevice?.let { device ->
             bluetoothHidDevice?.let { hidDevice ->
@@ -174,6 +178,11 @@ class BluetoothHidCore(
                         delay(DELAY_BETWEEN_KEY_PRESSES_IN_MILLIS)
                         hidDevice.sendReport(device, KEYBOARD_REPORT_ID, REMOTE_INPUT_NONE)
                         delay(DELAY_BETWEEN_KEY_PRESSES_IN_MILLIS)
+                    }
+                    if(shouldSendEnter) {
+                        hidDevice.sendReport(device, KEYBOARD_REPORT_ID, VirtualKeyboardLayout.KEYBOARD_KEY_ENTER)
+                        delay(DELAY_BETWEEN_KEY_PRESSES_IN_MILLIS)
+                        hidDevice.sendReport(device, KEYBOARD_REPORT_ID, REMOTE_INPUT_NONE)
                     }
                 }
             }
