@@ -21,6 +21,7 @@ android {
             useSupportLibrary = true
         }
         
+        // 仅保留 arm64-v8a 方案
         ndk {
             abiFilters.add("arm64-v8a")
         }
@@ -57,8 +58,8 @@ android {
      // ---------------------------------------------------------------------------
      
             isShrinkResources = false  
-            isMinifyEnabled = false // false 防闪退,下面的保护清单三行也注释！
-            proguardFiles(
+            isMinifyEnabled = false // false 防闪退,下面的保护清单4行也注释！
+     //       proguardFiles(
      //           getDefaultProguardFile("proguard-android-optimize.txt"),
      //           "proguard-rules.pro"
      //       )
