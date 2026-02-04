@@ -27,14 +27,14 @@ jobs:
       - name: Install dependencies
         # 注意：这里的路径加上了 TCL-BtRemote/
         run: flutter pub get
-        working-directory: TCL-BtRemote/app
+        working-directory: app
         
       - name: Build APK
         run: flutter build apk --release
-        working-directory: TCL-BtRemote/app
+        working-directory: app
         
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: BtRemote-APK
-          path: TCL-BtRemote/app/build/app/outputs/flutter-apk/app-release.apk
+          path: app/build/app/outputs/flutter-apk/app-release.apk
