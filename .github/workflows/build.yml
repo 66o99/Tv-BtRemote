@@ -1,22 +1,55 @@
-- name: Install Flutter and Build
+name: Build BtRemote APK
+on: 
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch: # 允许你在 GitHub 页面手动点击按钮运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.x'
+          cache: true
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          # 安装 Android 交叉编译目标
+          targets: aarch64-linux-android, armv7-linux-androideabi
+
+      - name: Auto-Locate and Build
         run: |
-          # 1. 打印当前目录结构，方便我们排错（在日志里能看到）
-          echo "Current directory listing:"
-          ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /'
+          # 1. 自动寻找包含 pubspec.yaml 的目录
+          PROJECT_ROOT=$(find . -name pubspec.yaml -exec dirname {} \; | head -n 1)
+          echo "检测到项目路径: $PROJECT_ROOT"
+          cd "$PROJECT_ROOT"
           
-          # 2. 尝试寻找 pubspec.yaml 所在的绝对路径
-          CONF_PATH=$(find . -name pubspec.yaml -printf '%h\n' | head -n 1)
-          echo "Found project at: $CONF_PATH"
-          
-          if [ -z "$CONF_PATH" ]; then
-            echo "Error: Could not find pubspec.yaml anywhere!"
-            exit 1
-          fi
-          
-          cd "$CONF_PATH"
-          
-          # 3. 执行编译
+          # 2. 安装 Flutter 依赖
           flutter pub get
+          
+          # 3. 进入安卓目录并使用 gradlew 编译
+          # 使用你在 GitLab 配置里看到的 assembleDefaultRelease
           cd android
           chmod +x gradlew
-          ./gradlew assembleDefaultRelease
+          ./gradlew assembleDefaultRelease --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BtRemote-Release-APK
+          # 使用通配符递归搜索生成的 APK，不管它在哪层
+          path: "**/build/app/outputs/flutter-apk/*.apk"
