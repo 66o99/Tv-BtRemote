@@ -6,19 +6,50 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # 1. 设置 Java 环境（Android 编译必备）
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      # 2. 设置 Flutter
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.x'
+          cache: true
+
+      # 3. 设置 Rust 及其 Android 编译目标
       - uses: dtolnay/rust-toolchain@stable
-      
+        with:
+          targets: aarch64-linux-android, armv7-linux-androideabi, x86_64-linux-android
+
+      # 4. 安装编译工具 (cargo-expand 和 codegen)
+      - name: Install Rust bridge tools
+        run: |
+          cargo install flutter_rust_bridge_codegen --version 1.80.1
+          # 注意：这里的版本号应与项目 pubspec.yaml 中的版本尽量一致
+
+      # 5. 获取 Flutter 依赖
+      # 注意：工作目录切换到了 btremote_app
       - name: Install dependencies
         run: flutter pub get
+        working-directory: btremote_app
         
+      # 6. 生成 Rust 桥接代码 (如果源码中未包含已生成代码)
+      - name: Run Codegen
+        run: flutter_rust_bridge_codegen --rust-input rust/src/api.rs --dart-output btremote_app/lib/bridge_generated.dart
+        # 如果项目已经自带生成好的代码，这一步可以跳过
+
+      # 7. 编译 APK
       - name: Build APK
         run: flutter build apk --release
+        working-directory: btremote_app
         
+      # 8. 上传产物
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          name: BtRemote-APK
+          # 路径也需要加上前缀
+          path: btremote_app/build/app/outputs/flutter-apk/app-release.apk
