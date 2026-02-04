@@ -6,9 +6,6 @@
 //   alias(libs.plugins.kotlin.compose) apply false
 // }
 
-android {
-    // ... 其他配置 (compileSdk, defaultConfig 等)
-
 buildTypes {
         getByName("release") {
             // 1. 赋值必须使用 '='
