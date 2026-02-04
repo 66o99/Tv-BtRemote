@@ -9,17 +9,19 @@
 android {
     // ... 其他配置 (compileSdk, defaultConfig 等)
 
-    buildTypes {
-        release {
-            // 【关键代码】强制让 release 模式使用自带的 debug 签名
-            signingConfig signingConfigs.debug
+buildTypes {
+        getByName("release") {
+            // 1. 赋值必须使用 '='
+            signingConfig = signingConfigs.getByName("debug")
 
-            // 开启混淆压缩以大幅减小体积
-            minifyEnabled true
-            // 开启资源缩减（剔除未使用的图片、布局等）
-            shrinkResources true
+            // 2. 属性名需加 'is' 前缀，且使用 '=' 赋值
+            isMinifyEnabled = true
+            isShrinkResources = true
             
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 3. 函数调用必须使用括号 '()'，且字符串使用双引号 ""
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
-}
