@@ -22,25 +22,38 @@ android {
         }
     }
 
+    // signingConfigs {
+        // create("release") {
+        //    System.getenv("ANDROID_KEY_STORE_FILE")?.let { storeFile = file(it) }
+        //    System.getenv("ANDROID_KEY_STORE_PASSWORD")?.let { storePassword = it }
+        //    System.getenv("ANDROID_KEY_ALIAS")?.let { keyAlias = it }
+        //    System.getenv("ANDROID_KEY_PASSWORD")?.let { keyPassword = it }
+            
     // 签名配置：因为你在 Actions 报错没找到密钥，我们在这里做一个保险
     signingConfigs {
         getByName("debug") {
-            // 保持默认
+            // 保持默认       
         }
     }
-
+    
     buildTypes {
         debug {
             isDebuggable = true
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
         }
+        
+     // release {
+     // isDebuggable = false
+     
+     // ---------------------------------------------------------------------------
         getByName("release") {
             // 【关键点】如果你的 Secrets 没配，这里强制用 debug 签名避免报错
             signingConfig = signingConfigs.getByName("debug")
-
-            isMinifyEnabled = true     // 开启混淆
-            isShrinkResources = true   // 剔除无用资源
+     // ---------------------------------------------------------------------------
+     
+            isShrinkResources = true  
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -48,11 +61,11 @@ android {
         }
     }
 
-    // 多渠道配置
     flavorDimensions += "version"
     productFlavors {
         create("default") {
             dimension = "version"
+     //     signingConfig = signingConfigs.getByName("release")
         }
         create("gplay") {
             dimension = "version"
@@ -76,7 +89,9 @@ android {
     }
 
     dependenciesInfo {
+        // Disables dependency metadata when building APKs.
         includeInApk = false
+        // Disables dependency metadata when building Android App Bundles.
         includeInBundle = false
     }
 }
@@ -96,7 +111,6 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.glance.appwidget)
     implementation(libs.glance.material3)
-    
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
