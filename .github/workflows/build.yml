@@ -1,5 +1,9 @@
-name: Build APK
-on: [push, pull_request]
+name: Build BtRemote APK
+on: 
+  push:
+    branches: [ main, master ]  # 推送代码时触发
+    tags: [ 'v*' ]             # 打标签时触发
+  workflow_dispatch:           # 允许你手动点击按钮触发
 
 jobs:
   build:
@@ -13,30 +17,24 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.x'
-          # 注意：这里的 cache 如果报错可以先设为 false
-          cache: true
-
-      - name: Set up Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: aarch64-linux-android, armv7-linux-androideabi
-
-      - name: Install dependencies
-        # 核心：直接告诉它去哪找 pubspec.yaml
-        working-directory: TCL-BtRemote/TCL-BtRemote/btremote_app
-        run: flutter pub get
-
-      - name: Build APK
-        # 核心：同样指定路径
-        working-directory: TCL-BtRemote/TCL-BtRemote/btremote_app
-        run: flutter build apk --release
-
-      - name: Upload Artifact
+      # 这个项目路径太深，我们先跳进去
+      - name: Install Flutter and Build
+        run: |
+          # 1. 找到正确的目录
+          cd TCL-BtRemote/TCL-BtRemote/btremote_app
+          
+          # 2. 这里的项目可能需要先运行 flutter pub get
+          # 如果你的仓库里没有 flutter，GitHub 环境自带了
+          flutter pub get
+          
+          # 3. 进入 Android 目录使用作者提到的 gradlew 编译
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDefaultRelease
+        
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: BtRemote-APK
-          path: "**/app-release.apk"
+          name: BtRemote-Release-APK
+          # 这里的路径根据作者的 GitLab 配置做了对应修改
+          path: "**/app/build/outputs/apk/*/release/*.apk"
