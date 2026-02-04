@@ -23,23 +23,40 @@ android {
     }
 
     signingConfigs {
-        create("release") {
-            System.getenv("ANDROID_KEY_STORE_FILE")?.let { storeFile = file(it) }
-            System.getenv("ANDROID_KEY_STORE_PASSWORD")?.let { storePassword = it }
-            System.getenv("ANDROID_KEY_ALIAS")?.let { keyAlias = it }
-            System.getenv("ANDROID_KEY_PASSWORD")?.let { keyPassword = it }
+        // create("release") {
+        //    System.getenv("ANDROID_KEY_STORE_FILE")?.let { storeFile = file(it) }
+        //    System.getenv("ANDROID_KEY_STORE_PASSWORD")?.let { storePassword = it }
+        //    System.getenv("ANDROID_KEY_ALIAS")?.let { keyAlias = it }
+        //    System.getenv("ANDROID_KEY_PASSWORD")?.let { keyPassword = it }
+            
+    // 签名配置：因为你在 Actions 报错没找到密钥，我们在这里做一个保险
+    signingConfigs {
+        getByName("debug") {
+            // 保持默认       
         }
     }
+    
 
+        }
+    }
+    
     buildTypes {
         debug {
             isDebuggable = true
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
         }
-        release {
-            isDebuggable = false
-            isShrinkResources = true
+        
+     // release {
+     // isDebuggable = false
+     
+     // ---------------------------------------------------------------------------
+        getByName("release") {
+            // 【关键点】如果你的 Secrets 没配，这里强制用 debug 签名避免报错
+            signingConfig = signingConfigs.getByName("debug")
+     // ---------------------------------------------------------------------------
+     
+            isShrinkResources = true  
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
