@@ -19,8 +19,13 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
+
+        ndk {
+            // 在 Kotlin 中，abiFilters 需要使用 .add() 或者直接 listOf()
+            abiFilters.add("arm64-v8a")
         }
     }
+}
 
     // signingConfigs {
         // create("release") {
